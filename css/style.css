@@ -242,8 +242,18 @@ p {
 
 /* Mode transparent (page d'accueil, au-dessus du hero) */
 .site-header.header-transparent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background: transparent;
   box-shadow: none;
+}
+
+/* Le hero remonte derrière le header fixe */
+.hero {
+  margin-top: -82px;
+  padding-top: 82px;
 }
 
 .site-header.header-transparent .logo-dark {
