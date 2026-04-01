@@ -28,64 +28,119 @@
   const heroContent = document.querySelector('.hero-video__content');
 
   if (videoSection && video) {
-    let videoReady = false;
-    let videoDuration = 0;
-    let targetProgress = 0;
-    let currentProgress = 0;
-    let rafId = null;
-    const LERP_FACTOR = 0.06; // Lower = smoother/slower, higher = snappier
+    // --- Canvas-based frame extraction for smooth scroll ---
+    // Extract all frames upfront, then draw to canvas on scroll (no seeking during scroll)
+    const TOTAL_FRAMES = 120;
+    const frames = [];
+    let framesReady = false;
+    let targetFrame = 0;
+    let currentFrame = 0;
 
-    video.addEventListener('loadedmetadata', () => {
-      videoDuration = video.duration;
-      videoReady = true;
-      video.currentTime = 0;
-      startRenderLoop();
-    });
+    // Create canvas to replace video
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.className = 'hero-video__player';
+    canvas.style.cssText = 'width:100%;height:100%;object-fit:cover;';
 
-    // Animate in text on load
+    // Animate in text
     if (heroContent) {
       setTimeout(() => heroContent.classList.add('animate-in'), 300);
     }
 
-    // Update target on scroll (cheap, no DOM writes)
-    function onScroll() {
+    // Extract frames from video
+    function extractFrames() {
+      return new Promise((resolve) => {
+        const duration = video.duration;
+        let extracted = 0;
+
+        function grabFrame(index) {
+          if (index >= TOTAL_FRAMES) {
+            resolve();
+            return;
+          }
+          const time = (index / (TOTAL_FRAMES - 1)) * duration;
+          video.currentTime = time;
+        }
+
+        video.addEventListener('seeked', function onSeeked() {
+          // Draw current frame to an offscreen canvas and store as ImageBitmap
+          const offscreen = document.createElement('canvas');
+          offscreen.width = video.videoWidth;
+          offscreen.height = video.videoHeight;
+          const offCtx = offscreen.getContext('2d');
+          offCtx.drawImage(video, 0, 0);
+          frames.push(offscreen);
+          extracted++;
+
+          if (extracted >= TOTAL_FRAMES) {
+            video.removeEventListener('seeked', onSeeked);
+            resolve();
+          } else {
+            grabFrame(extracted);
+          }
+        });
+
+        grabFrame(0);
+      });
+    }
+
+    video.addEventListener('loadeddata', async () => {
+      // Set canvas size
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+
+      // Draw first frame immediately
+      ctx.drawImage(video, 0, 0);
+
+      // Replace video with canvas
+      video.parentNode.replaceChild(canvas, video);
+
+      // Extract all frames in background
+      await extractFrames();
+      framesReady = true;
+
+      // Draw correct frame for current scroll position
+      updateTargetFrame();
+      currentFrame = targetFrame;
+      drawFrame(currentFrame);
+
+      // Start smooth render loop
+      requestAnimationFrame(renderLoop);
+    });
+
+    function drawFrame(index) {
+      const i = Math.round(Math.max(0, Math.min(TOTAL_FRAMES - 1, index)));
+      if (frames[i]) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(frames[i], 0, 0);
+      }
+    }
+
+    function updateTargetFrame() {
       const rect = videoSection.getBoundingClientRect();
       const sectionHeight = videoSection.offsetHeight - window.innerHeight;
       const scrolled = -rect.top;
-      targetProgress = Math.max(0, Math.min(1, scrolled / sectionHeight));
+      const progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
+      targetFrame = progress * (TOTAL_FRAMES - 1);
     }
 
-    // Smooth render loop — lerps currentProgress toward targetProgress
     function renderLoop() {
-      if (!videoReady || !videoDuration) {
-        rafId = requestAnimationFrame(renderLoop);
+      if (!framesReady) {
+        requestAnimationFrame(renderLoop);
         return;
       }
 
-      // Lerp: ease current toward target
-      const diff = targetProgress - currentProgress;
-
-      // Only update if there's meaningful change
-      if (Math.abs(diff) > 0.0001) {
-        currentProgress += diff * LERP_FACTOR;
-
-        const time = currentProgress * videoDuration;
-        if (isFinite(time) && Math.abs(video.currentTime - time) > 0.01) {
-          video.currentTime = time;
-        }
+      // Lerp for smoothness
+      const diff = targetFrame - currentFrame;
+      if (Math.abs(diff) > 0.05) {
+        currentFrame += diff * 0.1;
+        drawFrame(currentFrame);
       }
 
-      rafId = requestAnimationFrame(renderLoop);
+      requestAnimationFrame(renderLoop);
     }
 
-    function startRenderLoop() {
-      if (!rafId) {
-        onScroll(); // Set initial position
-        rafId = requestAnimationFrame(renderLoop);
-      }
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('scroll', updateTargetFrame, { passive: true });
   }
 
   // --- Mobile menu ---
