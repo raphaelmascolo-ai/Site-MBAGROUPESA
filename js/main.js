@@ -30,12 +30,16 @@
   if (videoSection && video) {
     let videoReady = false;
     let videoDuration = 0;
+    let targetProgress = 0;
+    let currentProgress = 0;
+    let rafId = null;
+    const LERP_FACTOR = 0.06; // Lower = smoother/slower, higher = snappier
 
     video.addEventListener('loadedmetadata', () => {
       videoDuration = video.duration;
       videoReady = true;
-      // Trigger initial position
-      updateVideoScroll();
+      video.currentTime = 0;
+      startRenderLoop();
     });
 
     // Animate in text on load
@@ -43,24 +47,45 @@
       setTimeout(() => heroContent.classList.add('animate-in'), 300);
     }
 
-    function updateVideoScroll() {
-      if (!videoReady || !videoDuration) return;
-
+    // Update target on scroll (cheap, no DOM writes)
+    function onScroll() {
       const rect = videoSection.getBoundingClientRect();
       const sectionHeight = videoSection.offsetHeight - window.innerHeight;
-
-      // Calculate scroll progress through the section (0 to 1)
       const scrolled = -rect.top;
-      const progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
+      targetProgress = Math.max(0, Math.min(1, scrolled / sectionHeight));
+    }
 
-      // Scrub video to this position
-      const targetTime = progress * videoDuration;
-      if (isFinite(targetTime)) {
-        video.currentTime = targetTime;
+    // Smooth render loop — lerps currentProgress toward targetProgress
+    function renderLoop() {
+      if (!videoReady || !videoDuration) {
+        rafId = requestAnimationFrame(renderLoop);
+        return;
+      }
+
+      // Lerp: ease current toward target
+      const diff = targetProgress - currentProgress;
+
+      // Only update if there's meaningful change
+      if (Math.abs(diff) > 0.0001) {
+        currentProgress += diff * LERP_FACTOR;
+
+        const time = currentProgress * videoDuration;
+        if (isFinite(time) && Math.abs(video.currentTime - time) > 0.01) {
+          video.currentTime = time;
+        }
+      }
+
+      rafId = requestAnimationFrame(renderLoop);
+    }
+
+    function startRenderLoop() {
+      if (!rafId) {
+        onScroll(); // Set initial position
+        rafId = requestAnimationFrame(renderLoop);
       }
     }
 
-    window.addEventListener('scroll', updateVideoScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
 
   // --- Mobile menu ---
