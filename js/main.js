@@ -7,14 +7,9 @@
 
   const header = document.querySelector('.site-header');
 
-  // --- Header transparent mode (index page with hero) ---
-  // If the page has a .hero section, the header starts transparent
-  const hero = document.querySelector('.hero');
-
-  if (header && hero) {
-    // Start transparent
-    header.classList.add('header-transparent');
-
+  // --- Header transparent mode (index page) ---
+  // If header has .header-transparent, manage it on scroll
+  if (header && header.classList.contains('header-transparent')) {
     const handleScroll = () => {
       if (window.scrollY > 60) {
         header.classList.remove('header-transparent');
@@ -24,7 +19,6 @@
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
   }
 
   // --- Mobile menu ---
