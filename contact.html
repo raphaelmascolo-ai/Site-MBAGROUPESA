@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="site-id" content="mba-groupe">
+  <title>Contact — MBA Groupe SA</title>
+  <meta name="description" content="Contactez MBA Groupe SA à Martigny. Formulaire de contact, adresse, téléphone et localisation pour tous vos projets de construction et d'immobilier.">
+  <meta property="og:title" content="Contact — MBA Groupe SA">
+  <meta property="og:description" content="Contactez MBA Groupe SA à Martigny, Valais.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="index.html" class="site-header__logo" aria-label="MBA Groupe SA — Accueil">
+        <img src="images/logo-mba-groupe-white.svg" alt="MBA Groupe SA" class="logo-white">
+        <img src="images/logo-mba-groupe.png" alt="MBA Groupe SA" class="logo-dark">
+      </a>
+      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" role="navigation" aria-label="Navigation principale">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="about.html" class="nav-link">À propos</a>
+        <a href="companies.html" class="nav-link">Nos sociétés</a>
+        <a href="blog.html" class="nav-link">Actualités</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+    <div class="menu-overlay"></div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="accent-line"></div>
+        <h1>Contact</h1>
+        <p>Une question, un projet ? N'hésitez pas à nous contacter. Notre équipe vous répondra dans les meilleurs délais.</p>
+      </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Formulaire -->
+          <div class="fade-in-left">
+            <h2 style="font-size:1.5rem;margin-bottom:2rem;">Envoyez-nous un message</h2>
+            <form class="contact-form" action="#" method="POST">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
+
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.ch" required>
+
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+41 00 000 00 00">
+
+              <label for="company">Société concernée</label>
+              <select id="company" name="company">
+                <option value="">— Choisir une société —</option>
+                <option value="mba-groupe">MBA Groupe SA (général)</option>
+                <option value="mba-construction">MBA Construction SA</option>
+                <option value="mba-immobilier">MBA Immobilier SA</option>
+                <option value="asv-construction">ASV Construction Générale SA</option>
+                <option value="asv-color">ASV Color SA</option>
+                <option value="mba-services">MBA Services SA</option>
+                <option value="praz-prins">Les Praz Prins SA</option>
+                <option value="e-immo">E-Immo Sàrl</option>
+              </select>
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Décrivez votre projet ou votre demande..." required></textarea>
+
+              <button type="submit" class="btn btn-primary">Envoyer le message</button>
+            </form>
+          </div>
+
+          <!-- Informations de contact -->
+          <div class="fade-in-right">
+            <h2 style="font-size:1.5rem;margin-bottom:2rem;">Nos coordonnées</h2>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h3>Adresse</h3>
+                <p>Rue du Châble-Bet 41<br>1920 Martigny<br>Valais, Suisse</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <h3>Téléphone</h3>
+                <p><a href="tel:+41000000000">+41 00 000 00 00</a></p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <h3>E-mail</h3>
+                <p><a href="mailto:info@mbagroupe.ch">info@mbagroupe.ch</a></p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h3>Horaires</h3>
+                <p>Lundi – Vendredi : 07h30 – 17h00<br>Samedi – Dimanche : Fermé</p>
+              </div>
+            </div>
+
+            <!-- Google Maps -->
+            <div class="contact-map">
+              <iframe
+                src="about:blank"
+                title="Localisation de MBA Groupe SA à Martigny"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                aria-label="Carte Google Maps — Rue du Châble-Bet 41, 1920 Martigny">
+              </iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logo-mba-groupe-white.svg" alt="MBA Groupe SA">
+          <p>Holding valaisanne regroupant des sociétés spécialisées dans la construction, l'immobilier et les services du bâtiment.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="companies.html">Nos sociétés</a></li>
+            <li><a href="blog.html">Actualités</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Sociétés</h4>
+          <ul>
+            <li><a href="companies.html">MBA Construction SA</a></li>
+            <li><a href="companies.html">MBA Immobilier SA</a></li>
+            <li><a href="companies.html">ASV Construction Générale SA</a></li>
+            <li><a href="companies.html">ASV Color SA</a></li>
+            <li><a href="companies.html">MBA Services SA</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li>Rue du Châble-Bet 41</li>
+            <li>1920 Martigny</li>
+            <li>Valais, Suisse</li>
+            <li style="margin-top:12px;"><a href="tel:+41000000000">+41 00 000 00 00</a></li>
+            <li><a href="mailto:info@mbagroupe.ch">info@mbagroupe.ch</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        &copy; 2026 MBA Groupe SA. Tous droits réservés.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/group-bar.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
