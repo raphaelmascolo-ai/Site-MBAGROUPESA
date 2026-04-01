@@ -26,7 +26,7 @@
   const isGroupSite = document.querySelector('meta[name="site-id"]')?.content === 'mba-groupe';
 
   // Skip group bar on pages with hero (index page) to avoid overlap with fixed header
-  const hasHero = document.querySelector('.hero');
+  const hasHero = document.querySelector('.hero-video-section') || document.querySelector('.hero');
   const skipGroupBar = hasHero;
 
   // --- Inject Group Top Bar ---

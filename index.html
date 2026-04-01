@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
 
@@ -40,22 +40,26 @@
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero__content">
-        <p class="hero__tagline">Holding Construction & Immobilier</p>
-        <h1>Nous construisons<br>plus que des <span class="highlight">bâtiments</span></h1>
-        <p class="hero__description">
-          Depuis Martigny, au cœur du Valais, MBA Groupe SA fédère un ensemble de sociétés spécialisées dans la construction, l'immobilier et les services du bâtiment.
-        </p>
-        <div class="hero__buttons">
-          <a href="companies.html" class="btn btn-primary">Découvrir nos sociétés</a>
-          <a href="contact.html" class="btn btn-outline">Nous contacter</a>
+    <!-- Hero with scroll-driven video -->
+    <section class="hero-video-section">
+      <div class="hero-video__sticky">
+        <div class="hero-video__bg">
+          <video class="hero-video__player" muted playsinline preload="auto">
+            <source src="images/hero-video.mp4" type="video/mp4">
+          </video>
+          <div class="hero-video__overlay"></div>
         </div>
-      </div>
-      <div class="hero__scroll-indicator" aria-hidden="true">
-        <span>Défiler</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        <div class="hero-video__content">
+          <p class="hero__tagline">Holding Construction & Immobilier</p>
+          <h1>Nous construisons<br>plus que des <span class="highlight">bâtiments</span></h1>
+          <p class="hero__description">
+            Depuis Martigny, au cœur du Valais, MBA Groupe SA fédère un ensemble de sociétés spécialisées dans la construction, l'immobilier et les services du bâtiment.
+          </p>
+          <div class="hero__buttons">
+            <a href="companies.html" class="btn btn-primary">Découvrir nos sociétés</a>
+            <a href="contact.html" class="btn btn-outline">Nous contacter</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -233,7 +237,7 @@
     </div>
   </footer>
 
-  <script src="js/group-bar.js?v=3"></script>
-  <script src="js/main.js?v=3"></script>
+  <script src="js/group-bar.js?v=4"></script>
+  <script src="js/main.js?v=4"></script>
 </body>
 </html>

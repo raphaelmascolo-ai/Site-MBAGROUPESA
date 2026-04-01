@@ -8,9 +8,10 @@
   const header = document.querySelector('.site-header');
 
   // --- Header transparent mode (index page) ---
-  // If header has .header-transparent, manage it on scroll
   if (header && header.classList.contains('header-transparent')) {
+    const heroSection = document.querySelector('.hero-video-section');
     const handleScroll = () => {
+      // Switch header when we scroll past the hero sticky zone
       if (window.scrollY > 60) {
         header.classList.remove('header-transparent');
       } else {
@@ -19,6 +20,47 @@
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+  }
+
+  // --- Scroll-driven video ---
+  const videoSection = document.querySelector('.hero-video-section');
+  const video = document.querySelector('.hero-video__player');
+  const heroContent = document.querySelector('.hero-video__content');
+
+  if (videoSection && video) {
+    let videoReady = false;
+    let videoDuration = 0;
+
+    video.addEventListener('loadedmetadata', () => {
+      videoDuration = video.duration;
+      videoReady = true;
+      // Trigger initial position
+      updateVideoScroll();
+    });
+
+    // Animate in text on load
+    if (heroContent) {
+      setTimeout(() => heroContent.classList.add('animate-in'), 300);
+    }
+
+    function updateVideoScroll() {
+      if (!videoReady || !videoDuration) return;
+
+      const rect = videoSection.getBoundingClientRect();
+      const sectionHeight = videoSection.offsetHeight - window.innerHeight;
+
+      // Calculate scroll progress through the section (0 to 1)
+      const scrolled = -rect.top;
+      const progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
+
+      // Scrub video to this position
+      const targetTime = progress * videoDuration;
+      if (isFinite(targetTime)) {
+        video.currentTime = targetTime;
+      }
+    }
+
+    window.addEventListener('scroll', updateVideoScroll, { passive: true });
   }
 
   // --- Mobile menu ---
