@@ -9,16 +9,13 @@
 
   // --- Header transparent mode (index page) ---
   if (header && header.classList.contains('header-transparent')) {
-    const heroSection = document.querySelector('.hero-video-section');
     const handleScroll = () => {
-      // Switch header when we scroll past the hero sticky zone
       if (window.scrollY > 60) {
         header.classList.remove('header-transparent');
       } else {
         header.classList.add('header-transparent');
       }
     };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
   }
 
@@ -28,119 +25,125 @@
   const heroContent = document.querySelector('.hero-video__content');
 
   if (videoSection && video) {
-    // --- Canvas-based frame extraction for smooth scroll ---
-    // Extract all frames upfront, then draw to canvas on scroll (no seeking during scroll)
-    const TOTAL_FRAMES = 120;
-    const frames = [];
-    let framesReady = false;
-    let targetFrame = 0;
-    let currentFrame = 0;
-
-    // Create canvas to replace video
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.className = 'hero-video__player';
-    canvas.style.cssText = 'width:100%;height:100%;object-fit:cover;';
+    const isMobile = window.innerWidth < 768 || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
 
     // Animate in text
     if (heroContent) {
       setTimeout(() => heroContent.classList.add('animate-in'), 300);
     }
 
-    // Extract frames from video
-    function extractFrames() {
-      return new Promise((resolve) => {
-        const duration = video.duration;
-        let extracted = 0;
+    if (isMobile) {
+      // --- MOBILE: autoplay video in background ---
+      videoSection.style.height = '100vh';
+      video.autoplay = true;
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
+      video.play().catch(() => {});
 
-        function grabFrame(index) {
-          if (index >= TOTAL_FRAMES) {
-            resolve();
-            return;
-          }
-          const time = (index / (TOTAL_FRAMES - 1)) * duration;
-          video.currentTime = time;
+    } else {
+      // --- DESKTOP: canvas frame extraction for smooth scroll scrub ---
+      const TOTAL_FRAMES = 150;
+      const frames = [];
+      let framesReady = false;
+      let targetFrame = 0;
+      let currentFrame = 0;
+      let extracting = false;
+
+      // Canvas that replaces the video
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.className = 'hero-video__player';
+      canvas.style.cssText = 'width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;';
+
+      // Show first frame ASAP
+      function showFirstFrame() {
+        canvas.width = video.videoWidth || 1920;
+        canvas.height = video.videoHeight || 1080;
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        // Insert canvas, hide video
+        video.style.display = 'none';
+        video.parentNode.appendChild(canvas);
+      }
+
+      // Extract frames sequentially
+      async function extractFrames() {
+        if (extracting) return;
+        extracting = true;
+        const duration = video.duration;
+
+        for (let i = 0; i < TOTAL_FRAMES; i++) {
+          const time = (i / (TOTAL_FRAMES - 1)) * duration;
+          await seekTo(time);
+          const offscreen = document.createElement('canvas');
+          offscreen.width = canvas.width;
+          offscreen.height = canvas.height;
+          const offCtx = offscreen.getContext('2d');
+          offCtx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          frames.push(offscreen);
         }
 
-        video.addEventListener('seeked', function onSeeked() {
-          // Draw current frame to an offscreen canvas and store as ImageBitmap
-          const offscreen = document.createElement('canvas');
-          offscreen.width = video.videoWidth;
-          offscreen.height = video.videoHeight;
-          const offCtx = offscreen.getContext('2d');
-          offCtx.drawImage(video, 0, 0);
-          frames.push(offscreen);
-          extracted++;
-
-          if (extracted >= TOTAL_FRAMES) {
-            video.removeEventListener('seeked', onSeeked);
-            resolve();
-          } else {
-            grabFrame(extracted);
-          }
-        });
-
-        grabFrame(0);
-      });
-    }
-
-    video.addEventListener('loadeddata', async () => {
-      // Set canvas size
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-
-      // Draw first frame immediately
-      ctx.drawImage(video, 0, 0);
-
-      // Replace video with canvas
-      video.parentNode.replaceChild(canvas, video);
-
-      // Extract all frames in background
-      await extractFrames();
-      framesReady = true;
-
-      // Draw correct frame for current scroll position
-      updateTargetFrame();
-      currentFrame = targetFrame;
-      drawFrame(currentFrame);
-
-      // Start smooth render loop
-      requestAnimationFrame(renderLoop);
-    });
-
-    function drawFrame(index) {
-      const i = Math.round(Math.max(0, Math.min(TOTAL_FRAMES - 1, index)));
-      if (frames[i]) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(frames[i], 0, 0);
-      }
-    }
-
-    function updateTargetFrame() {
-      const rect = videoSection.getBoundingClientRect();
-      const sectionHeight = videoSection.offsetHeight - window.innerHeight;
-      const scrolled = -rect.top;
-      const progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
-      targetFrame = progress * (TOTAL_FRAMES - 1);
-    }
-
-    function renderLoop() {
-      if (!framesReady) {
-        requestAnimationFrame(renderLoop);
-        return;
-      }
-
-      // Lerp for smoothness
-      const diff = targetFrame - currentFrame;
-      if (Math.abs(diff) > 0.05) {
-        currentFrame += diff * 0.1;
+        framesReady = true;
+        // Draw correct frame for current scroll
+        updateTargetFrame();
+        currentFrame = targetFrame;
         drawFrame(currentFrame);
       }
 
-      requestAnimationFrame(renderLoop);
-    }
+      function seekTo(time) {
+        return new Promise((resolve) => {
+          const onSeeked = () => {
+            video.removeEventListener('seeked', onSeeked);
+            resolve();
+          };
+          video.addEventListener('seeked', onSeeked);
+          video.currentTime = time;
+        });
+      }
 
-    window.addEventListener('scroll', updateTargetFrame, { passive: true });
+      function drawFrame(index) {
+        const i = Math.round(Math.max(0, Math.min(TOTAL_FRAMES - 1, index)));
+        if (frames[i]) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(frames[i], 0, 0);
+        }
+      }
+
+      function updateTargetFrame() {
+        const rect = videoSection.getBoundingClientRect();
+        const sectionHeight = videoSection.offsetHeight - window.innerHeight;
+        const scrolled = -rect.top;
+        const progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
+        targetFrame = progress * (TOTAL_FRAMES - 1);
+      }
+
+      function renderLoop() {
+        if (framesReady) {
+          const diff = targetFrame - currentFrame;
+          if (Math.abs(diff) > 0.05) {
+            currentFrame += diff * 0.12;
+            drawFrame(currentFrame);
+          }
+        }
+        requestAnimationFrame(renderLoop);
+      }
+
+      // Kick off as soon as video has enough data
+      video.addEventListener('loadeddata', () => {
+        showFirstFrame();
+        requestAnimationFrame(renderLoop);
+        extractFrames();
+      });
+
+      // Fallback if loadeddata already fired
+      if (video.readyState >= 2) {
+        showFirstFrame();
+        requestAnimationFrame(renderLoop);
+        extractFrames();
+      }
+
+      window.addEventListener('scroll', updateTargetFrame, { passive: true });
+    }
   }
 
   // --- Mobile menu ---
