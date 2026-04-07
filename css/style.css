@@ -382,69 +382,40 @@ p {
   pointer-events: none;
 }
 
-/* Glass panel — Apple-style frosted overlay on the right half */
+/* Wide gradient layer covering the whole hero — long natural fade */
+.hero-video__gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 25%,
+    rgba(10, 10, 12, 0.15) 40%,
+    rgba(10, 10, 12, 0.4) 60%,
+    rgba(10, 10, 12, 0.65) 80%,
+    rgba(10, 10, 12, 0.82) 100%
+  );
+}
+
+/* Content area — sits over the gradient, no glass background of its own */
 .hero-video__content {
   position: absolute;
   top: 0;
   right: 0;
-  width: 52%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 6% 0 6%;
+  padding: 0 6% 0 4%;
   color: var(--white);
   z-index: 2;
   text-align: left;
-
-  /* Glass effect */
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
-  background: linear-gradient(
-    to right,
-    rgba(15, 15, 18, 0.35) 0%,
-    rgba(15, 15, 18, 0.55) 35%,
-    rgba(15, 15, 18, 0.7) 70%,
-    rgba(15, 15, 18, 0.78) 100%
-  );
-
-  /* Soft fade-in from left edge using mask so blur transitions smoothly */
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(0, 0, 0, 0.3) 8%,
-    rgba(0, 0, 0, 0.7) 16%,
-    #000 24%,
-    #000 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(0, 0, 0, 0.3) 8%,
-    rgba(0, 0, 0, 0.7) 16%,
-    #000 24%,
-    #000 100%
-  );
-
-  border-left: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: -30px 0 80px rgba(0, 0, 0, 0.25);
-}
-
-/* Subtle yellow glow accent inside the glass panel */
-.hero-video__content::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    circle at 80% 30%,
-    rgba(253, 217, 0, 0.06) 0%,
-    transparent 50%
-  );
-  pointer-events: none;
-  z-index: -1;
 }
 
 .hero__tagline {
