@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=9">
+  <link rel="stylesheet" href="css/style.css?v=10">
 </head>
 <body>
 
@@ -91,61 +91,100 @@
           <h2>Nos sociétés</h2>
           <p class="section-subtitle">Un écosystème de compétences au service de vos projets de construction et d'immobilier.</p>
         </div>
-        <div class="companies-grid">
-          <div class="company-card fade-in">
-            <div class="company-card__icon">MC</div>
-            <h3>MBA Construction SA</h3>
-            <p>Maçonnerie, béton armé et construction depuis 2001. En 2026, nous célébrons 25 ans d'expertise au service du bâtiment valaisan.</p>
-            <a href="companies.html" class="company-card__link">
-              Découvrir
+        <div class="bento-grid">
+          <!-- Carte vedette : MBA Construction -->
+          <a href="companies.html#mba-construction" class="bento-card bento-card--featured fade-in">
+            <div class="bento-card__bg"></div>
+            <div class="bento-card__overlay"></div>
+            <div class="bento-card__content">
+              <span class="bento-card__badge">25 ans · Société fondatrice</span>
+              <div>
+                <span class="bento-card__sector">Maçonnerie · Béton armé</span>
+                <h3 class="bento-card__title">MBA<br>Construction<br>SA</h3>
+                <p class="bento-card__desc">Depuis 2001, l'expertise historique du groupe au service du bâtiment valaisan.</p>
+                <span class="bento-card__cta">
+                  Découvrir
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <a href="companies.html#mba-immobilier" class="bento-card fade-in">
+            <span class="bento-card__num">02</span>
+            <div class="bento-card__inner">
+              <span class="bento-card__sector">Promotion · Gestion</span>
+              <h3 class="bento-card__title">MBA Immobilier SA</h3>
+              <p class="bento-card__desc">Projets résidentiels et commerciaux pensés pour durer.</p>
+            </div>
+            <span class="bento-card__arrow" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-          <div class="company-card fade-in">
-            <div class="company-card__icon">MI</div>
-            <h3>MBA Immobilier SA</h3>
-            <p>Promotion, vente et gestion immobilière. Des projets résidentiels et commerciaux pensés pour durer.</p>
-            <a href="companies.html" class="company-card__link">
-              Découvrir
+            </span>
+          </a>
+
+          <a href="companies.html#asv-construction" class="bento-card fade-in">
+            <span class="bento-card__num">03</span>
+            <div class="bento-card__inner">
+              <span class="bento-card__sector">Construction générale</span>
+              <h3 class="bento-card__title">ASV Construction Générale SA</h3>
+              <p class="bento-card__desc">Projets clés en main, de la planification à la livraison.</p>
+            </div>
+            <span class="bento-card__arrow" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-          <div class="company-card fade-in">
-            <div class="company-card__icon">ASV</div>
-            <h3>ASV Construction Générale SA</h3>
-            <p>Construction générale, de la planification à la réalisation. Des projets clés en main, livrés dans les délais et selon les standards les plus exigeants.</p>
-            <a href="companies.html" class="company-card__link">
-              Découvrir
+            </span>
+          </a>
+
+          <a href="companies.html#asv-color" class="bento-card fade-in">
+            <span class="bento-card__num">04</span>
+            <div class="bento-card__inner">
+              <span class="bento-card__sector">Peinture · Finitions</span>
+              <h3 class="bento-card__title">ASV Color SA</h3>
+              <p class="bento-card__desc">Savoir-faire artisanal et finitions sur mesure.</p>
+            </div>
+            <span class="bento-card__arrow" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-          <div class="company-card fade-in">
-            <div class="company-card__icon">AC</div>
-            <h3>ASV Color SA</h3>
-            <p>Peinture et finitions du bâtiment. Un savoir-faire artisanal au service de la qualité des finitions.</p>
-            <a href="companies.html" class="company-card__link">
-              Découvrir
+            </span>
+          </a>
+
+          <a href="companies.html#mba-services" class="bento-card fade-in">
+            <span class="bento-card__num">05</span>
+            <div class="bento-card__inner">
+              <span class="bento-card__sector">Entretien · Maintenance</span>
+              <h3 class="bento-card__title">MBA Services SA</h3>
+              <p class="bento-card__desc">Support technique pour la pérennité de vos ouvrages.</p>
+            </div>
+            <span class="bento-card__arrow" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-          <div class="company-card fade-in">
-            <div class="company-card__icon">MS</div>
-            <h3>MBA Services SA</h3>
-            <p>Services liés au bâtiment : entretien, maintenance et support technique pour garantir la pérennité de vos ouvrages.</p>
-            <a href="companies.html" class="company-card__link">
-              Découvrir
+            </span>
+          </a>
+
+          <a href="companies.html#praz-prins" class="bento-card fade-in">
+            <span class="bento-card__num">06</span>
+            <div class="bento-card__inner">
+              <span class="bento-card__sector">Immobilier · Construction</span>
+              <h3 class="bento-card__title">Les Praz Prins SA</h3>
+              <p class="bento-card__desc">Projets ambitieux ancrés dans le paysage valaisan.</p>
+            </div>
+            <span class="bento-card__arrow" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-          <div class="company-card fade-in">
-            <div class="company-card__icon">PP</div>
-            <h3>Les Praz Prins SA</h3>
-            <p>Immobilier et construction. Des projets ambitieux ancrés dans le paysage valaisan.</p>
-            <a href="companies.html" class="company-card__link">
-              Découvrir
+            </span>
+          </a>
+
+          <a href="companies.html#e-immo" class="bento-card fade-in">
+            <span class="bento-card__num">07</span>
+            <div class="bento-card__inner">
+              <span class="bento-card__sector">Société immobilière</span>
+              <h3 class="bento-card__title">E-Immo Sàrl</h3>
+              <p class="bento-card__desc">Détention et gestion du patrimoine immobilier du groupe.</p>
+            </div>
+            <span class="bento-card__arrow" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
+            </span>
+          </a>
+        </div>
+
+        <div class="text-center" style="margin-top:3rem;">
+          <a href="companies.html" class="btn btn-dark">Voir toutes nos sociétés</a>
         </div>
       </div>
     </section>
