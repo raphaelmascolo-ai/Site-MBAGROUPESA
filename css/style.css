@@ -366,28 +366,23 @@ p {
   object-fit: cover;
 }
 
+/* Subtle base overlay on whole video for general contrast */
 .hero-video__overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background:
-    linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.25) 0%,
-      rgba(0, 0, 0, 0.55) 35%,
-      rgba(0, 0, 0, 0.85) 70%,
-      rgba(0, 0, 0, 0.92) 100%
-    ),
-    linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.4) 0%,
-      transparent 40%
-    );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
   pointer-events: none;
 }
 
+/* Glass panel — Apple-style frosted overlay on the right half */
 .hero-video__content {
   position: absolute;
   top: 0;
@@ -397,22 +392,56 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 6% 0 4%;
+  padding: 0 6% 0 6%;
   color: var(--white);
   z-index: 2;
   text-align: left;
+
+  /* Glass effect */
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  background: linear-gradient(
+    to right,
+    rgba(15, 15, 18, 0.35) 0%,
+    rgba(15, 15, 18, 0.55) 35%,
+    rgba(15, 15, 18, 0.7) 70%,
+    rgba(15, 15, 18, 0.78) 100%
+  );
+
+  /* Soft fade-in from left edge using mask so blur transitions smoothly */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 8%,
+    rgba(0, 0, 0, 0.7) 16%,
+    #000 24%,
+    #000 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 8%,
+    rgba(0, 0, 0, 0.7) 16%,
+    #000 24%,
+    #000 100%
+  );
+
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: -30px 0 80px rgba(0, 0, 0, 0.25);
 }
 
-/* Vignette spotlight derrière le contenu pour assombrir localement */
-.hero-video__content::before {
+/* Subtle yellow glow accent inside the glass panel */
+.hero-video__content::after {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
   background: radial-gradient(
-    ellipse at 60% 50%,
-    rgba(0, 0, 0, 0.55) 0%,
-    rgba(0, 0, 0, 0.35) 40%,
-    transparent 75%
+    circle at 80% 30%,
+    rgba(253, 217, 0, 0.06) 0%,
+    transparent 50%
   );
   pointer-events: none;
   z-index: -1;
@@ -429,7 +458,6 @@ p {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 .hero-video__content.animate-in .hero__tagline {
@@ -443,7 +471,6 @@ p {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease 0.15s, transform 0.6s ease 0.15s;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero-video__content.animate-in h1 {
@@ -457,14 +484,13 @@ p {
 
 .hero__description {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 500px;
   margin: 0 0 2.5rem;
   line-height: 1.75;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
 }
 
 .hero-video__content.animate-in .hero__description {
@@ -497,13 +523,21 @@ p {
   }
 
   .hero-video__overlay {
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.35);
   }
 
   .hero-video__content {
     width: 100%;
     padding: 100px 6% 40px;
     text-align: center;
+    background: linear-gradient(
+      to bottom,
+      rgba(15, 15, 18, 0.5) 0%,
+      rgba(15, 15, 18, 0.7) 100%
+    );
+    mask-image: none;
+    -webkit-mask-image: none;
+    border-left: none;
   }
 
   .hero__description {
