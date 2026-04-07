@@ -66,11 +66,16 @@
         video.parentNode.appendChild(canvas);
       }
 
-      // Extract frames sequentially
+      // Extract frames sequentially — but mark ready immediately
       async function extractFrames() {
         if (extracting) return;
         extracting = true;
         const duration = video.duration;
+        // Pre-allocate array so we can fill in any order if needed
+        frames.length = TOTAL_FRAMES;
+
+        // Mark ready right away — drawFrame will use closest available frame
+        framesReady = true;
 
         for (let i = 0; i < TOTAL_FRAMES; i++) {
           const time = (i / (TOTAL_FRAMES - 1)) * duration;
@@ -80,14 +85,8 @@
           offscreen.height = canvas.height;
           const offCtx = offscreen.getContext('2d');
           offCtx.drawImage(video, 0, 0, canvas.width, canvas.height);
-          frames.push(offscreen);
+          frames[i] = offscreen;
         }
-
-        framesReady = true;
-        // Draw correct frame for current scroll
-        updateTargetFrame();
-        currentFrame = targetFrame;
-        drawFrame(currentFrame);
       }
 
       function seekTo(time) {
@@ -102,7 +101,16 @@
       }
 
       function drawFrame(index) {
-        const i = Math.round(Math.max(0, Math.min(TOTAL_FRAMES - 1, index)));
+        const target = Math.round(Math.max(0, Math.min(TOTAL_FRAMES - 1, index)));
+        // Find closest available frame (in case extraction not finished)
+        let i = target;
+        if (!frames[i]) {
+          // Search outward for nearest extracted frame
+          for (let offset = 1; offset < TOTAL_FRAMES; offset++) {
+            if (frames[target - offset]) { i = target - offset; break; }
+            if (frames[target + offset]) { i = target + offset; break; }
+          }
+        }
         if (frames[i]) {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           ctx.drawImage(frames[i], 0, 0);
