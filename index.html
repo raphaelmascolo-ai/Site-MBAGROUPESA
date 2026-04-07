@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/style.css?v=11">
 </head>
 <body>
 
@@ -84,107 +84,92 @@
     </section>
 
     <!-- Nos Sociétés -->
-    <section class="section section--gray">
+    <section class="section section--gray ecosystem-section">
       <div class="container">
-        <div class="section__header fade-in">
-          <div class="accent-line"></div>
-          <h2>Nos sociétés</h2>
-          <p class="section-subtitle">Un écosystème de compétences au service de vos projets de construction et d'immobilier.</p>
+        <div class="ecosystem-header fade-in">
+          <div class="ecosystem-header__left">
+            <span class="ecosystem-badge">L'écosystème</span>
+            <h2 class="ecosystem-title">Nos <em>Sociétés</em></h2>
+            <p class="ecosystem-desc">Un portefeuille de sociétés complémentaires œuvrant en synergie pour façonner l'avenir de la construction et de l'immobilier en Valais.</p>
+          </div>
+          <div class="ecosystem-header__right">
+            <div class="ecosystem-counter">
+              <span class="ecosystem-counter__line"></span>
+              <span class="ecosystem-counter__label">06 sociétés actives</span>
+            </div>
+          </div>
         </div>
+
         <div class="bento-grid">
-          <!-- Carte vedette : MBA Construction -->
+          <!-- 1. MBA Construction — Featured dark, span 2 cols -->
           <a href="companies.html#mba-construction" class="bento-card bento-card--featured fade-in">
             <div class="bento-card__bg"></div>
-            <div class="bento-card__overlay"></div>
             <div class="bento-card__content">
-              <span class="bento-card__badge">25 ans · Société fondatrice</span>
-              <div>
-                <span class="bento-card__sector">Maçonnerie · Béton armé</span>
-                <h3 class="bento-card__title">MBA<br>Construction<br>SA</h3>
-                <p class="bento-card__desc">Depuis 2001, l'expertise historique du groupe au service du bâtiment valaisan.</p>
-                <span class="bento-card__cta">
-                  Découvrir
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </span>
-              </div>
+              <span class="bento-card__sector">Maçonnerie · Béton armé</span>
+              <h3 class="bento-card__title">MBA Construction SA</h3>
+              <p class="bento-card__desc">Pilier historique du groupe depuis 2001, MBA Construction porte les chantiers d'envergure et l'innovation en matière de structures béton.</p>
+              <span class="bento-card__cta">
+                Découvrir
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
             </div>
           </a>
 
-          <a href="companies.html#mba-immobilier" class="bento-card fade-in">
-            <span class="bento-card__num">02</span>
-            <div class="bento-card__inner">
-              <span class="bento-card__sector">Promotion · Gestion</span>
-              <h3 class="bento-card__title">MBA Immobilier SA</h3>
-              <p class="bento-card__desc">Projets résidentiels et commerciaux pensés pour durer.</p>
-            </div>
-            <span class="bento-card__arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <!-- 2. MBA Immobilier — Simple white card with top accent -->
+          <a href="companies.html#mba-immobilier" class="bento-card bento-card--simple fade-in">
+            <span class="bento-card__top-line"></span>
+            <span class="bento-card__sector">Promotion immobilière</span>
+            <h3 class="bento-card__title">MBA Immobilier SA</h3>
+            <p class="bento-card__desc">Promotion, vente et gestion d'un portefeuille résidentiel et commercial haut de gamme en Valais.</p>
+            <span class="bento-card__link-arrow">
+              Découvrir
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
             </span>
           </a>
 
-          <a href="companies.html#asv-construction" class="bento-card fade-in">
-            <span class="bento-card__num">03</span>
-            <div class="bento-card__inner">
+          <!-- 3. ASV Construction — Image card with caption below -->
+          <a href="companies.html#asv-construction" class="bento-card bento-card--image fade-in">
+            <div class="bento-card__image" role="img" aria-label="ASV Construction Générale SA">
+              <div class="bento-card__image-pattern"></div>
+            </div>
+            <div class="bento-card__caption">
               <span class="bento-card__sector">Construction générale</span>
               <h3 class="bento-card__title">ASV Construction Générale SA</h3>
-              <p class="bento-card__desc">Projets clés en main, de la planification à la livraison.</p>
+              <p class="bento-card__desc">Solutions clés en main pour les projets architecturaux complexes, de la conception à la livraison.</p>
+              <span class="bento-card__link-arrow">
+                Découvrir
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
             </div>
-            <span class="bento-card__arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
           </a>
 
-          <a href="companies.html#asv-color" class="bento-card fade-in">
-            <span class="bento-card__num">04</span>
-            <div class="bento-card__inner">
-              <span class="bento-card__sector">Peinture · Finitions</span>
-              <h3 class="bento-card__title">ASV Color SA</h3>
-              <p class="bento-card__desc">Savoir-faire artisanal et finitions sur mesure.</p>
-            </div>
-            <span class="bento-card__arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
+          <!-- 4. ASV Color — Center white card with yellow top -->
+          <a href="companies.html#asv-color" class="bento-card bento-card--center fade-in">
+            <span class="bento-card__top-line bento-card__top-line--full"></span>
+            <span class="bento-card__sector">Architecture · Finitions</span>
+            <h3 class="bento-card__title">ASV Color SA</h3>
+            <p class="bento-card__desc">Le langage visuel de nos ouvrages, à travers une esthétique minimaliste et une précision artisanale.</p>
+            <span class="bento-card__btn-dark">Découvrir</span>
           </a>
 
-          <a href="companies.html#mba-services" class="bento-card fade-in">
-            <span class="bento-card__num">05</span>
-            <div class="bento-card__inner">
-              <span class="bento-card__sector">Entretien · Maintenance</span>
+          <!-- 5. MBA Services — Image card with floating overlay -->
+          <a href="companies.html#mba-services" class="bento-card bento-card--image-overlay fade-in">
+            <div class="bento-card__image" role="img" aria-label="MBA Services SA">
+              <div class="bento-card__image-pattern bento-card__image-pattern--alt"></div>
+            </div>
+            <div class="bento-card__floating">
               <h3 class="bento-card__title">MBA Services SA</h3>
-              <p class="bento-card__desc">Support technique pour la pérennité de vos ouvrages.</p>
+              <p class="bento-card__desc">Excellence en maintenance et entretien technique du bâti.</p>
+              <span class="bento-card__floating-cta">Découvrir</span>
             </div>
-            <span class="bento-card__arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
           </a>
 
-          <a href="companies.html#praz-prins" class="bento-card fade-in">
-            <span class="bento-card__num">06</span>
-            <div class="bento-card__inner">
-              <span class="bento-card__sector">Immobilier · Construction</span>
-              <h3 class="bento-card__title">Les Praz Prins SA</h3>
-              <p class="bento-card__desc">Projets ambitieux ancrés dans le paysage valaisan.</p>
-            </div>
-            <span class="bento-card__arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
+          <!-- 6. Les Praz Prins — Yellow accent card (premium) -->
+          <a href="companies.html#praz-prins" class="bento-card bento-card--yellow fade-in">
+            <h3 class="bento-card__title">Les Praz Prins SA</h3>
+            <p class="bento-card__desc">Le bras premium du groupe, axé sur des projets immobiliers ambitieux qui marquent durablement le paysage valaisan.</p>
+            <span class="bento-card__btn-yellow">Découvrir le portefeuille</span>
           </a>
-
-          <a href="companies.html#e-immo" class="bento-card fade-in">
-            <span class="bento-card__num">07</span>
-            <div class="bento-card__inner">
-              <span class="bento-card__sector">Société immobilière</span>
-              <h3 class="bento-card__title">E-Immo Sàrl</h3>
-              <p class="bento-card__desc">Détention et gestion du patrimoine immobilier du groupe.</p>
-            </div>
-            <span class="bento-card__arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
-          </a>
-        </div>
-
-        <div class="text-center" style="margin-top:3rem;">
-          <a href="companies.html" class="btn btn-dark">Voir toutes nos sociétés</a>
         </div>
       </div>
     </section>
@@ -276,7 +261,7 @@
     </div>
   </footer>
 
-  <script src="js/group-bar.js?v=9"></script>
+  <script src="js/group-bar.js?v=11"></script>
   <script src="js/main.js?v=9"></script>
 </body>
 </html>
