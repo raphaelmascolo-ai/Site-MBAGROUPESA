@@ -1168,8 +1168,8 @@ p {
 .orbital-stage {
   position: relative;
   width: 100%;
-  max-width: 720px;
-  height: 560px;
+  max-width: 760px;
+  height: 640px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -1361,23 +1361,47 @@ p {
   font-size: 0.75rem;
 }
 
-/* External detail panel — large, centered below stage */
+/* Detail card — attached to active node, drops down from it */
 .orbital-detail {
-  max-width: 720px;
-  margin: 40px auto 0;
-  padding: 0 20px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  transform: translateX(-50%) translateY(-10px) scale(0.95);
+  transform-origin: top center;
+  width: 420px;
   opacity: 0;
-  transform: translateY(20px);
   pointer-events: none;
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-  position: relative;
-  z-index: 20;
+  visibility: hidden;
+  transition: opacity 0.4s ease,
+              transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+              visibility 0s linear 0.4s;
+  z-index: 500;
 }
 
-.orbital-detail.open {
+.orbital-node.active {
+  z-index: 500 !important;
+}
+
+.orbital-node.active .orbital-detail {
   opacity: 1;
-  transform: translateY(0);
   pointer-events: auto;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0) scale(1);
+  transition: opacity 0.4s ease,
+              transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+              visibility 0s linear 0s;
+}
+
+/* Connector line from node to card */
+.orbital-detail::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 16px;
+  background: linear-gradient(to bottom, transparent, var(--yellow));
 }
 
 .orbital-detail__inner {
@@ -1529,14 +1553,27 @@ p {
   transform: translateX(4px);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .orbital-detail {
+    width: 320px;
+  }
+
   .orbital-detail__inner {
     padding: 32px 24px 28px;
   }
 
-  .orbital-detail__meta {
-    flex-direction: column;
-    gap: 16px;
+  .orbital-detail__title {
+    font-size: 1.4rem;
+  }
+
+  .orbital-detail__text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .orbital-detail {
+    width: 280px;
   }
 }
 

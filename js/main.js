@@ -274,6 +274,24 @@
         <div class="orbital-node__halo"></div>
         <div class="orbital-node__dot">${c.short}</div>
         <div class="orbital-node__label">${c.name}</div>
+        <div class="orbital-detail">
+          <button class="orbital-detail__close" type="button" aria-label="Fermer">&times;</button>
+          <div class="orbital-detail__inner">
+            <span class="orbital-detail__sector">${c.sector}</span>
+            <h3 class="orbital-detail__title">${c.name}</h3>
+            <p class="orbital-detail__text">${c.text}</p>
+            <div class="orbital-detail__meta">
+              <div class="orbital-detail__meta-item">
+                <span class="orbital-detail__meta-label">${c.meta}</span>
+                <span class="orbital-detail__meta-value">${c.value}</span>
+              </div>
+            </div>
+            <a href="companies.html#${c.id}" class="orbital-detail__cta">
+              Découvrir la société
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
       `;
 
       node.addEventListener('click', (e) => {
@@ -300,32 +318,10 @@
       });
     }
 
-    const detail = document.getElementById('orbitalDetail');
-    const detailSector = document.getElementById('orbitalDetailSector');
-    const detailTitle = document.getElementById('orbitalDetailTitle');
-    const detailText = document.getElementById('orbitalDetailText');
-    const detailMetaLabel = document.getElementById('orbitalDetailMetaLabel');
-    const detailMetaValue = document.getElementById('orbitalDetailMetaValue');
-    const detailCta = document.getElementById('orbitalDetailCta');
-    const detailClose = document.getElementById('orbitalDetailClose');
-
     function closeDetail() {
       orbitalNodes.querySelectorAll('.orbital-node').forEach(n => n.classList.remove('active'));
       activeId = null;
       autoRotate = true;
-      detail.classList.remove('open');
-      detail.setAttribute('aria-hidden', 'true');
-    }
-
-    function openDetail(c) {
-      detailSector.textContent = c.sector;
-      detailTitle.textContent = c.name;
-      detailText.textContent = c.text;
-      detailMetaLabel.textContent = c.meta;
-      detailMetaValue.textContent = c.value;
-      detailCta.setAttribute('href', `companies.html#${c.id}`);
-      detail.classList.add('open');
-      detail.setAttribute('aria-hidden', 'false');
     }
 
     function toggleNode(id) {
@@ -346,15 +342,16 @@
         const idx = companies.findIndex(c => c.id === id);
         rotation = 270 - (idx / companies.length) * 360;
         updatePositions();
-
-        const company = companies.find(c => c.id === id);
-        openDetail(company);
       }
     }
 
-    if (detailClose) {
-      detailClose.addEventListener('click', closeDetail);
-    }
+    // Close button inside each detail card
+    orbitalNodes.addEventListener('click', (e) => {
+      if (e.target.closest('.orbital-detail__close')) {
+        e.stopPropagation();
+        closeDetail();
+      }
+    });
 
     // Click outside to close
     orbitalStage.addEventListener('click', (e) => {
