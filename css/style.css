@@ -1405,16 +1405,15 @@ p {
 }
 
 .orbital-detail__inner {
-  background: rgba(20, 20, 20, 0.92);
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
-  border: 1px solid rgba(253, 217, 0, 0.35);
+  background: #131313;
+  background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+  border: 1px solid rgba(253, 217, 0, 0.45);
   border-radius: 8px;
   padding: 38px 44px;
   position: relative;
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7),
-              0 0 60px rgba(253, 217, 0, 0.12),
-              inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.85),
+              0 0 60px rgba(253, 217, 0, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .orbital-detail__inner::before {
