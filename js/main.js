@@ -205,6 +205,164 @@
     animatedElements.forEach(el => el.classList.add('visible'));
   }
 
+  // --- Orbital Companies Timeline ---
+  const orbitalStage = document.getElementById('orbitalStage');
+  const orbitalNodes = document.getElementById('orbitalNodes');
+
+  if (orbitalStage && orbitalNodes) {
+    const companies = [
+      {
+        id: 'mba-construction',
+        short: 'MC',
+        name: 'MBA Construction SA',
+        sector: 'Maçonnerie · Béton armé',
+        text: 'Pilier historique du groupe depuis 2001. 25 ans d\'expertise au service du bâtiment valaisan.',
+        meta: 'Fondation',
+        value: '2001'
+      },
+      {
+        id: 'mba-immobilier',
+        short: 'MI',
+        name: 'MBA Immobilier SA',
+        sector: 'Promotion · Gestion',
+        text: 'Promotion, vente et gestion d\'un portefeuille résidentiel et commercial haut de gamme.',
+        meta: 'Activité',
+        value: 'Immo'
+      },
+      {
+        id: 'asv-construction',
+        short: 'ASV',
+        name: 'ASV Construction Générale SA',
+        sector: 'Construction générale',
+        text: 'Solutions clés en main pour les projets architecturaux complexes, conception à livraison.',
+        meta: 'Type',
+        value: 'Clés en main'
+      },
+      {
+        id: 'asv-color',
+        short: 'AC',
+        name: 'ASV Color SA',
+        sector: 'Peinture · Finitions',
+        text: 'Le langage visuel de nos ouvrages, avec une précision artisanale et des finitions sur mesure.',
+        meta: 'Spécialité',
+        value: 'Finitions'
+      },
+      {
+        id: 'mba-services',
+        short: 'MS',
+        name: 'MBA Services SA',
+        sector: 'Entretien · Maintenance',
+        text: 'Excellence en maintenance et entretien technique pour la pérennité des ouvrages du groupe.',
+        meta: 'Mission',
+        value: 'Pérennité'
+      }
+    ];
+
+    let rotation = 0;
+    let autoRotate = true;
+    let activeId = null;
+    const RADIUS = 200;
+    const RADIUS_MOBILE = 200;
+
+    // Build nodes
+    companies.forEach((c, i) => {
+      const node = document.createElement('div');
+      node.className = 'orbital-node';
+      node.dataset.id = c.id;
+      node.dataset.index = i;
+      node.innerHTML = `
+        <div class="orbital-node__halo"></div>
+        <div class="orbital-node__dot">${c.short}</div>
+        <div class="orbital-node__label">${c.name.replace(' SA', '').replace(' Sàrl', '')}</div>
+        <div class="orbital-card">
+          <span class="orbital-card__sector">${c.sector}</span>
+          <h4 class="orbital-card__title">${c.name}</h4>
+          <p class="orbital-card__text">${c.text}</p>
+          <div class="orbital-card__bar">
+            <span class="orbital-card__bar-label">${c.meta}</span>
+            <div class="orbital-card__bar-track">
+              <div class="orbital-card__bar-fill" style="width:${(i + 1) * 18 + 10}%"></div>
+            </div>
+            <span class="orbital-card__bar-value">${c.value}</span>
+          </div>
+          <a href="companies.html#${c.id}" class="orbital-card__cta">
+            Découvrir
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      `;
+
+      node.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleNode(c.id);
+      });
+
+      orbitalNodes.appendChild(node);
+    });
+
+    function updatePositions() {
+      const total = companies.length;
+      const nodeEls = orbitalNodes.querySelectorAll('.orbital-node');
+      nodeEls.forEach((node, i) => {
+        const angle = ((i / total) * 360 + rotation) % 360;
+        const radian = (angle * Math.PI) / 180;
+        const x = RADIUS * Math.cos(radian);
+        const y = RADIUS * Math.sin(radian);
+        const opacity = Math.max(0.5, 0.5 + 0.5 * ((1 + Math.sin(radian)) / 2));
+        const zIndex = Math.round(100 + 50 * Math.cos(radian));
+        node.style.transform = `translate(${x}px, ${y}px)`;
+        node.style.opacity = opacity;
+        node.style.zIndex = node.classList.contains('active') ? 200 : zIndex;
+      });
+    }
+
+    function toggleNode(id) {
+      const nodes = orbitalNodes.querySelectorAll('.orbital-node');
+      if (activeId === id) {
+        // Close
+        nodes.forEach(n => n.classList.remove('active'));
+        activeId = null;
+        autoRotate = true;
+      } else {
+        nodes.forEach(n => {
+          if (n.dataset.id === id) {
+            n.classList.add('active');
+          } else {
+            n.classList.remove('active');
+          }
+        });
+        activeId = id;
+        autoRotate = false;
+
+        // Center the active node at top (270deg)
+        const idx = companies.findIndex(c => c.id === id);
+        rotation = 270 - (idx / companies.length) * 360;
+        updatePositions();
+      }
+    }
+
+    // Click outside to close
+    orbitalStage.addEventListener('click', (e) => {
+      if (e.target === orbitalStage) {
+        orbitalNodes.querySelectorAll('.orbital-node').forEach(n => n.classList.remove('active'));
+        activeId = null;
+        autoRotate = true;
+      }
+    });
+
+    // Auto-rotation loop
+    function tick() {
+      if (autoRotate) {
+        rotation = (rotation + 0.15) % 360;
+        updatePositions();
+      }
+      requestAnimationFrame(tick);
+    }
+
+    updatePositions();
+    requestAnimationFrame(tick);
+  }
+
   // --- Active nav link ---
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach(link => {

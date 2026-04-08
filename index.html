@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="stylesheet" href="css/style.css?v=16">
 </head>
 <body>
 
@@ -169,6 +169,30 @@
       </div>
     </section>
 
+    <!-- Nos Sociétés (Version Orbital) -->
+    <section class="orbital-section">
+      <div class="orbital-section__header">
+        <span class="ecosystem-badge" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);">Vision orbitale</span>
+        <h2 class="orbital-section__title">Notre <em>écosystème</em></h2>
+        <p class="orbital-section__desc">Cliquez sur une société pour découvrir son rôle dans le groupe.</p>
+      </div>
+
+      <div class="orbital-stage" id="orbitalStage">
+        <div class="orbital-center" aria-hidden="true">
+          <div class="orbital-center__ping"></div>
+          <div class="orbital-center__ping orbital-center__ping--2"></div>
+          <div class="orbital-center__core">
+            <span>MBA</span>
+          </div>
+        </div>
+
+        <div class="orbital-ring" aria-hidden="true"></div>
+        <div class="orbital-ring orbital-ring--outer" aria-hidden="true"></div>
+
+        <div class="orbital-nodes" id="orbitalNodes"></div>
+      </div>
+    </section>
+
     <!-- Chiffres clés -->
     <section class="section section--dark">
       <div class="container">
@@ -257,6 +281,6 @@
   </footer>
 
   <script src="js/group-bar.js?v=11"></script>
-  <script src="js/main.js?v=9"></script>
+  <script src="js/main.js?v=16"></script>
 </body>
 </html>
