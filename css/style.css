@@ -1380,6 +1380,7 @@ p {
 
 .orbital-node.active {
   z-index: 500 !important;
+  opacity: 1 !important;
 }
 
 .orbital-node.active .orbital-detail {

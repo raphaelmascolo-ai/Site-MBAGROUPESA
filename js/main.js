@@ -313,8 +313,9 @@
         const opacity = Math.max(0.5, 0.5 + 0.5 * ((1 + Math.sin(radian)) / 2));
         const zIndex = Math.round(100 + 50 * Math.cos(radian));
         node.style.transform = `translate(${x}px, ${y}px)`;
-        node.style.opacity = opacity;
-        node.style.zIndex = node.classList.contains('active') ? 200 : zIndex;
+        // Active node always full opacity (so detail card stays opaque)
+        node.style.opacity = node.classList.contains('active') ? 1 : opacity;
+        node.style.zIndex = node.classList.contains('active') ? 500 : zIndex;
       });
     }
 
