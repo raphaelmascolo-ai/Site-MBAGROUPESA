@@ -378,8 +378,8 @@
 }
 
 .seh__title--top {
-  opacity: calc(1 - var(--p, 0) * 2);
-  transform: scale(calc(1 + var(--p, 0) * 0.3));
+  opacity: 1;
+  transform: none;
 }
 
 .seh__hint {
