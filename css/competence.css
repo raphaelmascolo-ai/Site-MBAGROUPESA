@@ -369,7 +369,7 @@
 .seh__title {
   font-size: clamp(2.5rem, 7vw, 5rem);
   font-weight: 800;
-  color: var(--white);
+  color: var(--yellow);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   line-height: 1.1;
