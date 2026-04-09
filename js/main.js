@@ -184,6 +184,19 @@
     });
   }
 
+  // Dropdown toggle for mobile
+  document.querySelectorAll('.nav-dropdown').forEach(function(dropdown) {
+    var link = dropdown.querySelector('.nav-link--dropdown');
+    if (link) {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          dropdown.classList.toggle('open');
+        }
+      });
+    }
+  });
+
   // --- Scroll animations (IntersectionObserver) ---
   const animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
 

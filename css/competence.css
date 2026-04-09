@@ -1,0 +1,320 @@
+/* ============================================
+   MBA Groupe SA — Competence Pages
+   ============================================ */
+
+/* --- Hero Competence --- */
+.hero-competence {
+  background: var(--black);
+  color: var(--white);
+  padding: 140px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-competence::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(253, 217, 0, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-competence .accent-line {
+  display: inline-block;
+  width: 60px;
+  height: 3px;
+  background: var(--yellow);
+  margin-bottom: 1.5rem;
+}
+
+.hero-competence h1 {
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.hero-competence .hero-tagline {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  max-width: 600px;
+}
+
+/* --- Content Wrapper --- */
+.content-competence {
+  padding: 80px 0 0;
+}
+
+/* --- Content Sections --- */
+.description-block,
+.services-block,
+.gallery-block,
+.advantages-block,
+.companies-involved {
+  margin-bottom: 80px;
+}
+
+.description-block h2,
+.services-block h2,
+.gallery-block h2,
+.advantages-block h2,
+.companies-involved h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.description-block h2::after,
+.services-block h2::after,
+.gallery-block h2::after,
+.advantages-block h2::after,
+.companies-involved h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--yellow);
+}
+
+.description-block p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--gray-dark);
+  max-width: 800px;
+}
+
+/* --- Services Grid --- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--white);
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 32px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--yellow);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.service-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--black);
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: var(--gray-dark);
+  line-height: 1.6;
+}
+
+/* --- Gallery --- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.gallery-placeholder {
+  aspect-ratio: 4/3;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-placeholder:nth-child(1) {
+  background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+}
+
+.gallery-placeholder:nth-child(2) {
+  background: linear-gradient(135deg, #d5d5d5 0%, #c0c0c0 100%);
+}
+
+.gallery-placeholder:nth-child(3) {
+  background: linear-gradient(135deg, #dcdcdc 0%, #b8b8b8 100%);
+}
+
+.gallery-placeholder:nth-child(4) {
+  background: linear-gradient(135deg, #e0e0e0 0%, #c8c8c8 100%);
+}
+
+.gallery-placeholder::after {
+  content: 'Photo';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--gray-metal);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* --- Advantages Grid --- */
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+.advantage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.advantage .icon-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.advantage:hover .icon-circle {
+  background: var(--yellow);
+}
+
+.advantage .icon-circle svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--black);
+  fill: none;
+  stroke-width: 2;
+}
+
+.advantage h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 0.25rem;
+}
+
+.advantage p {
+  font-size: 0.85rem;
+  color: var(--gray-dark);
+}
+
+/* --- Companies Involved --- */
+.companies-involved .companies-box {
+  background: var(--gray-light);
+  border-radius: 4px;
+  padding: 32px 40px;
+  border-left: 4px solid var(--yellow);
+}
+
+.companies-involved .companies-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.companies-involved .companies-box li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 0.95rem;
+  color: var(--gray-dark);
+}
+
+.companies-involved .companies-box li:last-child {
+  border-bottom: none;
+}
+
+.companies-involved .companies-box li strong {
+  color: var(--black);
+  font-weight: 600;
+}
+
+/* --- CTA Competence --- */
+.cta-competence {
+  background: var(--black);
+  color: var(--white);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta-competence h2 {
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.cta-competence p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .hero-competence {
+    padding: 100px 0 60px;
+  }
+
+  .content-competence {
+    padding: 60px 0 0;
+  }
+
+  .description-block,
+  .services-block,
+  .gallery-block,
+  .advantages-block,
+  .companies-involved {
+    margin-bottom: 60px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .companies-involved .companies-box {
+    padding: 24px 20px;
+  }
+
+  .cta-competence {
+    padding: 60px 0;
+  }
+}
