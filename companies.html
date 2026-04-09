@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="site-id" content="mba-groupe">
   <title>Nos sociétés — MBA Groupe SA</title>
-  <meta name="description" content="Découvrez les sociétés du groupe MBA : construction, immobilier, peinture, services du bâtiment. Un écosystème complet basé en Valais.">
+  <meta name="description" content="Découvrez les 6 sociétés du groupe MBA : construction, immobilier, finitions, fenêtres, services spécialisés. De la conception à la livraison.">
   <meta property="og:title" content="Nos sociétés — MBA Groupe SA">
-  <meta property="og:description" content="Les sociétés du groupe MBA : construction, immobilier, peinture, services du bâtiment.">
+  <meta property="og:description" content="Les 6 sociétés du groupe MBA : de la conception à la livraison, un écosystème complet en Valais.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
 
@@ -43,106 +43,217 @@
     <section class="page-hero">
       <div class="container">
         <div class="accent-line"></div>
-        <h1>Nos sociétés</h1>
-        <p>Sept sociétés complémentaires, une vision commune : bâtir l'avenir du Valais avec excellence et engagement.</p>
+        <h1>Nos Sociétés</h1>
+        <p class="page-hero__subtitle">De la conception à la livraison, chaque entreprise apporte son excellence</p>
+        <p class="page-hero__desc">MBA Groupe SA regroupe 6 entreprises spécialisées qui travaillent ensemble pour vos projets immobiliers. Chacune apporte son expertise dans son domaine pour un résultat d'excellence.</p>
       </div>
     </section>
 
-    <!-- Sociétés -->
-    <section class="section">
+    <!-- Value Chain Sections -->
+    <div class="vc-wrapper">
       <div class="container">
-        <div class="companies-grid" style="grid-template-columns: 1fr;">
 
-          <!-- MBA Construction SA -->
-          <div class="company-detail fade-in" id="mba-construction">
-            <div class="company-detail__header">
-              <div class="company-detail__logo">MBA<br>Constr.</div>
-              <div>
+        <!-- Section 1: Conception & Construction -->
+        <section class="vc-section fade-in" id="construction">
+          <div class="vc-section__header">
+            <span class="vc-section__icon">&#x1F3D7;&#xFE0F;</span>
+            <div>
+              <h2 class="vc-section__title">Conception & Construction</h2>
+              <p class="vc-section__subtitle">La base solide de tous vos projets</p>
+            </div>
+          </div>
+          <div class="vc-grid vc-grid--2">
+
+            <!-- MBA Construction SA -->
+            <div class="vc-card fade-in" id="mba-construction">
+              <div class="vc-card__image">
+                <div class="vc-card__image-placeholder"></div>
+              </div>
+              <div class="vc-card__content">
+                <span class="vc-card__category">Construction Générale</span>
                 <h3>MBA Construction SA</h3>
-                <p>Maçonnerie, béton armé, construction — Fondée en 2001</p>
+                <p>Pilier du groupe, MBA Construction assure les projets de construction générale en Valais, de la conception à la livraison. Gros œuvre, structure, enveloppe du bâtiment.</p>
+                <ul class="vc-card__services">
+                  <li>Construction générale</li>
+                  <li>Gros œuvre</li>
+                  <li>Rénovation</li>
+                  <li>Mise en œuvre structurelle</li>
+                </ul>
+                <a href="https://mba-construction.ch/" target="_blank" rel="noopener" class="btn btn-primary">Visiter le site</a>
               </div>
             </div>
-            <div class="company-detail__body">
-              <p>Fondée en 2001, MBA Construction SA est le pilier historique du groupe. Spécialisée en maçonnerie et béton armé, la société a bâti sa réputation sur la qualité de ses réalisations et le respect des délais. En 2026, nous célébrons fièrement 25 ans d'expertise au service du bâtiment valaisan.</p>
-              <p>De la construction de villas individuelles aux immeubles résidentiels et bâtiments commerciaux, MBA Construction SA intervient sur des projets variés, toujours avec le même souci du détail et de la qualité.</p>
-            </div>
-            <div class="company-detail__footer">
-              <a href="#" class="btn btn-primary">Visiter le site</a>
-            </div>
-          </div>
 
-          <!-- MBA Immobilier SA -->
-          <div class="company-detail fade-in" id="mba-immobilier">
-            <div class="company-detail__header">
-              <div class="company-detail__logo">MBA<br>Immo.</div>
-              <div>
-                <h3>MBA Immobilier SA</h3>
-                <p>Promotion, vente et gestion immobilière</p>
+            <!-- ASV Construction Générale SA -->
+            <div class="vc-card fade-in" id="asv-construction">
+              <div class="vc-card__image">
+                <div class="vc-card__image-placeholder"></div>
               </div>
-            </div>
-            <div class="company-detail__body">
-              <p>MBA Immobilier SA est le bras immobilier du groupe. Active dans la promotion, la vente et la gestion de biens immobiliers, la société développe des projets résidentiels et commerciaux de qualité supérieure en Valais.</p>
-              <p>Notre connaissance approfondie du marché local et notre réseau de partenaires nous permettent de proposer des solutions immobilières adaptées aux besoins de chaque client, qu'il s'agisse d'acquérir, de vendre ou de gérer un bien.</p>
-            </div>
-            <div class="company-detail__footer">
-              <a href="#" class="btn btn-primary">Visiter le site</a>
-            </div>
-          </div>
-
-          <!-- ASV Construction Générale SA -->
-          <div class="company-detail fade-in" id="asv-construction">
-            <div class="company-detail__header">
-              <div class="company-detail__logo">ASV<br>Constr.</div>
-              <div>
+              <div class="vc-card__content">
+                <span class="vc-card__category">Construction Générale</span>
                 <h3>ASV Construction Générale SA</h3>
-                <p>Construction générale</p>
+                <p>ASV Construction apporte son expertise en construction générale avec un accent particulier sur les finitions et le détail architectural. Qualité, précision, excellence.</p>
+                <ul class="vc-card__services">
+                  <li>Construction générale</li>
+                  <li>Finitions architecturales</li>
+                  <li>Détails techniques</li>
+                  <li>Assurance qualité</li>
+                </ul>
+                <a href="https://asv-construction.ch/" target="_blank" rel="noopener" class="btn btn-primary">Visiter le site</a>
               </div>
             </div>
-            <div class="company-detail__body">
-              <p>ASV Construction Générale SA offre des services complets de construction générale, de la planification à la réalisation. La société gère des projets clés en main, garantissant la coordination de tous les corps de métier pour un résultat optimal.</p>
-              <p>Grâce à son expertise en gestion de projet et à ses équipes qualifiées, ASV Construction Générale SA livre des ouvrages conformes aux standards les plus exigeants, dans le respect des délais et des budgets convenus.</p>
-            </div>
-            <div class="company-detail__footer">
-              <a href="#" class="btn btn-primary">Visiter le site</a>
+
+          </div>
+        </section>
+
+        <!-- Section 2: Finitions & Spécialités -->
+        <section class="vc-section fade-in" id="finitions">
+          <div class="vc-section__header">
+            <span class="vc-section__icon">&#x1F3A8;</span>
+            <div>
+              <h2 class="vc-section__title">Finitions & Spécialités</h2>
+              <p class="vc-section__subtitle">La qualité visible au quotidien</p>
             </div>
           </div>
+          <div class="vc-grid vc-grid--2">
 
-          <!-- ASV Color SA -->
-          <div class="company-detail fade-in" id="asv-color">
-            <div class="company-detail__header">
-              <div class="company-detail__logo">ASV<br>Color</div>
-              <div>
+            <!-- ASV Color SA -->
+            <div class="vc-card fade-in" id="asv-color">
+              <div class="vc-card__image">
+                <div class="vc-card__image-placeholder"></div>
+              </div>
+              <div class="vc-card__content">
+                <span class="vc-card__category">Finitions</span>
                 <h3>ASV Color SA</h3>
-                <p>Peinture et finitions du bâtiment</p>
+                <p>Spécialiste des finitions, ASV Color garantit la qualité des travaux de peinture et des revêtements spécialisés sur tous les projets du groupe. Le détail qui change tout.</p>
+                <ul class="vc-card__services">
+                  <li>Peinture intérieure & extérieure</li>
+                  <li>Revêtements spécialisés</li>
+                  <li>Finitions décoratives</li>
+                  <li>Coordination techniques</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Demander un devis</a>
               </div>
             </div>
-            <div class="company-detail__body">
-              <p>ASV Color SA est spécialisée dans la peinture et les finitions du bâtiment. Avec un savoir-faire artisanal reconnu, la société intervient sur des projets neufs comme en rénovation pour apporter la touche finale qui fait la différence.</p>
-              <p>Peinture intérieure et extérieure, revêtements décoratifs, isolation de façades — ASV Color SA maîtrise l'ensemble des techniques pour sublimer vos espaces.</p>
-            </div>
-            <div class="company-detail__footer">
-              <a href="#" class="btn btn-primary">Visiter le site</a>
-            </div>
-          </div>
 
-          <!-- ASV Fenêtres et Portes SA -->
-          <div class="company-detail fade-in" id="asv-fenetres">
-            <div class="company-detail__header">
-              <div class="company-detail__logo">ASV<br>F&P</div>
-              <div>
+            <!-- ASV Fenêtres et Portes SA -->
+            <div class="vc-card fade-in" id="asv-fenetres">
+              <div class="vc-card__image">
+                <div class="vc-card__image-placeholder"></div>
+              </div>
+              <div class="vc-card__content">
+                <span class="vc-card__category">Fenêtres & Portes</span>
                 <h3>ASV Fenêtres et Portes SA</h3>
-                <p>Fenêtres et portes</p>
+                <p>Spécialiste de la fourniture et de la pose de fenêtres et de portes de haute qualité. Performance énergétique, esthétique et durabilité pour chaque projet.</p>
+                <ul class="vc-card__services">
+                  <li>Fenêtres sur mesure</li>
+                  <li>Portes intérieures & extérieures</li>
+                  <li>Performance énergétique</li>
+                  <li>Pose et installation</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Demander un devis</a>
               </div>
             </div>
-            <div class="company-detail__body">
-              <p>ASV Fenêtres et Portes SA est spécialisée dans la fourniture et la pose de fenêtres et de portes de haute qualité. Nos solutions allient performance énergétique, esthétique et durabilité pour répondre aux exigences de chaque projet.</p>
-              <p>Du conseil à l'installation, ASV Fenêtres et Portes SA accompagne chaque étape pour garantir un résultat à la hauteur de vos attentes.</p>
-            </div>
-            <div class="company-detail__footer">
-              <a href="#" class="btn btn-primary">Visiter le site</a>
+
+          </div>
+        </section>
+
+        <!-- Section 3: Immobilier -->
+        <section class="vc-section fade-in" id="immobilier">
+          <div class="vc-section__header">
+            <span class="vc-section__icon">&#x1F3E2;</span>
+            <div>
+              <h2 class="vc-section__title">Immobilier & Promotion</h2>
+              <p class="vc-section__subtitle">De l'idée au projet réalisé</p>
             </div>
           </div>
+          <div class="vc-grid vc-grid--1">
 
+            <!-- MBA Immobilier SA -->
+            <div class="vc-card fade-in" id="mba-immobilier">
+              <div class="vc-card__image">
+                <div class="vc-card__image-placeholder"></div>
+              </div>
+              <div class="vc-card__content">
+                <span class="vc-card__category">Immobilier & Promotion</span>
+                <h3>MBA Immobilier SA</h3>
+                <p>MBA Immobilier maîtrise tout le cycle immobilier : promotion, vente et gestion. De l'idée au projet réalisé, nous accompagnons chaque étape avec expertise et vision.</p>
+                <ul class="vc-card__services">
+                  <li>Promotion immobilière</li>
+                  <li>Vente immobilière</li>
+                  <li>Gestion immobilière</li>
+                  <li>Conseil immobilier</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Section 4: Solutions Spécialisées -->
+        <section class="vc-section fade-in" id="solutions">
+          <div class="vc-section__header">
+            <span class="vc-section__icon">&#x2699;&#xFE0F;</span>
+            <div>
+              <h2 class="vc-section__title">Solutions Spécialisées</h2>
+              <p class="vc-section__subtitle">Expertise complémentaire</p>
+            </div>
+          </div>
+          <div class="vc-grid vc-grid--1">
+
+            <!-- Les Praz Prins SA -->
+            <div class="vc-card fade-in" id="les-praz-prins">
+              <div class="vc-card__image">
+                <div class="vc-card__image-placeholder"></div>
+              </div>
+              <div class="vc-card__content">
+                <span class="vc-card__category">Solutions Spécialisées</span>
+                <h3>Les Praz Prins SA</h3>
+                <p>Les Praz Prins apporte son expertise dans les projets immobiliers et les solutions constructives spécialisées. Partenaire stratégique du groupe pour projets complexes.</p>
+                <ul class="vc-card__services">
+                  <li>Projets immobiliers</li>
+                  <li>Solutions constructives</li>
+                  <li>Accompagnement stratégique</li>
+                  <li>Expertise spécialisée</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Pourquoi Nous -->
+    <section class="why-us fade-in">
+      <div class="container">
+        <div class="section__header">
+          <div class="accent-line"></div>
+          <h2>Pourquoi Choisir le Groupe MBA</h2>
+        </div>
+        <div class="why-us__grid">
+          <div class="why-us__card fade-in">
+            <div class="why-us__icon">&#x1F91D;</div>
+            <h3>Coordination Simplifiée</h3>
+            <p>Un seul contact pour tous vos besoins. Gestion simplifiée et communication fluide du début à la fin.</p>
+          </div>
+          <div class="why-us__card fade-in">
+            <div class="why-us__icon">&#x2B50;</div>
+            <h3>Qualité Garantie</h3>
+            <p>Expertise interne garantit la cohérence et la qualité à chaque étape du projet.</p>
+          </div>
+          <div class="why-us__card fade-in">
+            <div class="why-us__icon">&#x26A1;</div>
+            <h3>Efficacité</h3>
+            <p>Pas d'intermédiaires, chronologie optimisée et délais respectés. Gain de temps et d'argent.</p>
+          </div>
+          <div class="why-us__card fade-in">
+            <div class="why-us__icon">&#x1F3E0;</div>
+            <h3>Suivi Long Terme</h3>
+            <p>Du projet à la maintenance. Nous accompagnons votre investissement immobilier à long terme.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -179,10 +290,11 @@
           <h4>Sociétés</h4>
           <ul>
             <li><a href="#mba-construction">MBA Construction SA</a></li>
-            <li><a href="#mba-immobilier">MBA Immobilier SA</a></li>
             <li><a href="#asv-construction">ASV Construction Générale SA</a></li>
             <li><a href="#asv-color">ASV Color SA</a></li>
             <li><a href="#asv-fenetres">ASV Fenêtres et Portes SA</a></li>
+            <li><a href="#mba-immobilier">MBA Immobilier SA</a></li>
+            <li><a href="#les-praz-prins">Les Praz Prins SA</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -204,7 +316,7 @@
     </div>
   </footer>
 
-  <script src="js/group-bar.js?v=4"></script>
-  <script src="js/main.js?v=4"></script>
+  <script src="js/group-bar.js?v=5"></script>
+  <script src="js/main.js?v=5"></script>
 </body>
 </html>
