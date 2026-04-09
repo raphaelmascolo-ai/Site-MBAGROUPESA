@@ -2399,8 +2399,9 @@ p {
 
 /* Cards-inside-media variant */
 .se-media--cards {
-  background: var(--white);
+  background: #111;
   overflow: hidden;
+  z-index: 4; /* above titles so it covers them as it grows */
 }
 
 .se-media__cards-inner {
@@ -2411,7 +2412,7 @@ p {
   justify-content: center;
   padding: 32px;
   overflow: hidden;
-  opacity: calc(var(--p, 0) * 2.5);
+  opacity: calc(var(--p, 0) * 2);
 }
 
 .se-cards-grid {
@@ -2425,9 +2426,9 @@ p {
 .se-card {
   display: flex;
   border-radius: 4px;
-  border: 1px solid #eee;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .se-card__accent {
@@ -2447,7 +2448,7 @@ p {
   font-family: var(--font-heading);
   font-size: 0.65rem;
   font-weight: 700;
-  color: var(--gray-metal);
+  color: var(--yellow);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-bottom: 8px;
@@ -2458,13 +2459,13 @@ p {
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--black);
+  color: var(--white);
   margin-bottom: 8px;
 }
 
 .se-card__body p {
   font-size: 0.82rem;
-  color: var(--gray-dark);
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.6;
   margin-bottom: 12px;
 }
@@ -2478,10 +2479,10 @@ p {
 
 .se-card__list li {
   font-size: 0.78rem;
-  color: var(--gray-dark);
+  color: rgba(255, 255, 255, 0.55);
   padding: 5px 0 5px 16px;
   position: relative;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .se-card__list li:last-child {
@@ -2509,13 +2510,13 @@ p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--black);
+  color: var(--yellow);
   margin-top: auto;
   transition: color 0.25s ease;
 }
 
 .se-card__cta:hover {
-  color: var(--gold-mid);
+  color: var(--gold-light);
 }
 
 .se-card__cta svg {
@@ -2954,25 +2955,31 @@ p {
 
   .se-cards-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 
   .se-media__cards-inner {
-    padding: 20px;
+    padding: 16px;
     align-items: flex-start;
     overflow-y: auto;
   }
 
   .se-card__body {
-    padding: 18px;
+    padding: 16px;
   }
 
   .se-card__body h3 {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .se-card__body p {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+  }
+
+  .se-card__list li {
+    font-size: 0.72rem;
+    padding: 4px 0 4px 14px;
   }
 
   .why-us__grid {
