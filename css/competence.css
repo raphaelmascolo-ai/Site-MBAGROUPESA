@@ -127,20 +127,35 @@
 
 .description-block__logo-box {
   flex-shrink: 0;
-  width: 240px;
-  height: 240px;
-  background: var(--black);
+  width: 320px;
+  min-height: 320px;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(253, 217, 0, 0.12) 0%, transparent 55%),
+    linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.description-block__logo-box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(135deg, transparent 60%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0.02) 70%, transparent 70%),
+    linear-gradient(45deg, transparent 65%, rgba(253,217,0,0.04) 65%, rgba(253,217,0,0.04) 75%, transparent 75%);
+  pointer-events: none;
 }
 
 .description-block__logo-box img {
   width: 100%;
   height: auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* --- Services Grid --- */
@@ -459,9 +474,9 @@
   }
 
   .description-block__logo-box {
-    width: 180px;
-    height: 180px;
-    padding: 30px;
+    width: 100%;
+    min-height: 240px;
+    padding: 50px 80px;
   }
 
   .services-grid {
