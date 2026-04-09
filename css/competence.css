@@ -115,6 +115,30 @@
   max-width: none;
 }
 
+.description-block--split {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.description-block__text {
+  flex: 1;
+}
+
+.description-block__logo {
+  flex-shrink: 0;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.description-block__logo img {
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
 /* --- Services Grid --- */
 .services-grid {
   display: grid;
@@ -423,6 +447,15 @@
   .advantages-block,
   .companies-involved {
     margin-bottom: 60px;
+  }
+
+  .description-block--split {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .description-block__logo {
+    width: 140px;
   }
 
   .services-grid {
