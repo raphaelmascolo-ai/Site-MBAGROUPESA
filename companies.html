@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="stylesheet" href="css/style.css?v=8">
 </head>
 <body>
 
@@ -38,7 +38,7 @@
     <div class="menu-overlay"></div>
   </header>
 
-  <main class="companies-page">
+  <main>
     <!-- Page Hero -->
     <section class="page-hero">
       <div class="container">
@@ -49,178 +49,157 @@
       </div>
     </section>
 
-    <!-- ==========================================
-         STEP 01 — Conception & Construction
-         ========================================== -->
-    <section class="se-section" id="construction">
-      <div class="se-scroll">
-        <div class="se-sticky">
-          <!-- Background -->
-          <div class="se-bg se-bg--construction"></div>
-          <div class="se-bg-overlay"></div>
-          <!-- Expanding media — contains the company cards -->
-          <div class="se-media se-media--cards">
-            <div class="se-media__cards-inner">
-              <div class="se-cards-grid">
+    <!-- Value Chain -->
+    <div class="vc">
 
-                <article class="se-card" id="mba-construction">
-                  <div class="se-card__accent"></div>
-                  <div class="se-card__body">
-                    <span class="se-card__tag">Construction Générale</span>
-                    <h3>MBA Construction SA</h3>
-                    <p>Pilier du groupe, MBA Construction assure les projets de construction générale en Valais, de la conception à la livraison. Gros oeuvre, structure, enveloppe du bâtiment.</p>
-                    <ul class="se-card__list">
-                      <li>Construction générale</li>
-                      <li>Gros oeuvre</li>
-                      <li>Rénovation</li>
-                      <li>Mise en oeuvre structurelle</li>
-                    </ul>
-                    <a href="https://mba-construction.ch/" target="_blank" rel="noopener" class="se-card__cta">
-                      Visiter le site
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                    </a>
-                  </div>
-                </article>
-
-                <article class="se-card" id="asv-construction">
-                  <div class="se-card__accent"></div>
-                  <div class="se-card__body">
-                    <span class="se-card__tag">Construction Générale</span>
-                    <h3>ASV Construction Générale SA</h3>
-                    <p>ASV Construction apporte son expertise en construction générale avec un accent particulier sur les finitions et le détail architectural. Qualité, précision, excellence.</p>
-                    <ul class="se-card__list">
-                      <li>Construction générale</li>
-                      <li>Finitions architecturales</li>
-                      <li>Détails techniques</li>
-                      <li>Assurance qualité</li>
-                    </ul>
-                    <a href="https://asv-construction.ch/" target="_blank" rel="noopener" class="se-card__cta">
-                      Visiter le site
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                    </a>
-                  </div>
-                </article>
-
+      <!-- Step 1: Construction -->
+      <section class="vc-step" id="construction">
+        <div class="vc-step__banner fade-in">
+          <div class="container">
+            <div class="vc-step__label">
+              <span class="vc-step__num">01</span>
+              <div>
+                <h2 class="vc-step__title">Conception & Construction</h2>
+                <p class="vc-step__sub">La base solide de tous vos projets</p>
               </div>
             </div>
           </div>
-          <!-- Title -->
-          <div class="se-titles">
-            <span class="se-num">01</span>
-            <h2 class="se-title se-title--top">Conception</h2>
-            <h2 class="se-title se-title--bottom">& Construction</h2>
-            <p class="se-hint">Scrollez pour découvrir</p>
+        </div>
+        <div class="container">
+          <div class="vc-cards vc-cards--2">
+            <article class="vc-card fade-in" id="mba-construction">
+              <div class="vc-card__accent"></div>
+              <div class="vc-card__body">
+                <span class="vc-card__tag">Construction Générale</span>
+                <h3>MBA Construction SA</h3>
+                <p class="vc-card__desc">Pilier du groupe, MBA Construction assure les projets de construction générale en Valais, de la conception à la livraison. Gros oeuvre, structure, enveloppe du bâtiment.</p>
+                <ul class="vc-card__list">
+                  <li>Construction générale</li>
+                  <li>Gros oeuvre</li>
+                  <li>Rénovation</li>
+                  <li>Mise en oeuvre structurelle</li>
+                </ul>
+                <a href="https://mba-construction.ch/" target="_blank" rel="noopener" class="vc-card__cta">
+                  Visiter le site
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+              </div>
+            </article>
+            <article class="vc-card fade-in" id="asv-construction">
+              <div class="vc-card__accent"></div>
+              <div class="vc-card__body">
+                <span class="vc-card__tag">Construction Générale</span>
+                <h3>ASV Construction Générale SA</h3>
+                <p class="vc-card__desc">ASV Construction apporte son expertise en construction générale avec un accent particulier sur les finitions et le détail architectural. Qualité, précision, excellence.</p>
+                <ul class="vc-card__list">
+                  <li>Construction générale</li>
+                  <li>Finitions architecturales</li>
+                  <li>Détails techniques</li>
+                  <li>Assurance qualité</li>
+                </ul>
+                <a href="https://asv-construction.ch/" target="_blank" rel="noopener" class="vc-card__cta">
+                  Visiter le site
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+              </div>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ==========================================
-         STEP 02 — Finitions & Spécialités
-         ========================================== -->
-    <section class="se-section" id="finitions">
-      <div class="se-scroll">
-        <div class="se-sticky">
-          <div class="se-bg se-bg--finitions"></div>
-          <div class="se-bg-overlay"></div>
-          <div class="se-media se-media--cards">
-            <div class="se-media__cards-inner">
-              <div class="se-cards-grid">
-
-                <article class="se-card" id="asv-color">
-                  <div class="se-card__accent"></div>
-                  <div class="se-card__body">
-                    <span class="se-card__tag">Peinture & Finitions</span>
-                    <h3>ASV Color SA</h3>
-                    <p>Spécialiste des finitions, ASV Color garantit la qualité des travaux de peinture et des revêtements spécialisés sur tous les projets du groupe. Le détail qui change tout.</p>
-                    <ul class="se-card__list">
-                      <li>Peinture intérieure & extérieure</li>
-                      <li>Revêtements spécialisés</li>
-                      <li>Finitions décoratives</li>
-                      <li>Coordination techniques</li>
-                    </ul>
-                    <a href="contact.html" class="se-card__cta">
-                      Demander un devis
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                  </div>
-                </article>
-
-                <article class="se-card" id="asv-fenetres">
-                  <div class="se-card__accent"></div>
-                  <div class="se-card__body">
-                    <span class="se-card__tag">Fenêtres & Portes</span>
-                    <h3>ASV Fenêtres et Portes SA</h3>
-                    <p>Spécialiste de la fourniture et de la pose de fenêtres et de portes de haute qualité. Performance énergétique, esthétique et durabilité pour chaque projet.</p>
-                    <ul class="se-card__list">
-                      <li>Fenêtres sur mesure</li>
-                      <li>Portes intérieures & extérieures</li>
-                      <li>Performance énergétique</li>
-                      <li>Pose et installation</li>
-                    </ul>
-                    <a href="contact.html" class="se-card__cta">
-                      Demander un devis
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                  </div>
-                </article>
-
+      <!-- Step 2: Finitions -->
+      <section class="vc-step" id="finitions">
+        <div class="vc-step__banner fade-in">
+          <div class="container">
+            <div class="vc-step__label">
+              <span class="vc-step__num">02</span>
+              <div>
+                <h2 class="vc-step__title">Finitions & Spécialités</h2>
+                <p class="vc-step__sub">La qualité visible au quotidien</p>
               </div>
             </div>
           </div>
-          <div class="se-titles">
-            <span class="se-num">02</span>
-            <h2 class="se-title se-title--top">Finitions</h2>
-            <h2 class="se-title se-title--bottom">& Spécialités</h2>
-            <p class="se-hint">Scrollez pour découvrir</p>
+        </div>
+        <div class="container">
+          <div class="vc-cards vc-cards--2">
+            <article class="vc-card fade-in" id="asv-color">
+              <div class="vc-card__accent"></div>
+              <div class="vc-card__body">
+                <span class="vc-card__tag">Peinture & Finitions</span>
+                <h3>ASV Color SA</h3>
+                <p class="vc-card__desc">Spécialiste des finitions, ASV Color garantit la qualité des travaux de peinture et des revêtements spécialisés sur tous les projets du groupe. Le détail qui change tout.</p>
+                <ul class="vc-card__list">
+                  <li>Peinture intérieure & extérieure</li>
+                  <li>Revêtements spécialisés</li>
+                  <li>Finitions décoratives</li>
+                  <li>Coordination techniques</li>
+                </ul>
+                <a href="contact.html" class="vc-card__cta">
+                  Demander un devis
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </article>
+            <article class="vc-card fade-in" id="asv-fenetres">
+              <div class="vc-card__accent"></div>
+              <div class="vc-card__body">
+                <span class="vc-card__tag">Fenêtres & Portes</span>
+                <h3>ASV Fenêtres et Portes SA</h3>
+                <p class="vc-card__desc">Spécialiste de la fourniture et de la pose de fenêtres et de portes de haute qualité. Performance énergétique, esthétique et durabilité pour chaque projet.</p>
+                <ul class="vc-card__list">
+                  <li>Fenêtres sur mesure</li>
+                  <li>Portes intérieures & extérieures</li>
+                  <li>Performance énergétique</li>
+                  <li>Pose et installation</li>
+                </ul>
+                <a href="contact.html" class="vc-card__cta">
+                  Demander un devis
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ==========================================
-         STEP 03 — Immobilier & Promotion
-         ========================================== -->
-    <section class="se-section" id="immobilier">
-      <div class="se-scroll">
-        <div class="se-sticky">
-          <div class="se-bg se-bg--immobilier"></div>
-          <div class="se-bg-overlay"></div>
-          <div class="se-media se-media--cards">
-            <div class="se-media__cards-inner">
-              <div class="se-cards-grid se-cards-grid--1">
-
-                <article class="se-card" id="mba-immobilier">
-                  <div class="se-card__accent"></div>
-                  <div class="se-card__body">
-                    <span class="se-card__tag">Immobilier & Promotion</span>
-                    <h3>MBA Immobilier SA</h3>
-                    <p>MBA Immobilier maîtrise tout le cycle immobilier : promotion, vente et gestion. De l'idée au projet réalisé, nous accompagnons chaque étape avec expertise et vision.</p>
-                    <ul class="se-card__list se-card__list--inline">
-                      <li>Promotion immobilière</li>
-                      <li>Vente immobilière</li>
-                      <li>Gestion immobilière</li>
-                      <li>Conseil immobilier</li>
-                    </ul>
-                    <a href="contact.html" class="se-card__cta">
-                      Nous contacter
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                  </div>
-                </article>
-
+      <!-- Step 3: Immobilier -->
+      <section class="vc-step" id="immobilier">
+        <div class="vc-step__banner fade-in">
+          <div class="container">
+            <div class="vc-step__label">
+              <span class="vc-step__num">03</span>
+              <div>
+                <h2 class="vc-step__title">Immobilier & Promotion</h2>
+                <p class="vc-step__sub">De l'idée au projet réalisé</p>
               </div>
             </div>
           </div>
-          <div class="se-titles">
-            <span class="se-num">03</span>
-            <h2 class="se-title se-title--top">Immobilier</h2>
-            <h2 class="se-title se-title--bottom">& Promotion</h2>
-            <p class="se-hint">Scrollez pour découvrir</p>
+        </div>
+        <div class="container">
+          <div class="vc-cards vc-cards--1">
+            <article class="vc-card vc-card--wide fade-in" id="mba-immobilier">
+              <div class="vc-card__accent"></div>
+              <div class="vc-card__body">
+                <span class="vc-card__tag">Immobilier & Promotion</span>
+                <h3>MBA Immobilier SA</h3>
+                <p class="vc-card__desc">MBA Immobilier maîtrise tout le cycle immobilier : promotion, vente et gestion. De l'idée au projet réalisé, nous accompagnons chaque étape avec expertise et vision.</p>
+                <ul class="vc-card__list vc-card__list--inline">
+                  <li>Promotion immobilière</li>
+                  <li>Vente immobilière</li>
+                  <li>Gestion immobilière</li>
+                  <li>Conseil immobilier</li>
+                </ul>
+                <a href="contact.html" class="vc-card__cta">
+                  Nous contacter
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+    </div>
 
     <!-- Pourquoi Nous -->
     <section class="why-us">
@@ -320,8 +299,7 @@
     </div>
   </footer>
 
-  <script src="js/group-bar.js?v=7"></script>
-  <script src="js/main.js?v=7"></script>
-  <script src="js/scroll-expand.js?v=1"></script>
+  <script src="js/group-bar.js?v=8"></script>
+  <script src="js/main.js?v=8"></script>
 </body>
 </html>
