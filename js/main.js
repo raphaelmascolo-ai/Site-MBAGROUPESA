@@ -255,15 +255,6 @@
         text: 'Spécialiste en fourniture et pose de fenêtres et portes de haute qualité.',
         meta: 'Mission',
         value: 'Qualité'
-      },
-      {
-        id: 'les-praz-prins',
-        short: 'PP',
-        name: 'Les Praz Prins SA',
-        sector: 'Solutions spécialisées',
-        text: 'Expertise en projets immobiliers et solutions constructives spécialisées pour le groupe.',
-        meta: 'Rôle',
-        value: 'Stratégie'
       }
     ];
 
