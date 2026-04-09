@@ -290,6 +290,42 @@
   letter-spacing: 0.1em;
 }
 
+/* --- Expand Gallery --- */
+.gallery-block__sub {
+  font-size: 0.95rem;
+  color: var(--gray-metal);
+  margin-bottom: 32px;
+}
+
+.expand-gallery {
+  display: flex;
+  gap: 8px;
+  height: 420px;
+  width: 100%;
+}
+
+.expand-gallery__item {
+  position: relative;
+  flex: 1;
+  min-width: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: flex 0.5s ease;
+}
+
+.expand-gallery__item:hover {
+  flex: 4;
+}
+
+.expand-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 /* --- Advantages Grid --- */
 .advantages-grid {
   display: grid;
@@ -537,6 +573,15 @@
   .gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+  }
+
+  .expand-gallery {
+    height: 280px;
+    gap: 4px;
+  }
+
+  .expand-gallery__item {
+    border-radius: 6px;
   }
 
   .advantages-grid {
