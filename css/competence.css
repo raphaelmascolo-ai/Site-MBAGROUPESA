@@ -382,6 +382,15 @@
   transform: none;
 }
 
+.seh__tagline {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 400;
+  margin-top: 12px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
 .seh__hint {
   margin-top: 20px;
   font-family: var(--font-heading);
