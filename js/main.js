@@ -248,13 +248,13 @@
         value: 'Finitions'
       },
       {
-        id: 'mba-services',
-        short: 'MS',
-        name: 'MBA Services SA',
-        sector: 'Entretien · Maintenance',
-        text: 'Excellence en maintenance et entretien technique pour la pérennité des ouvrages du groupe.',
+        id: 'asv-fenetres',
+        short: 'AF',
+        name: 'ASV Fenêtres et Portes SA',
+        sector: 'Fenêtres · Portes',
+        text: 'Spécialiste en fourniture et pose de fenêtres et portes de haute qualité.',
         meta: 'Mission',
-        value: 'Pérennité'
+        value: 'Qualité'
       }
     ];
 
