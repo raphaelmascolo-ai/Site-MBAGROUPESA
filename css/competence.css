@@ -26,7 +26,10 @@
 .hero-competence--image {
   background-size: cover;
   background-position: center;
-  padding: 180px 0 100px;
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 0 60px;
 }
 
 .hero-competence--image::before {
