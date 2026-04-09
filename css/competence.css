@@ -125,18 +125,22 @@
   flex: 1;
 }
 
-.description-block__logo {
+.description-block__logo-box {
   flex-shrink: 0;
-  width: 200px;
+  width: 240px;
+  height: 240px;
+  background: var(--black);
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 40px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
 }
 
-.description-block__logo img {
+.description-block__logo-box img {
   width: 100%;
   height: auto;
-  opacity: 0.8;
 }
 
 /* --- Services Grid --- */
@@ -454,8 +458,10 @@
     gap: 30px;
   }
 
-  .description-block__logo {
-    width: 140px;
+  .description-block__logo-box {
+    width: 180px;
+    height: 180px;
+    padding: 30px;
   }
 
   .services-grid {
