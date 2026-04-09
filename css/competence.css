@@ -303,6 +303,102 @@
   margin: 0 auto 2rem;
 }
 
+/* --- Scroll-Expansion Hero --- */
+.seh__scroll {
+  height: 300vh;
+  position: relative;
+}
+
+.seh__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black);
+}
+
+.seh__bg {
+  position: absolute;
+  inset: -20px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px) brightness(0.3);
+  opacity: calc(1 - var(--p, 0) * 0.5);
+  transform: scale(1.1);
+}
+
+.seh__media {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  box-shadow: 0 4px 80px rgba(0, 0, 0, 0.6);
+  --sw: 300px;
+  --sh: 400px;
+  width: calc(var(--sw) + var(--p, 0) * (100vw - var(--sw)));
+  height: calc(var(--sh) + var(--p, 0) * (100vh - var(--sh)));
+  border-radius: calc(16px * (1 - var(--p, 0)));
+}
+
+.seh__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.seh__media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);
+  opacity: calc(0.6 - var(--p, 0) * 0.4);
+}
+
+.seh__titles {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.seh__title {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  margin-bottom: 0;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.seh__title--top {
+  opacity: calc(1 - var(--p, 0) * 2);
+  transform: scale(calc(1 + var(--p, 0) * 0.3));
+}
+
+.seh__hint {
+  margin-top: 20px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: calc(1 - var(--p, 0) * 4);
+  animation: seh-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes seh-pulse {
+  0%, 100% { transform: translateY(0); opacity: calc((1 - var(--p, 0) * 4) * 0.4); }
+  50% { transform: translateY(4px); opacity: calc(1 - var(--p, 0) * 4); }
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
   .hero-competence {
@@ -342,5 +438,18 @@
 
   .cta-competence {
     padding: 60px 0;
+  }
+
+  .seh__scroll {
+    height: 220vh;
+  }
+
+  .seh__media {
+    --sw: 220px;
+    --sh: 300px;
+  }
+
+  .seh__title {
+    font-size: clamp(2rem, 10vw, 3rem);
   }
 }

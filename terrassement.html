@@ -52,13 +52,23 @@
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero-competence hero-competence--image" style="background-image: url('images/hero-terrassement.jpg');">
-      <div class="hero-competence__overlay"></div>
-      <div class="container fade-in">
-        <div class="accent-line"></div>
-        <h1>Terrassement</h1>
-        <p class="hero-tagline">Préparer le terrain pour vos projets</p>
+    <!-- Scroll-Expansion Hero -->
+    <section class="seh" id="seh-terrassement">
+      <div class="seh__scroll">
+        <div class="seh__sticky">
+          <!-- Background (blurred / dimmed) -->
+          <div class="seh__bg" style="background-image: url('images/hero-terrassement.jpg');"></div>
+          <!-- Expanding image -->
+          <div class="seh__media">
+            <img src="images/hero-terrassement.jpg" alt="Terrassement" class="seh__img">
+            <div class="seh__media-overlay"></div>
+          </div>
+          <!-- Split titles -->
+          <div class="seh__titles">
+            <h1 class="seh__title seh__title--top">Terrassement</h1>
+            <p class="seh__hint">Scrollez pour découvrir</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -213,5 +223,23 @@
 
   <script src="js/group-bar.js?v=11"></script>
   <script src="js/main.js?v=20"></script>
+  <script>
+  (function() {
+    var scroll = document.querySelector('.seh__scroll');
+    if (!scroll) return;
+    var sticky = scroll.querySelector('.seh__sticky');
+    var media = scroll.querySelector('.seh__media');
+    function update() {
+      var rect = scroll.getBoundingClientRect();
+      var h = scroll.offsetHeight - window.innerHeight;
+      if (h <= 0) return void requestAnimationFrame(update);
+      var p = Math.max(0, Math.min(1, -rect.top / h));
+      sticky.style.setProperty('--p', p.toFixed(4));
+      media.style.setProperty('--p', p.toFixed(4));
+      requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  })();
+  </script>
 </body>
 </html>
