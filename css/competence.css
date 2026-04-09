@@ -115,47 +115,70 @@
   max-width: none;
 }
 
-/* Description card (logo + text in one card) */
-.description-card {
+/* CTA Card (logo + text) */
+.cta-card {
   display: flex;
-  align-items: flex-start;
-  gap: 0;
-  background: var(--black);
-  border-radius: 4px;
+  flex-direction: row;
   overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  background: var(--white);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   margin-bottom: 80px;
 }
 
-.description-card__logo {
+.cta-card__image {
   flex-shrink: 0;
-  width: 240px;
+  width: 33%;
+  background: var(--black);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 48px;
-  align-self: stretch;
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.description-card__logo img {
+.cta-card__image img {
   width: 100%;
+  max-width: 180px;
   height: auto;
 }
 
-.description-card__text {
+.cta-card__content {
   flex: 1;
   padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.description-card__text p {
+.cta-card__label {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.cta-card__title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.cta-card__desc {
   font-size: 0.95rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: var(--gray-dark);
+  margin-bottom: 12px;
 }
 
-.description-card__text p:last-child {
-  margin-bottom: 0;
+.cta-card__content .btn {
+  margin-top: 12px;
+  align-self: flex-start;
 }
 
 /* --- Services Grid --- */
@@ -468,22 +491,20 @@
     margin-bottom: 60px;
   }
 
-  .description-card {
+  .cta-card {
     flex-direction: column;
   }
 
-  .description-card__logo {
+  .cta-card__image {
     width: 100%;
-    padding: 32px 60px;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 36px;
   }
 
-  .description-card__logo img {
-    max-width: 160px;
+  .cta-card__image img {
+    max-width: 140px;
   }
 
-  .description-card__text {
+  .cta-card__content {
     padding: 28px 24px;
   }
 
