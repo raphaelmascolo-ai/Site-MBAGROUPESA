@@ -2295,8 +2295,8 @@ p {
 }
 
 .companies-page .page-hero {
-  background: linear-gradient(180deg, var(--gray-light) 0%, var(--gray-light) 50%, #1a1a1a 100%);
-  padding-bottom: 100px;
+  background: linear-gradient(180deg, var(--gray-light) 0%, var(--gray-light) 30%, #1a1a1a 100%);
+  padding-bottom: 220px;
   border-bottom: none;
   margin-bottom: 0;
   color: var(--gray-dark);
