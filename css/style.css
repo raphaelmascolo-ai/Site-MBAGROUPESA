@@ -2282,6 +2282,67 @@ p {
   font-size: 0.95rem;
 }
 
+/* Unified dark background for the entire companies page */
+.companies-page {
+  background: linear-gradient(180deg,
+    #1a1a1a 0%,
+    #1e1e1e 15%,
+    #1c1c1c 40%,
+    #1a1a1a 65%,
+    #1e1e1e 85%,
+    #1a1a1a 100%
+  );
+}
+
+.companies-page .page-hero {
+  background: transparent;
+}
+
+.companies-page .page-hero::before {
+  background: none;
+}
+
+.companies-page .se-bg,
+.companies-page .se-bg-overlay {
+  display: none;
+}
+
+.companies-page .se-sticky {
+  background: transparent;
+}
+
+.companies-page .why-us {
+  background: transparent;
+  color: var(--white);
+}
+
+.companies-page .why-us h2,
+.companies-page .why-us h3 {
+  color: var(--white);
+}
+
+.companies-page .why-us__card p {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.companies-page .why-us__icon {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.companies-page .section-subtitle {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.companies-page .section__header .accent-line {
+  background: var(--yellow);
+}
+
+.companies-page .cta-section {
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
 /* === Scroll-Expansion Heroes === */
 .se-section {
   position: relative;
