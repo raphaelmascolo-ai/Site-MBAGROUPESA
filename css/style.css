@@ -318,6 +318,16 @@ p {
   width: 100%;
 }
 
+.nav-link.nav-link--dropdown::after,
+.nav-link.nav-link--dropdown:hover::after {
+  position: static;
+  width: 5px;
+  height: 5px;
+  background: none;
+  bottom: auto;
+  left: auto;
+}
+
 /* Mobile menu toggle */
 .menu-toggle {
   display: none;
