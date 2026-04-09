@@ -112,7 +112,7 @@
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--gray-dark);
-  max-width: 800px;
+  max-width: none;
 }
 
 /* --- Services Grid --- */
