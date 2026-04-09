@@ -2296,6 +2296,9 @@ p {
 
 .companies-page .page-hero {
   background: transparent;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 20px;
 }
 
 .companies-page .page-hero::before {
@@ -2314,6 +2317,8 @@ p {
 .companies-page .why-us {
   background: transparent;
   color: var(--white);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 40px;
 }
 
 .companies-page .why-us h2,
