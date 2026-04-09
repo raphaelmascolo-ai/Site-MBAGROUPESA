@@ -135,12 +135,33 @@
   align-items: center;
   justify-content: center;
   padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-card__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(253, 217, 0, 0.12) 0%, transparent 55%),
+    linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
+}
+
+.cta-card__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(135deg, transparent 60%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0.02) 70%, transparent 70%),
+    linear-gradient(45deg, transparent 65%, rgba(253,217,0,0.04) 65%, rgba(253,217,0,0.04) 75%, transparent 75%);
 }
 
 .cta-card__image img {
   width: 100%;
   max-width: 180px;
   height: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-card__content {
