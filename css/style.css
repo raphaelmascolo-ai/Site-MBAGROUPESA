@@ -2295,14 +2295,31 @@ p {
 }
 
 .companies-page .page-hero {
-  background: transparent;
+  background: var(--gray-light);
   padding-bottom: 60px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 20px;
+  border-bottom: none;
+  margin-bottom: 0;
+  color: var(--gray-dark);
 }
 
 .companies-page .page-hero::before {
   background: none;
+}
+
+.companies-page .page-hero h1 {
+  color: var(--black);
+}
+
+.companies-page .page-hero .page-hero__subtitle {
+  color: var(--gold-mid);
+}
+
+.companies-page .page-hero .page-hero__desc {
+  color: var(--gray-metal);
+}
+
+.companies-page .page-hero .accent-line {
+  background: var(--yellow);
 }
 
 .companies-page .se-bg,
