@@ -2315,28 +2315,27 @@ p {
 }
 
 .companies-page .why-us {
-  background: transparent;
-  color: var(--white);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--gray-light);
+  color: var(--gray-dark);
+  border-top: none;
   margin-top: 40px;
 }
 
 .companies-page .why-us h2,
 .companies-page .why-us h3 {
-  color: var(--white);
+  color: var(--black);
 }
 
 .companies-page .why-us__card p {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--gray-dark);
 }
 
 .companies-page .why-us__icon {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--black);
 }
 
-.companies-page .section-subtitle {
-  color: rgba(255, 255, 255, 0.45);
+.companies-page .why-us .section-subtitle {
+  color: var(--gray-metal);
 }
 
 .companies-page .section__header .accent-line {
