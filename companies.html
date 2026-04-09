@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
 
@@ -44,215 +44,246 @@
       <div class="container">
         <div class="accent-line"></div>
         <h1>Nos Sociétés</h1>
-        <p class="page-hero__subtitle">De la conception à la livraison, chaque entreprise apporte son excellence</p>
-        <p class="page-hero__desc">MBA Groupe SA regroupe 6 entreprises spécialisées qui travaillent ensemble pour vos projets immobiliers. Chacune apporte son expertise dans son domaine pour un résultat d'excellence.</p>
+        <p class="page-hero__subtitle">De la conception à la livraison</p>
+        <p class="page-hero__desc">6 entreprises, une vision commune. Chaque société du groupe apporte son excellence pour des projets immobiliers maîtrisés de bout en bout.</p>
       </div>
     </section>
 
-    <!-- Value Chain Sections -->
-    <div class="vc-wrapper">
-      <div class="container">
+    <!-- Value Chain -->
+    <div class="vc">
 
-        <!-- Section 1: Conception & Construction -->
-        <section class="vc-section fade-in" id="construction">
-          <div class="vc-section__header">
-            <span class="vc-section__icon">&#x1F3D7;&#xFE0F;</span>
-            <div>
-              <h2 class="vc-section__title">Conception & Construction</h2>
-              <p class="vc-section__subtitle">La base solide de tous vos projets</p>
+      <!-- Step 1: Construction -->
+      <section class="vc-step" id="construction">
+        <div class="vc-step__banner fade-in">
+          <div class="container">
+            <div class="vc-step__label">
+              <span class="vc-step__num">01</span>
+              <div>
+                <h2 class="vc-step__title">Conception & Construction</h2>
+                <p class="vc-step__sub">La base solide de tous vos projets</p>
+              </div>
             </div>
           </div>
-          <div class="vc-grid vc-grid--2">
+        </div>
+        <div class="container">
+          <div class="vc-cards vc-cards--2">
 
-            <!-- MBA Construction SA -->
-            <div class="vc-card fade-in" id="mba-construction">
-              <div class="vc-card__image">
-                <div class="vc-card__image-placeholder"></div>
-              </div>
-              <div class="vc-card__content">
-                <span class="vc-card__category">Construction Générale</span>
+            <article class="vc-card fade-in" id="mba-construction">
+              <div class="vc-card__accent"></div>
+              <div class="vc-card__body">
+                <span class="vc-card__tag">Construction Générale</span>
                 <h3>MBA Construction SA</h3>
-                <p>Pilier du groupe, MBA Construction assure les projets de construction générale en Valais, de la conception à la livraison. Gros œuvre, structure, enveloppe du bâtiment.</p>
-                <ul class="vc-card__services">
+                <p class="vc-card__desc">Pilier du groupe, MBA Construction assure les projets de construction générale en Valais, de la conception à la livraison. Gros oeuvre, structure, enveloppe du bâtiment.</p>
+                <ul class="vc-card__list">
                   <li>Construction générale</li>
-                  <li>Gros œuvre</li>
+                  <li>Gros oeuvre</li>
                   <li>Rénovation</li>
-                  <li>Mise en œuvre structurelle</li>
+                  <li>Mise en oeuvre structurelle</li>
                 </ul>
-                <a href="https://mba-construction.ch/" target="_blank" rel="noopener" class="btn btn-primary">Visiter le site</a>
+                <a href="https://mba-construction.ch/" target="_blank" rel="noopener" class="vc-card__cta">
+                  Visiter le site
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
               </div>
-            </div>
+            </article>
 
-            <!-- ASV Construction Générale SA -->
-            <div class="vc-card fade-in" id="asv-construction">
-              <div class="vc-card__image">
-                <div class="vc-card__image-placeholder"></div>
-              </div>
-              <div class="vc-card__content">
-                <span class="vc-card__category">Construction Générale</span>
+            <article class="vc-card fade-in" id="asv-construction">
+              <div class="vc-card__accent"></div>
+              <div class="vc-card__body">
+                <span class="vc-card__tag">Construction Générale</span>
                 <h3>ASV Construction Générale SA</h3>
-                <p>ASV Construction apporte son expertise en construction générale avec un accent particulier sur les finitions et le détail architectural. Qualité, précision, excellence.</p>
-                <ul class="vc-card__services">
+                <p class="vc-card__desc">ASV Construction apporte son expertise en construction générale avec un accent particulier sur les finitions et le détail architectural. Qualité, précision, excellence.</p>
+                <ul class="vc-card__list">
                   <li>Construction générale</li>
                   <li>Finitions architecturales</li>
                   <li>Détails techniques</li>
                   <li>Assurance qualité</li>
                 </ul>
-                <a href="https://asv-construction.ch/" target="_blank" rel="noopener" class="btn btn-primary">Visiter le site</a>
+                <a href="https://asv-construction.ch/" target="_blank" rel="noopener" class="vc-card__cta">
+                  Visiter le site
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
               </div>
-            </div>
+            </article>
 
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Section 2: Finitions & Spécialités -->
-        <section class="vc-section fade-in" id="finitions">
-          <div class="vc-section__header">
-            <span class="vc-section__icon">&#x1F3A8;</span>
-            <div>
-              <h2 class="vc-section__title">Finitions & Spécialités</h2>
-              <p class="vc-section__subtitle">La qualité visible au quotidien</p>
+      <!-- Step 2: Finitions -->
+      <section class="vc-step" id="finitions">
+        <div class="vc-step__banner fade-in">
+          <div class="container">
+            <div class="vc-step__label">
+              <span class="vc-step__num">02</span>
+              <div>
+                <h2 class="vc-step__title">Finitions & Spécialités</h2>
+                <p class="vc-step__sub">La qualité visible au quotidien</p>
+              </div>
             </div>
           </div>
-          <div class="vc-grid vc-grid--2">
+        </div>
+        <div class="container">
+          <div class="vc-cards vc-cards--2">
 
-            <!-- ASV Color SA -->
-            <div class="vc-card fade-in" id="asv-color">
-              <div class="vc-card__image">
-                <div class="vc-card__image-placeholder"></div>
-              </div>
-              <div class="vc-card__content">
-                <span class="vc-card__category">Finitions</span>
+            <article class="vc-card fade-in" id="asv-color">
+              <div class="vc-card__accent"></div>
+              <div class="vc-card__body">
+                <span class="vc-card__tag">Peinture & Finitions</span>
                 <h3>ASV Color SA</h3>
-                <p>Spécialiste des finitions, ASV Color garantit la qualité des travaux de peinture et des revêtements spécialisés sur tous les projets du groupe. Le détail qui change tout.</p>
-                <ul class="vc-card__services">
+                <p class="vc-card__desc">Spécialiste des finitions, ASV Color garantit la qualité des travaux de peinture et des revêtements spécialisés sur tous les projets du groupe. Le détail qui change tout.</p>
+                <ul class="vc-card__list">
                   <li>Peinture intérieure & extérieure</li>
                   <li>Revêtements spécialisés</li>
                   <li>Finitions décoratives</li>
                   <li>Coordination techniques</li>
                 </ul>
-                <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+                <a href="contact.html" class="vc-card__cta">
+                  Demander un devis
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
               </div>
-            </div>
+            </article>
 
-            <!-- ASV Fenêtres et Portes SA -->
-            <div class="vc-card fade-in" id="asv-fenetres">
-              <div class="vc-card__image">
-                <div class="vc-card__image-placeholder"></div>
-              </div>
-              <div class="vc-card__content">
-                <span class="vc-card__category">Fenêtres & Portes</span>
+            <article class="vc-card fade-in" id="asv-fenetres">
+              <div class="vc-card__accent"></div>
+              <div class="vc-card__body">
+                <span class="vc-card__tag">Fenêtres & Portes</span>
                 <h3>ASV Fenêtres et Portes SA</h3>
-                <p>Spécialiste de la fourniture et de la pose de fenêtres et de portes de haute qualité. Performance énergétique, esthétique et durabilité pour chaque projet.</p>
-                <ul class="vc-card__services">
+                <p class="vc-card__desc">Spécialiste de la fourniture et de la pose de fenêtres et de portes de haute qualité. Performance énergétique, esthétique et durabilité pour chaque projet.</p>
+                <ul class="vc-card__list">
                   <li>Fenêtres sur mesure</li>
                   <li>Portes intérieures & extérieures</li>
                   <li>Performance énergétique</li>
                   <li>Pose et installation</li>
                 </ul>
-                <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+                <a href="contact.html" class="vc-card__cta">
+                  Demander un devis
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
               </div>
-            </div>
+            </article>
 
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Section 3: Immobilier -->
-        <section class="vc-section fade-in" id="immobilier">
-          <div class="vc-section__header">
-            <span class="vc-section__icon">&#x1F3E2;</span>
-            <div>
-              <h2 class="vc-section__title">Immobilier & Promotion</h2>
-              <p class="vc-section__subtitle">De l'idée au projet réalisé</p>
+      <!-- Step 3: Immobilier -->
+      <section class="vc-step" id="immobilier">
+        <div class="vc-step__banner fade-in">
+          <div class="container">
+            <div class="vc-step__label">
+              <span class="vc-step__num">03</span>
+              <div>
+                <h2 class="vc-step__title">Immobilier & Promotion</h2>
+                <p class="vc-step__sub">De l'idée au projet réalisé</p>
+              </div>
             </div>
           </div>
-          <div class="vc-grid vc-grid--1">
+        </div>
+        <div class="container">
+          <div class="vc-cards vc-cards--1">
 
-            <!-- MBA Immobilier SA -->
-            <div class="vc-card fade-in" id="mba-immobilier">
-              <div class="vc-card__image">
-                <div class="vc-card__image-placeholder"></div>
-              </div>
-              <div class="vc-card__content">
-                <span class="vc-card__category">Immobilier & Promotion</span>
+            <article class="vc-card vc-card--wide fade-in" id="mba-immobilier">
+              <div class="vc-card__accent"></div>
+              <div class="vc-card__body">
+                <span class="vc-card__tag">Immobilier & Promotion</span>
                 <h3>MBA Immobilier SA</h3>
-                <p>MBA Immobilier maîtrise tout le cycle immobilier : promotion, vente et gestion. De l'idée au projet réalisé, nous accompagnons chaque étape avec expertise et vision.</p>
-                <ul class="vc-card__services">
+                <p class="vc-card__desc">MBA Immobilier maîtrise tout le cycle immobilier : promotion, vente et gestion. De l'idée au projet réalisé, nous accompagnons chaque étape avec expertise et vision.</p>
+                <ul class="vc-card__list vc-card__list--inline">
                   <li>Promotion immobilière</li>
                   <li>Vente immobilière</li>
                   <li>Gestion immobilière</li>
                   <li>Conseil immobilier</li>
                 </ul>
-                <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+                <a href="contact.html" class="vc-card__cta">
+                  Nous contacter
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
               </div>
-            </div>
+            </article>
 
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Section 4: Solutions Spécialisées -->
-        <section class="vc-section fade-in" id="solutions">
-          <div class="vc-section__header">
-            <span class="vc-section__icon">&#x2699;&#xFE0F;</span>
-            <div>
-              <h2 class="vc-section__title">Solutions Spécialisées</h2>
-              <p class="vc-section__subtitle">Expertise complémentaire</p>
+      <!-- Step 4: Solutions -->
+      <section class="vc-step" id="solutions">
+        <div class="vc-step__banner fade-in">
+          <div class="container">
+            <div class="vc-step__label">
+              <span class="vc-step__num">04</span>
+              <div>
+                <h2 class="vc-step__title">Solutions Spécialisées</h2>
+                <p class="vc-step__sub">Expertise complémentaire</p>
+              </div>
             </div>
           </div>
-          <div class="vc-grid vc-grid--1">
+        </div>
+        <div class="container">
+          <div class="vc-cards vc-cards--1">
 
-            <!-- Les Praz Prins SA -->
-            <div class="vc-card fade-in" id="les-praz-prins">
-              <div class="vc-card__image">
-                <div class="vc-card__image-placeholder"></div>
-              </div>
-              <div class="vc-card__content">
-                <span class="vc-card__category">Solutions Spécialisées</span>
+            <article class="vc-card vc-card--wide fade-in" id="les-praz-prins">
+              <div class="vc-card__accent"></div>
+              <div class="vc-card__body">
+                <span class="vc-card__tag">Solutions Spécialisées</span>
                 <h3>Les Praz Prins SA</h3>
-                <p>Les Praz Prins apporte son expertise dans les projets immobiliers et les solutions constructives spécialisées. Partenaire stratégique du groupe pour projets complexes.</p>
-                <ul class="vc-card__services">
+                <p class="vc-card__desc">Les Praz Prins apporte son expertise dans les projets immobiliers et les solutions constructives spécialisées. Partenaire stratégique du groupe pour projets complexes.</p>
+                <ul class="vc-card__list vc-card__list--inline">
                   <li>Projets immobiliers</li>
                   <li>Solutions constructives</li>
                   <li>Accompagnement stratégique</li>
                   <li>Expertise spécialisée</li>
                 </ul>
-                <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+                <a href="contact.html" class="vc-card__cta">
+                  Nous contacter
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
               </div>
-            </div>
+            </article>
 
           </div>
-        </section>
+        </div>
+      </section>
 
-      </div>
     </div>
 
     <!-- Pourquoi Nous -->
-    <section class="why-us fade-in">
+    <section class="why-us">
       <div class="container">
-        <div class="section__header">
+        <div class="section__header fade-in">
           <div class="accent-line"></div>
-          <h2>Pourquoi Choisir le Groupe MBA</h2>
+          <h2>Pourquoi le Groupe MBA</h2>
+          <p class="section-subtitle">Un écosystème intégré au service de vos projets</p>
         </div>
         <div class="why-us__grid">
           <div class="why-us__card fade-in">
-            <div class="why-us__icon">&#x1F91D;</div>
-            <h3>Coordination Simplifiée</h3>
+            <div class="why-us__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3>Coordination simplifiée</h3>
             <p>Un seul contact pour tous vos besoins. Gestion simplifiée et communication fluide du début à la fin.</p>
           </div>
           <div class="why-us__card fade-in">
-            <div class="why-us__icon">&#x2B50;</div>
-            <h3>Qualité Garantie</h3>
-            <p>Expertise interne garantit la cohérence et la qualité à chaque étape du projet.</p>
+            <div class="why-us__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3>Qualité garantie</h3>
+            <p>L'expertise interne garantit la cohérence et la qualité à chaque étape du projet.</p>
           </div>
           <div class="why-us__card fade-in">
-            <div class="why-us__icon">&#x26A1;</div>
+            <div class="why-us__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
             <h3>Efficacité</h3>
             <p>Pas d'intermédiaires, chronologie optimisée et délais respectés. Gain de temps et d'argent.</p>
           </div>
           <div class="why-us__card fade-in">
-            <div class="why-us__icon">&#x1F3E0;</div>
-            <h3>Suivi Long Terme</h3>
-            <p>Du projet à la maintenance. Nous accompagnons votre investissement immobilier à long terme.</p>
+            <div class="why-us__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3>Suivi long terme</h3>
+            <p>Du projet à la maintenance. Nous accompagnons votre investissement immobilier sur la durée.</p>
           </div>
         </div>
       </div>
@@ -316,7 +347,7 @@
     </div>
   </footer>
 
-  <script src="js/group-bar.js?v=5"></script>
-  <script src="js/main.js?v=5"></script>
+  <script src="js/group-bar.js?v=6"></script>
+  <script src="js/main.js?v=6"></script>
 </body>
 </html>
