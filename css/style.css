@@ -2401,7 +2401,7 @@ p {
 .se-media--cards {
   background: #111;
   overflow: hidden;
-  z-index: 4; /* above titles so it covers them as it grows */
+  z-index: 1; /* behind titles so text stays readable */
 }
 
 .se-media__cards-inner {
