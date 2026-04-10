@@ -506,6 +506,171 @@
   margin: 0 auto 2rem;
 }
 
+/* --- Feature Carousel (Services) --- */
+.feature-carousel {
+  display: flex;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 500px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 80px;
+}
+
+.feature-carousel__left {
+  width: 40%;
+  background: var(--black);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.feature-carousel__heading {
+  color: var(--white);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.feature-carousel__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feature-carousel__chip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 22px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-align: left;
+}
+
+.feature-carousel__chip:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.feature-carousel__chip.active {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+.feature-carousel__chip svg {
+  flex-shrink: 0;
+}
+
+.feature-carousel__right {
+  flex: 1;
+  background: var(--gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-carousel__cards {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4/5;
+}
+
+.feature-carousel__card {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 6px solid var(--white);
+  background: var(--white);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: scale(0.85) translateX(80px);
+  pointer-events: none;
+}
+
+.feature-carousel__card.active {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  z-index: 3;
+  pointer-events: auto;
+}
+
+.feature-carousel__card.prev {
+  opacity: 0.4;
+  transform: scale(0.88) translateX(-60px) rotate(-3deg);
+  z-index: 2;
+  filter: grayscale(0.5) brightness(0.8);
+}
+
+.feature-carousel__card.next {
+  opacity: 0.4;
+  transform: scale(0.88) translateX(60px) rotate(3deg);
+  z-index: 1;
+  filter: grayscale(0.5) brightness(0.8);
+}
+
+.feature-carousel__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.feature-carousel__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.feature-carousel__card.active .feature-carousel__card-overlay {
+  opacity: 1;
+}
+
+.feature-carousel__card-tag {
+  display: inline-block;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 5px 12px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+.feature-carousel__card-overlay p {
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
 /* --- Competences Carousel --- */
 .competences-carousel {
   padding: 80px 0;
@@ -779,6 +944,36 @@
 
   .contact-competence {
     padding: 50px 0;
+  }
+
+  .feature-carousel {
+    flex-direction: column;
+    min-height: auto;
+    border-radius: 16px;
+  }
+
+  .feature-carousel__left {
+    width: 100%;
+    padding: 32px 24px;
+  }
+
+  .feature-carousel__chip {
+    padding: 10px 18px;
+    font-size: 0.75rem;
+  }
+
+  .feature-carousel__right {
+    padding: 24px;
+    min-height: 400px;
+  }
+
+  .feature-carousel__cards {
+    max-width: 300px;
+  }
+
+  .feature-carousel__card {
+    border-width: 4px;
+    border-radius: 14px;
   }
 
   .competences-carousel {
