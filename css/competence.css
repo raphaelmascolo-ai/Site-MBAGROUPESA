@@ -121,9 +121,9 @@
   flex-direction: row;
   overflow: hidden;
   border-radius: 12px;
-  border: 1px solid #e0e0e0;
-  background: var(--white);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  border: none;
+  background: transparent;
+  box-shadow: none;
   margin-bottom: 80px;
 }
 
@@ -518,6 +518,11 @@
   font-size: 1.05rem;
   max-width: 600px;
   margin: 0 auto 2rem;
+}
+
+/* --- Dark Competence Page Override --- */
+body:has(.comp-dark-section) {
+  background: var(--black);
 }
 
 /* --- Dark Page Sections --- */
