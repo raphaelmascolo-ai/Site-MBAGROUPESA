@@ -202,6 +202,10 @@
   align-self: flex-start;
 }
 
+.cta-card--reversed {
+  flex-direction: row-reverse;
+}
+
 /* --- Services Grid --- */
 .services-grid {
   display: grid;
@@ -518,12 +522,25 @@
 
 .feature-carousel__left {
   width: 40%;
-  background: var(--black);
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(253, 217, 0, 0.12) 0%, transparent 55%),
+    linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
   padding: 48px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
+  overflow: hidden;
+}
+
+.feature-carousel__left::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(135deg, transparent 60%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0.02) 70%, transparent 70%),
+    linear-gradient(45deg, transparent 65%, rgba(253,217,0,0.04) 65%, rgba(253,217,0,0.04) 75%, transparent 75%);
+  pointer-events: none;
 }
 
 .feature-carousel__heading {
@@ -532,12 +549,16 @@
   margin-bottom: 32px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  position: relative;
+  z-index: 1;
 }
 
 .feature-carousel__list {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  position: relative;
+  z-index: 1;
 }
 
 .feature-carousel__chip {
