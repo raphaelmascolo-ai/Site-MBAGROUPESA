@@ -660,6 +660,10 @@ body:has(.comp-dark-section) {
   background: var(--black);
 }
 
+body.theme-orange:has(.comp-dark-section) {
+  background: var(--white);
+}
+
 /* --- Dark Page Sections --- */
 .comp-dark-section {
   background: var(--black);
