@@ -82,8 +82,6 @@ body.theme-orange {
     radial-gradient(ellipse at 70% 30%, rgba(253, 217, 0, 0.08) 0%, transparent 55%),
     radial-gradient(ellipse at 20% 80%, rgba(232, 117, 26, 0.08) 0%, transparent 55%),
     linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
-  justify-content: flex-start;
-  padding-top: 60px;
 }
 
 .theme-orange .feature-carousel__left::after {
@@ -93,8 +91,7 @@ body.theme-orange {
 }
 
 .theme-orange .feature-carousel__heading {
-  color: var(--accent);
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--white);
 }
 
 .theme-orange .feature-carousel__chip.active {
