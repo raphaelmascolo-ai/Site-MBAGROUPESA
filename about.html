@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
@@ -199,10 +200,18 @@
           <h2>Notre territoire</h2>
           <p class="section-subtitle">Actifs principalement en Valais, nous intervenons sur l'ensemble du canton et au-delà.</p>
         </div>
-        <div class="region-map fade-in">
-          <p style="font-size:1.1rem;">Valais — Suisse</p>
-          <p style="margin-top:8px;">De Martigny, notre siège, nous rayonnons sur l'ensemble du Valais et de la Suisse romande.</p>
-          <p style="margin-top:16px;font-size:0.85rem;color:#aaa;">Carte interactive à venir</p>
+        <div class="map-container fade-in">
+          <div id="map" style="width:100%;height:500px;border-radius:8px;overflow:hidden;"></div>
+          <div class="map-info">
+            <div class="map-info__card">
+              <h3>MBA Groupe SA</h3>
+              <p>Rue du Châble-Bet 41<br>1920 Martigny<br>Valais, Suisse</p>
+              <a href="https://maps.google.com/?q=Rue+du+Châble-Bet+41,+1920+Martigny" target="_blank" rel="noopener" class="map-info__link">
+                Itinéraire
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -266,5 +275,35 @@
 
   <script src="js/group-bar.js?v=4"></script>
   <script src="js/main.js?v=4"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+  (function() {
+    var mapEl = document.getElementById('map');
+    if (!mapEl) return;
+
+    var lat = 46.1010;
+    var lng = 7.0726;
+
+    var map = L.map('map', {
+      scrollWheelZoom: false
+    }).setView([lat, lng], 14);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      maxZoom: 19
+    }).addTo(map);
+
+    var icon = L.divIcon({
+      className: 'map-marker',
+      html: '<div style="width:20px;height:20px;background:#FDD900;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.4);"></div>',
+      iconSize: [20, 20],
+      iconAnchor: [10, 10]
+    });
+
+    L.marker([lat, lng], { icon: icon })
+      .addTo(map)
+      .bindPopup('<strong>MBA Groupe SA</strong><br>Rue du Châble-Bet 41<br>1920 Martigny');
+  })();
+  </script>
 </body>
 </html>

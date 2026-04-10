@@ -2346,6 +2346,53 @@ p {
   color: var(--gray-metal);
 }
 
+/* Interactive map */
+.map-container {
+  position: relative;
+}
+
+.map-info {
+  margin-top: 24px;
+}
+
+.map-info__card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 24px 28px;
+  border: 1px solid #eee;
+  display: inline-block;
+}
+
+.map-info__card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--black);
+}
+
+.map-info__card p {
+  font-size: 0.9rem;
+  color: var(--gray-dark);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.map-info__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--black);
+  transition: color 0.2s ease;
+}
+
+.map-info__link:hover {
+  color: var(--gold-mid);
+}
+
 /* --- Value Chain (Companies Page) --- */
 .page-hero__subtitle {
   font-family: var(--font-heading);
