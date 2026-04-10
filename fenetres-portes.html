@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="site-id" content="mba-groupe">
   <title>Fenêtres &amp; Portes — MBA Groupe SA</title>
-  <meta name="description" content="MBA Groupe SA : fenêtres et portes en Valais. Pose de fenêtres, portes d'entrée, menuiseries sur mesure et isolation thermique pour votre habitat.">
-  <meta property="og:title" content="Fenêtres & Portes — MBA Groupe SA">
-  <meta property="og:description" content="Performance et esthétique pour votre habitat en Valais.">
+  <meta name="description" content="ASV Fenêtres et Portes SA : pose de fenêtres, portes d'entrée, menuiseries sur mesure et isolation thermique en Valais.">
+  <meta property="og:title" content="Fenêtres &amp; Portes — MBA Groupe SA">
+  <meta property="og:description" content="Fenêtres et portes de haute qualité pour vos projets en Valais.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=20">
-  <link rel="stylesheet" href="css/competence.css?v=1">
+  <link rel="stylesheet" href="css/competence.css?v=17">
 </head>
-<body>
+<body class="theme-orange">
 
   <!-- Header -->
   <header class="site-header" role="banner">
@@ -52,112 +52,232 @@
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero-competence">
-      <div class="container fade-in">
-        <div class="accent-line"></div>
-        <h1>Fenêtres &amp; Portes</h1>
-        <p class="hero-tagline">Performance et esthétique pour votre habitat</p>
+    <!-- Scroll-Expansion Hero -->
+    <section class="seh" id="seh-fenetres">
+      <div class="seh__scroll">
+        <div class="seh__sticky">
+          <div class="seh__bg" style="background-image: url('images/hero-maconnerie.jpg');"></div>
+          <div class="seh__media">
+            <img src="images/hero-maconnerie.jpg" alt="Fenêtres & Portes" class="seh__img">
+            <div class="seh__media-overlay"></div>
+          </div>
+          <div class="seh__titles">
+            <h1 class="seh__title seh__title--top">Fenêtres & Portes</h1>
+            <p class="seh__tagline">Performance et esthétique pour votre habitat.</p>
+            <p class="seh__hint">Scrollez pour découvrir</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <div class="content-competence">
+    <!-- Description dark section -->
+    <section class="comp-dark-section">
+      <div class="container">
+        <div class="comp-intro fade-in">
+          <div class="comp-intro__text">
+            <span class="comp-intro__label">ASV Fenêtres et Portes SA</span>
+            <h2 class="comp-intro__title">L'expertise des <span class="highlight">fenêtres & portes</span><br>au service de votre confort</h2>
+            <p>Les fenêtres et les portes sont essentielles au confort, à la sécurité et à l'efficacité énergétique de votre bâtiment. ASV Fenêtres et Portes SA propose des solutions sur mesure alliant performance thermique, esthétique contemporaine et durabilité.</p>
+            <p>Du conseil à l'installation, notre équipe accompagne chaque étape pour garantir un résultat à la hauteur de vos attentes, en Valais et dans toute la Suisse romande.</p>
+            <a href="companies.html#asv-fenetres" class="btn btn-primary">Découvrir ASV Fenêtres et Portes SA</a>
+          </div>
+          <div class="comp-intro__logo">
+            <div class="comp-intro__logo-bg"></div>
+            <img src="images/logo-asv-fenetres.png" alt="ASV Fenêtres et Portes SA">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="comp-stats">
+      <div class="container">
+        <div class="comp-stats__grid fade-in">
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">25+</span>
+            <span class="comp-stats__label">Années d'expérience</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">500+</span>
+            <span class="comp-stats__label">Projets réalisés</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">150+</span>
+            <span class="comp-stats__label">Collaborateurs</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">100%</span>
+            <span class="comp-stats__label">Valais & Suisse romande</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="content-competence content-competence--dark">
       <div class="container">
 
-        <!-- Description -->
-        <div class="description-block fade-in">
-          <h2>Qu'est-ce que c'est ?</h2>
-          <p>Les fenêtres et les portes sont essentielles au confort, à la sécurité et à l'efficacité énergétique de votre bâtiment. Nous proposons des solutions sur mesure alliant performance thermique, esthétique contemporaine et durabilité.</p>
-        </div>
-
-        <!-- Services -->
-        <div class="services-block fade-in">
-          <h2>Nos services</h2>
-          <div class="services-grid">
-            <div class="service-card">
-              <h3>Pose de fenêtres</h3>
-              <p>Installation professionnelle de fenêtres haute performance pour tous types de bâtiments.</p>
+        <!-- Services Feature Carousel -->
+        <div class="feature-carousel fade-in" id="featureCarousel">
+          <div class="feature-carousel__left">
+            <h2 class="feature-carousel__heading">Nos services</h2>
+            <div class="feature-carousel__list">
+              <button class="feature-carousel__chip active" data-index="0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg>
+                <span>Pose de fenêtres</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="1">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18"/></svg>
+                <span>Portes d'entrée & intérieures</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                <span>Menuiseries sur mesure</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="3">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Isolation thermique & acoustique</span>
+              </button>
             </div>
-            <div class="service-card">
-              <h3>Portes d'entrée &amp; intérieures</h3>
-              <p>Fourniture et pose de portes d'entrée sécurisées et de portes intérieures design.</p>
-            </div>
-            <div class="service-card">
-              <h3>Menuiseries sur mesure</h3>
-              <p>Fabrication et installation de menuiseries adaptées à vos besoins spécifiques.</p>
-            </div>
-            <div class="service-card">
-              <h3>Isolation thermique &amp; acoustique</h3>
-              <p>Solutions d'isolation optimales pour le confort et les économies d'énergie.</p>
+          </div>
+          <div class="feature-carousel__right">
+            <div class="feature-carousel__cards">
+              <div class="feature-carousel__card active" data-index="0">
+                <img src="images/maconnerie-5.jpg" alt="Pose de fenêtres">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">01 — Pose de fenêtres</span>
+                  <p>Installation de fenêtres PVC, bois et aluminium. Performance énergétique optimale et finitions soignées pour chaque ouverture.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="1">
+                <img src="images/maconnerie-5.jpg" alt="Portes d'entrée & intérieures">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">02 — Portes d'entrée & intérieures</span>
+                  <p>Portes sécurisées et esthétiques. Large choix de matériaux, coloris et systèmes de fermeture adaptés à chaque besoin.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="2">
+                <img src="images/maconnerie-5.jpg" alt="Menuiseries sur mesure">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">03 — Menuiseries sur mesure</span>
+                  <p>Fabrication et pose de menuiseries adaptées aux dimensions et contraintes architecturales de chaque projet.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="3">
+                <img src="images/maconnerie-5.jpg" alt="Isolation thermique & acoustique">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">04 — Isolation thermique & acoustique</span>
+                  <p>Solutions haute performance pour réduire les déperditions énergétiques et garantir le confort acoustique de votre habitat.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Gallery -->
-        <div class="gallery-block fade-in">
-          <h2>Galerie</h2>
-          <div class="gallery">
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-          </div>
-        </div>
-
-        <!-- Advantages -->
-        <div class="advantages-block fade-in">
-          <h2>Nos avantages</h2>
-          <div class="advantages-grid">
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              </div>
-              <h3>Qualité premium</h3>
-              <p>Produits de marques reconnues, sélectionnés pour leur excellence.</p>
+        <div class="gallery-block gallery-block--dark fade-in">
+          <h2>Nos réalisations</h2>
+          <p class="gallery-block__sub">Quelques-unes de nos installations de fenêtres et portes en Valais.</p>
+          <div class="expand-gallery">
+            <div class="expand-gallery__item">
+              <img src="images/maconnerie-5.jpg" alt="Fenêtres - projet 1">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <h3>Performance thermique</h3>
-              <p>Isolation optimale pour réduire les dépenses énergétiques.</p>
+            <div class="expand-gallery__item">
+              <img src="images/maconnerie-5.jpg" alt="Fenêtres - projet 2">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-              </div>
-              <h3>Esthétique</h3>
-              <p>Designs contemporains qui valorisent l'architecture de votre bien.</p>
+            <div class="expand-gallery__item">
+              <img src="images/maconnerie-5.jpg" alt="Fenêtres - projet 3">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <h3>Étanchéité parfaite</h3>
-              <p>Pose soignée garantissant une étanchéité à l'air et à l'eau irréprochable.</p>
+            <div class="expand-gallery__item">
+              <img src="images/maconnerie-5.jpg" alt="Fenêtres - projet 4">
             </div>
-          </div>
-        </div>
-
-        <!-- Companies Involved -->
-        <div class="companies-involved fade-in">
-          <h2>Sociétés concernées</h2>
-          <div class="companies-box">
-            <ul>
-              <li><strong>ASV Fenêtres et Portes SA</strong></li>
-            </ul>
+            <div class="expand-gallery__item">
+              <img src="images/maconnerie-5.jpg" alt="Fenêtres - projet 5">
+            </div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- CTA -->
-    <section class="cta-competence">
-      <div class="container fade-in">
-        <h2>Besoin de nouvelles fenêtres ou portes ?</h2>
-        <p>Contactez-nous pour un conseil personnalisé et un devis adapté à votre projet.</p>
-        <a href="contact.html" class="btn btn-primary">Contactez-nous</a>
+    <!-- Contact -->
+    <section class="contact-competence">
+      <div class="container">
+        <div class="contact-competence__grid fade-in">
+          <div class="contact-competence__photo">
+            <img src="images/contact-fenetres.jpg" alt="ASV Fenêtres et Portes SA">
+          </div>
+          <div class="contact-competence__form">
+            <h2>Un projet de fenêtres ou portes ?</h2>
+            <p class="contact-competence__sub">Contactez-nous directement, nous vous répondons rapidement.</p>
+            <form class="contact-form" action="#" method="POST">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
+
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.ch" required>
+
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+41 00 000 00 00">
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Décrivez votre projet de fenêtres ou portes..." required></textarea>
+
+              <button type="submit" class="btn btn-primary">Envoyer le message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Competences Carousel -->
+    <section class="competences-carousel">
+      <div class="container">
+        <h2 class="competences-carousel__title fade-in">Nos autres compétences</h2>
+        <div class="carousel-wrapper">
+          <button class="carousel-btn carousel-btn--prev" aria-label="Précédent">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="carousel-track">
+            <a href="promotion-immobilier.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Promotion Immobilière</h3>
+              <p>Conception et développement de projets</p>
+            </a>
+            <a href="terrassement.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Terrassement</h3>
+              <p>Préparer le terrain pour vos projets</p>
+            </a>
+            <a href="maconnerie.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Maçonnerie & Gros Oeuvre</h3>
+              <p>Fondations et structures porteuses</p>
+            </a>
+            <a href="peinture-finitions.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Peinture & Finitions</h3>
+              <p>Le détail qui fait la différence</p>
+            </a>
+            <a href="renovation.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Rénovation</h3>
+              <p>Nouvelle vie pour vos espaces</p>
+            </a>
+            <a href="projet-cle-en-main.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Projet Clé en Main</h3>
+              <p>Un interlocuteur unique</p>
+            </a>
+            <a href="vente-immobiliere.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Vente Immobilière</h3>
+              <p>Maximiser la valeur de vos biens</p>
+            </a>
+          </div>
+          <button class="carousel-btn carousel-btn--next" aria-label="Suivant">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
     </section>
   </main>
@@ -211,5 +331,63 @@
 
   <script src="js/group-bar.js?v=11"></script>
   <script src="js/main.js?v=20"></script>
+  <script>
+  (function() {
+    var scroll = document.querySelector('.seh__scroll');
+    if (scroll) {
+      var sticky = scroll.querySelector('.seh__sticky');
+      var media = scroll.querySelector('.seh__media');
+      function update() {
+        var rect = scroll.getBoundingClientRect();
+        var h = scroll.offsetHeight - window.innerHeight;
+        if (h <= 0) return void requestAnimationFrame(update);
+        var p = Math.max(0, Math.min(1, -rect.top / h));
+        sticky.style.setProperty('--p', p.toFixed(4));
+        media.style.setProperty('--p', p.toFixed(4));
+        requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+
+    var fc = document.getElementById('featureCarousel');
+    if (fc) {
+      var chips = fc.querySelectorAll('.feature-carousel__chip');
+      var cards = fc.querySelectorAll('.feature-carousel__card');
+      var current = 0;
+      var total = chips.length;
+      var paused = false;
+
+      function setActive(idx) {
+        var prev = ((idx - 1) + total) % total;
+        var next = (idx + 1) % total;
+        chips.forEach(function(c, i) { c.classList.toggle('active', i === idx); });
+        cards.forEach(function(c, i) {
+          c.classList.remove('active', 'prev', 'next');
+          if (i === idx) c.classList.add('active');
+          else if (i === prev) c.classList.add('prev');
+          else if (i === next) c.classList.add('next');
+        });
+        current = idx;
+      }
+
+      chips.forEach(function(chip, i) {
+        chip.addEventListener('click', function() { setActive(i); });
+        chip.addEventListener('mouseenter', function() { paused = true; });
+        chip.addEventListener('mouseleave', function() { paused = false; });
+      });
+
+      setInterval(function() { if (!paused) setActive((current + 1) % total); }, 3500);
+      setActive(0);
+    }
+
+    var track = document.querySelector('.carousel-track');
+    var prev = document.querySelector('.carousel-btn--prev');
+    var next = document.querySelector('.carousel-btn--next');
+    if (track && prev && next) {
+      prev.addEventListener('click', function() { track.scrollBy({ left: -260, behavior: 'smooth' }); });
+      next.addEventListener('click', function() { track.scrollBy({ left: 260, behavior: 'smooth' }); });
+    }
+  })();
+  </script>
 </body>
 </html>

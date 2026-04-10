@@ -2,6 +2,83 @@
    MBA Groupe SA — Competence Pages
    ============================================ */
 
+/* --- Orange Theme (ASV Fenêtres & Portes) --- */
+.theme-orange {
+  --accent: #E8751A;
+  --accent-light: #F4943D;
+  --accent-glow: rgba(232, 117, 26, 0.15);
+}
+
+.theme-orange .seh__title {
+  color: var(--accent);
+}
+
+.theme-orange .comp-intro__label {
+  color: var(--accent);
+}
+
+.theme-orange .comp-intro__title .highlight {
+  color: var(--accent);
+}
+
+.theme-orange .comp-intro__logo-bg {
+  background:
+    radial-gradient(ellipse at 70% 30%, var(--accent-glow) 0%, transparent 55%),
+    linear-gradient(180deg, #222 0%, #111 50%, #222 100%);
+}
+
+.theme-orange .comp-intro__logo-bg::after {
+  background-image:
+    linear-gradient(135deg, transparent 60%, rgba(255,255,255,0.03) 60%, rgba(255,255,255,0.03) 70%, transparent 70%),
+    linear-gradient(45deg, transparent 65%, rgba(232,117,26,0.06) 65%, rgba(232,117,26,0.06) 75%, transparent 75%);
+}
+
+.theme-orange .comp-stats {
+  background: var(--accent);
+}
+
+.theme-orange .btn-primary {
+  background: var(--accent);
+}
+
+.theme-orange .btn-primary:hover {
+  background: var(--accent-light);
+  box-shadow: 0 6px 20px rgba(232, 117, 26, 0.3);
+}
+
+.theme-orange .feature-carousel__heading {
+  color: var(--accent);
+}
+
+.theme-orange .feature-carousel__chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.theme-orange .feature-carousel__card.active {
+  border-color: var(--accent);
+}
+
+.theme-orange .feature-carousel__card-tag {
+  background: var(--accent);
+}
+
+.theme-orange .feature-carousel__card {
+  border-color: rgba(232, 117, 26, 0.3);
+}
+
+.theme-orange .feature-carousel__left {
+  background:
+    radial-gradient(ellipse at 70% 30%, var(--accent-glow) 0%, transparent 55%),
+    linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
+}
+
+.theme-orange .feature-carousel__left::after {
+  background-image:
+    linear-gradient(135deg, transparent 60%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0.02) 70%, transparent 70%),
+    linear-gradient(45deg, transparent 65%, rgba(232,117,26,0.05) 65%, rgba(232,117,26,0.05) 75%, transparent 75%);
+}
+
 /* --- Hero Competence --- */
 .hero-competence {
   background: var(--black);
