@@ -417,7 +417,7 @@
 /* --- Contact Competence --- */
 .contact-competence {
   padding: 80px 0;
-  background: #111;
+  background: var(--gray-light);
 }
 
 .contact-competence__grid {
@@ -425,8 +425,8 @@
   gap: 0;
   border-radius: 12px;
   overflow: hidden;
-  background: #222;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+  background: var(--white);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
 .contact-competence__photo {
@@ -448,13 +448,13 @@
 
 .contact-competence__form h2 {
   font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-  color: var(--white);
+  color: var(--black);
   margin-bottom: 8px;
 }
 
 .contact-competence__sub {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--gray-metal);
   margin-bottom: 28px;
 }
 
@@ -465,7 +465,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--gray-dark);
   margin-bottom: 6px;
 }
 
@@ -473,26 +473,20 @@
 .contact-competence .contact-form textarea {
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #e0e0e0;
   border-radius: 4px;
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: var(--white);
+  color: var(--black);
   margin-bottom: 20px;
   transition: border-color 0.2s ease;
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.contact-competence .contact-form input::placeholder,
-.contact-competence .contact-form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.25);
+  background: var(--white);
 }
 
 .contact-competence .contact-form input:focus,
 .contact-competence .contact-form textarea:focus {
   outline: none;
   border-color: var(--yellow);
-  background: rgba(255, 255, 255, 0.08);
 }
 
 .contact-competence .contact-form textarea {
