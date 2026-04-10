@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="site-id" content="mba-groupe">
   <title>Rénovation — MBA Groupe SA</title>
-  <meta name="description" content="MBA Groupe SA : rénovation en Valais. Rénovation complète ou partielle, mise aux normes et transformation de vos bâtiments existants.">
+  <meta name="description" content="MBA Groupe SA : rénovation complète en Valais. Maçonnerie, fenêtres, portes et finitions pour donner une nouvelle vie à vos espaces.">
   <meta property="og:title" content="Rénovation — MBA Groupe SA">
-  <meta property="og:description" content="Donner une nouvelle vie à vos espaces en Valais.">
+  <meta property="og:description" content="Rénovation complète de vos bâtiments en Valais.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=20">
-  <link rel="stylesheet" href="css/competence.css?v=1">
+  <link rel="stylesheet" href="css/competence.css?v=28">
 </head>
 <body>
 
@@ -52,114 +52,237 @@
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero-competence">
-      <div class="container fade-in">
-        <div class="accent-line"></div>
-        <h1>Rénovation</h1>
-        <p class="hero-tagline">Donner une nouvelle vie à vos espaces</p>
+    <!-- Scroll-Expansion Hero -->
+    <section class="seh" id="seh-renovation">
+      <div class="seh__scroll">
+        <div class="seh__sticky">
+          <div class="seh__bg" style="background-image: url('images/fenetres-saillon.jpg');"></div>
+          <div class="seh__media">
+            <img src="images/fenetres-saillon.jpg" alt="Rénovation" class="seh__img">
+            <div class="seh__media-overlay"></div>
+          </div>
+          <div class="seh__titles">
+            <h1 class="seh__title seh__title--top">Rénovation</h1>
+            <p class="seh__tagline">Donner une nouvelle vie à vos espaces.</p>
+            <p class="seh__hint">Scrollez pour découvrir</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <div class="content-competence">
+    <!-- Description dark section -->
+    <section class="comp-dark-section">
+      <div class="container">
+        <div class="comp-intro fade-in">
+          <div class="comp-intro__text">
+            <span class="comp-intro__label">MBA Construction SA & ASV Fenêtres et Portes SA</span>
+            <h2 class="comp-intro__title">La <span class="highlight">rénovation</span><br>maîtrisée de A à Z</h2>
+            <p>La rénovation permet de transformer et moderniser vos bâtiments existants tout en respectant leur caractère. Nos équipes coordonnent l'ensemble des corps de métier pour une rénovation complète, de la structure aux finitions.</p>
+            <p>Grâce à l'expertise combinée de MBA Construction SA pour le gros oeuvre et d'ASV Fenêtres et Portes SA pour les menuiseries, nous garantissons un résultat cohérent et durable sur chaque projet.</p>
+          </div>
+          <div class="comp-intro__logos">
+            <div class="comp-intro__logo">
+              <div class="comp-intro__logo-bg"></div>
+              <img src="images/logo-mba-construction.png" alt="MBA Construction SA">
+            </div>
+            <div class="comp-intro__logo comp-intro__logo--asv">
+              <div class="comp-intro__logo-bg comp-intro__logo-bg--light"></div>
+              <img src="images/logo-asv-fenetres.png" alt="ASV Fenêtres et Portes SA">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="comp-stats">
+      <div class="container">
+        <div class="comp-stats__grid fade-in">
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">25+</span>
+            <span class="comp-stats__label">Années d'expérience</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">500+</span>
+            <span class="comp-stats__label">Projets réalisés</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">150+</span>
+            <span class="comp-stats__label">Collaborateurs</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">100%</span>
+            <span class="comp-stats__label">Valais & Suisse romande</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="content-competence content-competence--dark">
       <div class="container">
 
-        <!-- Description -->
-        <div class="description-block fade-in">
-          <h2>Qu'est-ce que c'est ?</h2>
-          <p>La rénovation permet de transformer et moderniser vos bâtiments existants tout en respectant leur caractère. Nos équipes coordonnent l'ensemble des corps de métier pour une rénovation complète, de la structure aux finitions.</p>
-        </div>
-
-        <!-- Services -->
-        <div class="services-block fade-in">
-          <h2>Nos services</h2>
-          <div class="services-grid">
-            <div class="service-card">
-              <h3>Rénovation complète</h3>
-              <p>Transformation intégrale de votre bien, de la structure aux finitions les plus fines.</p>
+        <!-- Services Feature Carousel -->
+        <div class="feature-carousel fade-in" id="featureCarousel">
+          <div class="feature-carousel__left">
+            <h2 class="feature-carousel__heading">Nos services</h2>
+            <div class="feature-carousel__list">
+              <button class="feature-carousel__chip active" data-index="0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
+                <span>Rénovation complète</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="1">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg>
+                <span>Fenêtres & Portes</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+                <span>Maçonnerie & Structure</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="3">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Mise aux normes</span>
+              </button>
             </div>
-            <div class="service-card">
-              <h3>Rénovation partielle</h3>
-              <p>Interventions ciblées sur des pièces ou éléments spécifiques de votre bâtiment.</p>
-            </div>
-            <div class="service-card">
-              <h3>Mise aux normes</h3>
-              <p>Adaptation de votre bien aux normes actuelles de sécurité et d'efficacité énergétique.</p>
-            </div>
-            <div class="service-card">
-              <h3>Transformation &amp; Adaptation</h3>
-              <p>Modification des espaces pour répondre à de nouveaux usages ou besoins.</p>
+          </div>
+          <div class="feature-carousel__right">
+            <div class="feature-carousel__cards">
+              <div class="feature-carousel__card active" data-index="0">
+                <img src="images/fenetres-saillon.jpg" alt="Rénovation complète">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">01 — Rénovation complète</span>
+                  <p>Transformation intégrale de votre bâtiment : structure, isolation, menuiseries et finitions coordonnées par nos équipes.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="1">
+                <img src="images/fenetres-5.jpg" alt="Fenêtres & Portes">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">02 — Fenêtres & Portes</span>
+                  <p>Remplacement et modernisation de vos menuiseries pour améliorer confort thermique, acoustique et esthétique.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="2">
+                <img src="images/maconnerie-3.jpg" alt="Maçonnerie & Structure">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">03 — Maçonnerie & Structure</span>
+                  <p>Renforcement et adaptation des structures existantes. Ouvertures, agrandissements et consolidation du bâti.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="3">
+                <img src="images/maconnerie-1.jpg" alt="Mise aux normes">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">04 — Mise aux normes</span>
+                  <p>Adaptation de votre bâtiment aux normes énergétiques, sismiques et d'accessibilité en vigueur.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Gallery -->
-        <div class="gallery-block fade-in">
-          <h2>Galerie</h2>
-          <div class="gallery">
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-          </div>
-        </div>
-
-        <!-- Advantages -->
-        <div class="advantages-block fade-in">
-          <h2>Nos avantages</h2>
-          <div class="advantages-grid">
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              </div>
-              <h3>Coordination simplifiée</h3>
-              <p>Un seul interlocuteur pour coordonner tous les corps de métier.</p>
+        <div class="gallery-block gallery-block--dark fade-in">
+          <h2>Nos réalisations</h2>
+          <p class="gallery-block__sub">Quelques-uns de nos projets de rénovation réalisés en Valais.</p>
+          <div class="expand-gallery">
+            <div class="expand-gallery__item">
+              <img src="images/fenetres-saillon.jpg" alt="Saillon - rénovation">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <h3>Respect du bâti existant</h3>
-              <p>Préservation du caractère et de la valeur de votre bien.</p>
+            <div class="expand-gallery__item">
+              <img src="images/fenetres-1.jpg" alt="Champéry">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              </div>
-              <h3>Qualité moderne</h3>
-              <p>Matériaux et techniques de dernière génération pour un résultat durable.</p>
+            <div class="expand-gallery__item">
+              <img src="images/fenetres-5.jpg" alt="Lutry">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <h3>Minimisation des perturbations</h3>
-              <p>Planning optimisé pour réduire l'impact sur votre quotidien.</p>
+            <div class="expand-gallery__item">
+              <img src="images/fenetres-3.jpg" alt="Grandvaux">
             </div>
-          </div>
-        </div>
-
-        <!-- Companies Involved -->
-        <div class="companies-involved fade-in">
-          <h2>Sociétés concernées</h2>
-          <div class="companies-box">
-            <ul>
-              <li><strong>MBA Construction SA</strong></li>
-              <li><strong>ASV Construction Générale SA</strong></li>
-              <li><strong>ASV Color SA</strong></li>
-            </ul>
+            <div class="expand-gallery__item">
+              <img src="images/fenetres-7.jpg" alt="Trient">
+            </div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- CTA -->
-    <section class="cta-competence">
-      <div class="container fade-in">
-        <h2>Un projet de rénovation ?</h2>
-        <p>Contactez-nous pour transformer vos espaces et donner une nouvelle vie à votre bien.</p>
-        <a href="contact.html" class="btn btn-primary">Contactez-nous</a>
+    <!-- Contact -->
+    <section class="contact-competence">
+      <div class="container">
+        <div class="contact-competence__grid fade-in">
+          <div class="contact-competence__photo">
+            <img src="images/gerald.jpg" alt="Gérald — MBA Construction SA">
+          </div>
+          <div class="contact-competence__form">
+            <h2>Un projet de rénovation ?</h2>
+            <p class="contact-competence__sub">Contactez-nous directement, nous vous répondons rapidement.</p>
+            <form class="contact-form" action="#" method="POST">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
+
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.ch" required>
+
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+41 00 000 00 00">
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Décrivez votre projet de rénovation..." required></textarea>
+
+              <button type="submit" class="btn btn-primary">Envoyer le message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Competences Carousel -->
+    <section class="competences-carousel">
+      <div class="container">
+        <h2 class="competences-carousel__title fade-in">Nos autres compétences</h2>
+        <div class="carousel-wrapper">
+          <button class="carousel-btn carousel-btn--prev" aria-label="Précédent">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="carousel-track">
+            <a href="promotion-immobilier.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Promotion Immobilière</h3>
+              <p>Conception et développement de projets</p>
+            </a>
+            <a href="terrassement.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Terrassement</h3>
+              <p>Préparer le terrain pour vos projets</p>
+            </a>
+            <a href="maconnerie.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Maçonnerie & Gros Oeuvre</h3>
+              <p>Fondations et structures porteuses</p>
+            </a>
+            <a href="fenetres-portes.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Fenêtres & Portes</h3>
+              <p>Performance et esthétique</p>
+            </a>
+            <a href="peinture-finitions.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Peinture & Finitions</h3>
+              <p>Le détail qui fait la différence</p>
+            </a>
+            <a href="projet-cle-en-main.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Projet Clé en Main</h3>
+              <p>Un interlocuteur unique</p>
+            </a>
+            <a href="vente-immobiliere.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Vente Immobilière</h3>
+              <p>Maximiser la valeur de vos biens</p>
+            </a>
+          </div>
+          <button class="carousel-btn carousel-btn--next" aria-label="Suivant">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
     </section>
   </main>
@@ -213,5 +336,60 @@
 
   <script src="js/group-bar.js?v=11"></script>
   <script src="js/main.js?v=20"></script>
+  <script>
+  (function() {
+    var scroll = document.querySelector('.seh__scroll');
+    if (scroll) {
+      var sticky = scroll.querySelector('.seh__sticky');
+      var media = scroll.querySelector('.seh__media');
+      function update() {
+        var rect = scroll.getBoundingClientRect();
+        var h = scroll.offsetHeight - window.innerHeight;
+        if (h <= 0) return void requestAnimationFrame(update);
+        var p = Math.max(0, Math.min(1, -rect.top / h));
+        sticky.style.setProperty('--p', p.toFixed(4));
+        media.style.setProperty('--p', p.toFixed(4));
+        requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+
+    var fc = document.getElementById('featureCarousel');
+    if (fc) {
+      var chips = fc.querySelectorAll('.feature-carousel__chip');
+      var cards = fc.querySelectorAll('.feature-carousel__card');
+      var current = 0;
+      var total = chips.length;
+      var paused = false;
+      function setActive(idx) {
+        var prev = ((idx - 1) + total) % total;
+        var next = (idx + 1) % total;
+        chips.forEach(function(c, i) { c.classList.toggle('active', i === idx); });
+        cards.forEach(function(c, i) {
+          c.classList.remove('active', 'prev', 'next');
+          if (i === idx) c.classList.add('active');
+          else if (i === prev) c.classList.add('prev');
+          else if (i === next) c.classList.add('next');
+        });
+        current = idx;
+      }
+      chips.forEach(function(chip, i) {
+        chip.addEventListener('click', function() { setActive(i); });
+        chip.addEventListener('mouseenter', function() { paused = true; });
+        chip.addEventListener('mouseleave', function() { paused = false; });
+      });
+      setInterval(function() { if (!paused) setActive((current + 1) % total); }, 3500);
+      setActive(0);
+    }
+
+    var track = document.querySelector('.carousel-track');
+    var prev = document.querySelector('.carousel-btn--prev');
+    var next = document.querySelector('.carousel-btn--next');
+    if (track && prev && next) {
+      prev.addEventListener('click', function() { track.scrollBy({ left: -260, behavior: 'smooth' }); });
+      next.addEventListener('click', function() { track.scrollBy({ left: 260, behavior: 'smooth' }); });
+    }
+  })();
+  </script>
 </body>
 </html>
