@@ -877,8 +877,8 @@ body:has(.comp-dark-section) {
 .carousel-card {
   flex: 0 0 220px;
   scroll-snap-align: start;
-  background: var(--black);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--white);
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   padding: 28px 24px;
   text-align: center;
@@ -887,8 +887,8 @@ body:has(.comp-dark-section) {
 }
 
 .carousel-card:hover {
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+  border-color: var(--yellow);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
   transform: translateY(-4px);
 }
 
@@ -910,13 +910,13 @@ body:has(.comp-dark-section) {
 .carousel-card h3 {
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--yellow);
+  color: var(--black);
   margin-bottom: 6px;
 }
 
 .carousel-card p {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--gray-metal);
   margin-bottom: 0;
   line-height: 1.5;
 }
