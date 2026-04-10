@@ -417,7 +417,7 @@
 /* --- Contact Competence --- */
 .contact-competence {
   padding: 80px 0;
-  background: var(--gray-light);
+  background: var(--black);
 }
 
 .contact-competence__grid {
@@ -512,6 +512,140 @@
   font-size: 1.05rem;
   max-width: 600px;
   margin: 0 auto 2rem;
+}
+
+/* --- Dark Page Sections --- */
+.comp-dark-section {
+  background: var(--black);
+  padding: 100px 0;
+}
+
+.comp-intro {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.comp-intro__text {
+  flex: 1;
+}
+
+.comp-intro__label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.comp-intro__title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.comp-intro__title .highlight {
+  color: var(--yellow);
+}
+
+.comp-intro__text p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.comp-intro__text .btn {
+  margin-top: 12px;
+}
+
+.comp-intro__logo {
+  flex-shrink: 0;
+  width: 280px;
+  height: 280px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.comp-intro__logo-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(253, 217, 0, 0.15) 0%, transparent 55%),
+    linear-gradient(180deg, #222 0%, #111 50%, #222 100%);
+  border-radius: 8px;
+}
+
+.comp-intro__logo-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(135deg, transparent 60%, rgba(255,255,255,0.03) 60%, rgba(255,255,255,0.03) 70%, transparent 70%),
+    linear-gradient(45deg, transparent 65%, rgba(253,217,0,0.05) 65%, rgba(253,217,0,0.05) 75%, transparent 75%);
+}
+
+.comp-intro__logo img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Stats bar */
+.comp-stats {
+  background: var(--yellow);
+  padding: 48px 0;
+}
+
+.comp-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+.comp-stats__number {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--black);
+  display: block;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.comp-stats__label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Dark content wrapper */
+.content-competence--dark {
+  background: var(--black);
+  padding-top: 80px;
+}
+
+.content-competence--dark h2 {
+  color: var(--white);
+}
+
+.content-competence--dark .gallery-block__sub {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* --- Feature Carousel (Services) --- */
@@ -699,7 +833,12 @@
 /* --- Competences Carousel --- */
 .competences-carousel {
   padding: 80px 0;
-  background: var(--white);
+  background: var(--black);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.competences-carousel__title {
+  color: var(--white);
 }
 
 .competences-carousel__title {
@@ -733,20 +872,21 @@
 .carousel-card {
   flex: 0 0 220px;
   scroll-snap-align: start;
-  background: var(--white);
-  border: 1px solid #e8e8e8;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   padding: 28px 24px;
   text-align: center;
   transition: all 0.3s ease;
   text-decoration: none;
-  color: inherit;
+  color: var(--white);
 }
 
 .carousel-card:hover {
   border-color: var(--yellow);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 28px rgba(253, 217, 0, 0.1);
   transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .carousel-card__img {
@@ -767,13 +907,13 @@
 .carousel-card h3 {
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--black);
+  color: var(--white);
   margin-bottom: 6px;
 }
 
 .carousel-card p {
   font-size: 0.8rem;
-  color: var(--gray-metal);
+  color: rgba(255, 255, 255, 0.45);
   margin-bottom: 0;
   line-height: 1.5;
 }
@@ -783,13 +923,13 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid #e0e0e0;
-  background: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gray-dark);
+  color: var(--white);
   transition: all 0.2s ease;
 }
 
@@ -972,6 +1112,28 @@
 
   .contact-competence {
     padding: 50px 0;
+  }
+
+  .comp-intro {
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .comp-intro__logo {
+    width: 200px;
+    height: 200px;
+    padding: 40px;
+    margin: 0 auto;
+  }
+
+  .comp-dark-section {
+    padding: 60px 0;
+  }
+
+  .comp-stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 
   .feature-carousel {
