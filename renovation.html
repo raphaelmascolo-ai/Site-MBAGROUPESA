@@ -121,82 +121,66 @@
     <div class="content-competence content-competence--dark">
       <div class="container">
 
-        <!-- Services Feature Carousel -->
-        <div class="feature-carousel fade-in" id="featureCarousel">
-          <div class="feature-carousel__left">
-            <h2 class="feature-carousel__heading">Nos services</h2>
-            <div class="feature-carousel__list">
-              <button class="feature-carousel__chip active" data-index="0">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
-                <span>Rénovation complète</span>
-              </button>
-              <button class="feature-carousel__chip" data-index="1">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg>
-                <span>Fenêtres & Portes</span>
-              </button>
-              <button class="feature-carousel__chip" data-index="2">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
-                <span>Maçonnerie & Structure</span>
-              </button>
-              <button class="feature-carousel__chip" data-index="3">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                <span>Mise aux normes</span>
-              </button>
-            </div>
-          </div>
-          <div class="feature-carousel__right">
-            <div class="feature-carousel__cards">
-              <div class="feature-carousel__card active" data-index="0">
-                <img src="images/fenetres-saillon.jpg" alt="Rénovation complète">
-                <div class="feature-carousel__card-overlay">
-                  <span class="feature-carousel__card-tag">01 — Rénovation complète</span>
-                  <p>Transformation intégrale de votre bâtiment : structure, isolation, menuiseries et finitions coordonnées par nos équipes.</p>
-                </div>
-              </div>
-              <div class="feature-carousel__card" data-index="1">
-                <img src="images/fenetres-5.jpg" alt="Fenêtres & Portes">
-                <div class="feature-carousel__card-overlay">
-                  <span class="feature-carousel__card-tag">02 — Fenêtres & Portes</span>
-                  <p>Remplacement et modernisation de vos menuiseries pour améliorer confort thermique, acoustique et esthétique.</p>
-                </div>
-              </div>
-              <div class="feature-carousel__card" data-index="2">
-                <img src="images/maconnerie-3.jpg" alt="Maçonnerie & Structure">
-                <div class="feature-carousel__card-overlay">
-                  <span class="feature-carousel__card-tag">03 — Maçonnerie & Structure</span>
-                  <p>Renforcement et adaptation des structures existantes. Ouvertures, agrandissements et consolidation du bâti.</p>
-                </div>
-              </div>
-              <div class="feature-carousel__card" data-index="3">
-                <img src="images/maconnerie-1.jpg" alt="Mise aux normes">
-                <div class="feature-carousel__card-overlay">
-                  <span class="feature-carousel__card-tag">04 — Mise aux normes</span>
-                  <p>Adaptation de votre bâtiment aux normes énergétiques, sismiques et d'accessibilité en vigueur.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Before/After Comparisons -->
+        <div class="comparison-section fade-in">
+          <h2>Avant / Après</h2>
+          <p class="comparison-section__sub">Glissez le curseur pour comparer nos rénovations.</p>
 
-        <!-- Gallery -->
-        <div class="gallery-block gallery-block--dark fade-in">
-          <h2>Nos réalisations</h2>
-          <p class="gallery-block__sub">Quelques-uns de nos projets de rénovation réalisés en Valais.</p>
-          <div class="expand-gallery">
-            <div class="expand-gallery__item">
-              <img src="images/fenetres-saillon.jpg" alt="Saillon - rénovation">
+          <div class="comparison-grid">
+            <div class="img-comparison" data-before="images/reno-1-avant.jpg" data-after="images/reno-1-apres.jpg">
+              <div class="img-comparison__after">
+                <img src="images/reno-1-apres.jpg" alt="Après rénovation 1" draggable="false">
+              </div>
+              <img src="images/reno-1-avant.jpg" alt="Avant rénovation 1" class="img-comparison__before" draggable="false">
+              <div class="img-comparison__handle">
+                <div class="img-comparison__handle-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8l-4 4 4 4"/><path d="M6 8l4 4-4 4"/></svg>
+                </div>
+              </div>
+              <span class="img-comparison__label img-comparison__label--avant">Avant</span>
+              <span class="img-comparison__label img-comparison__label--apres">Après</span>
             </div>
-            <div class="expand-gallery__item">
-              <img src="images/fenetres-1.jpg" alt="Champéry">
+
+            <div class="img-comparison" data-before="images/reno-2-avant.jpg" data-after="images/reno-2-apres.jpg">
+              <div class="img-comparison__after">
+                <img src="images/reno-2-apres.jpg" alt="Après rénovation 2" draggable="false">
+              </div>
+              <img src="images/reno-2-avant.jpg" alt="Avant rénovation 2" class="img-comparison__before" draggable="false">
+              <div class="img-comparison__handle">
+                <div class="img-comparison__handle-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8l-4 4 4 4"/><path d="M6 8l4 4-4 4"/></svg>
+                </div>
+              </div>
+              <span class="img-comparison__label img-comparison__label--avant">Avant</span>
+              <span class="img-comparison__label img-comparison__label--apres">Après</span>
             </div>
-            <div class="expand-gallery__item">
-              <img src="images/fenetres-5.jpg" alt="Lutry">
+
+            <div class="img-comparison" data-before="images/reno-3-avant.jpg" data-after="images/reno-3-apres.jpg">
+              <div class="img-comparison__after">
+                <img src="images/reno-3-apres.jpg" alt="Après rénovation 3" draggable="false">
+              </div>
+              <img src="images/reno-3-avant.jpg" alt="Avant rénovation 3" class="img-comparison__before" draggable="false">
+              <div class="img-comparison__handle">
+                <div class="img-comparison__handle-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8l-4 4 4 4"/><path d="M6 8l4 4-4 4"/></svg>
+                </div>
+              </div>
+              <span class="img-comparison__label img-comparison__label--avant">Avant</span>
+              <span class="img-comparison__label img-comparison__label--apres">Après</span>
             </div>
-            <div class="expand-gallery__item">
-              <img src="images/fenetres-3.jpg" alt="Grandvaux">
-            </div>
-            <div class="expand-gallery__item">
-              <img src="images/fenetres-7.jpg" alt="Trient">
+
+            <div class="img-comparison" data-before="images/reno-4-avant.jpg" data-after="images/reno-4-apres.jpg">
+              <div class="img-comparison__after">
+                <img src="images/reno-4-apres.jpg" alt="Après rénovation 4" draggable="false">
+              </div>
+              <img src="images/reno-4-avant.jpg" alt="Avant rénovation 4" class="img-comparison__before" draggable="false">
+              <div class="img-comparison__handle">
+                <div class="img-comparison__handle-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8l-4 4 4 4"/><path d="M6 8l4 4-4 4"/></svg>
+                </div>
+              </div>
+              <span class="img-comparison__label img-comparison__label--avant">Avant</span>
+              <span class="img-comparison__label img-comparison__label--apres">Après</span>
             </div>
           </div>
         </div>
@@ -354,33 +338,45 @@
       requestAnimationFrame(update);
     }
 
-    var fc = document.getElementById('featureCarousel');
-    if (fc) {
-      var chips = fc.querySelectorAll('.feature-carousel__chip');
-      var cards = fc.querySelectorAll('.feature-carousel__card');
-      var current = 0;
-      var total = chips.length;
-      var paused = false;
-      function setActive(idx) {
-        var prev = ((idx - 1) + total) % total;
-        var next = (idx + 1) % total;
-        chips.forEach(function(c, i) { c.classList.toggle('active', i === idx); });
-        cards.forEach(function(c, i) {
-          c.classList.remove('active', 'prev', 'next');
-          if (i === idx) c.classList.add('active');
-          else if (i === prev) c.classList.add('prev');
-          else if (i === next) c.classList.add('next');
-        });
-        current = idx;
+    // Before/After comparison sliders
+    document.querySelectorAll('.img-comparison').forEach(function(comp) {
+      var afterDiv = comp.querySelector('.img-comparison__after');
+      var handle = comp.querySelector('.img-comparison__handle');
+      var dragging = false;
+
+      function setPosition(x) {
+        var rect = comp.getBoundingClientRect();
+        var pct = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
+        afterDiv.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+        handle.style.left = pct + '%';
       }
-      chips.forEach(function(chip, i) {
-        chip.addEventListener('click', function() { setActive(i); });
-        chip.addEventListener('mouseenter', function() { paused = true; });
-        chip.addEventListener('mouseleave', function() { paused = false; });
+
+      comp.addEventListener('mousedown', function(e) {
+        dragging = true;
+        comp.classList.add('dragging');
+        setPosition(e.clientX);
       });
-      setInterval(function() { if (!paused) setActive((current + 1) % total); }, 3500);
-      setActive(0);
-    }
+      window.addEventListener('mousemove', function(e) {
+        if (dragging) setPosition(e.clientX);
+      });
+      window.addEventListener('mouseup', function() {
+        dragging = false;
+        comp.classList.remove('dragging');
+      });
+
+      comp.addEventListener('touchstart', function(e) {
+        dragging = true;
+        comp.classList.add('dragging');
+        setPosition(e.touches[0].clientX);
+      }, { passive: true });
+      comp.addEventListener('touchmove', function(e) {
+        if (dragging) setPosition(e.touches[0].clientX);
+      }, { passive: true });
+      comp.addEventListener('touchend', function() {
+        dragging = false;
+        comp.classList.remove('dragging');
+      });
+    });
 
     var track = document.querySelector('.carousel-track');
     var prev = document.querySelector('.carousel-btn--prev');
