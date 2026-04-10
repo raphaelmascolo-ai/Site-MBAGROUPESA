@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="site-id" content="mba-groupe">
   <title>Maçonnerie &amp; Gros Œuvre — MBA Groupe SA</title>
-  <meta name="description" content="MBA Groupe SA : maçonnerie et gros œuvre en Valais. Fondations, structures porteuses, murs, dalles et béton armé pour des constructions durables.">
-  <meta property="og:title" content="Maçonnerie & Gros Œuvre — MBA Groupe SA">
-  <meta property="og:description" content="Des fondations solides pour vos projets de construction en Valais.">
+  <meta name="description" content="MBA Groupe SA : services de maçonnerie et gros œuvre en Valais. Fondations, structures, béton armé et murs porteurs pour vos projets de construction.">
+  <meta property="og:title" content="Maçonnerie &amp; Gros Œuvre — MBA Groupe SA">
+  <meta property="og:description" content="Maçonnerie et gros œuvre pour vos projets de construction en Valais.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=20">
-  <link rel="stylesheet" href="css/competence.css?v=1">
+  <link rel="stylesheet" href="css/competence.css?v=17">
 </head>
 <body>
 
@@ -52,112 +52,232 @@
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero-competence">
-      <div class="container fade-in">
-        <div class="accent-line"></div>
-        <h1>Maçonnerie &amp; Gros Œuvre</h1>
-        <p class="hero-tagline">Des fondations solides pour vos projets</p>
+    <!-- Scroll-Expansion Hero -->
+    <section class="seh" id="seh-maconnerie">
+      <div class="seh__scroll">
+        <div class="seh__sticky">
+          <div class="seh__bg" style="background-image: url('images/hero-terrassement.jpg');"></div>
+          <div class="seh__media">
+            <img src="images/hero-terrassement.jpg" alt="Maçonnerie & Gros Œuvre" class="seh__img">
+            <div class="seh__media-overlay"></div>
+          </div>
+          <div class="seh__titles">
+            <h1 class="seh__title seh__title--top">Maçonnerie & Gros Oeuvre</h1>
+            <p class="seh__tagline">Des fondations solides pour vos projets.</p>
+            <p class="seh__hint">Scrollez pour découvrir</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <div class="content-competence">
+    <!-- Description dark section -->
+    <section class="comp-dark-section">
+      <div class="container">
+        <div class="comp-intro fade-in">
+          <div class="comp-intro__text">
+            <span class="comp-intro__label">MBA Construction SA</span>
+            <h2 class="comp-intro__title">L'excellence du <span class="highlight">gros oeuvre</span><br>depuis plus de 25 ans</h2>
+            <p>La maçonnerie et le gros oeuvre constituent le squelette de tout bâtiment. MBA Construction SA réalise les fondations, structures porteuses, murs et dalles avec une précision et une qualité qui garantissent la durabilité de chaque ouvrage.</p>
+            <p>De la villa individuelle à l'immeuble résidentiel, nos équipes maîtrisent le béton armé, les structures complexes et les techniques de construction les plus exigeantes.</p>
+            <a href="companies.html#mba-construction" class="btn btn-primary">Découvrir MBA Construction SA</a>
+          </div>
+          <div class="comp-intro__logo">
+            <div class="comp-intro__logo-bg"></div>
+            <img src="images/logo-mba-construction.png" alt="MBA Construction SA">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="comp-stats">
+      <div class="container">
+        <div class="comp-stats__grid fade-in">
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">25+</span>
+            <span class="comp-stats__label">Années d'expérience</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">500+</span>
+            <span class="comp-stats__label">Projets réalisés</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">150+</span>
+            <span class="comp-stats__label">Collaborateurs</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">100%</span>
+            <span class="comp-stats__label">Valais & Suisse romande</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="content-competence content-competence--dark">
       <div class="container">
 
-        <!-- Description -->
-        <div class="description-block fade-in">
-          <h2>Qu'est-ce que c'est ?</h2>
-          <p>La maçonnerie et le gros œuvre constituent le squelette de tout bâtiment. Nos équipes spécialisées réalisent les fondations, structures porteuses, murs et dalles avec une précision et une qualité qui garantissent la durabilité de votre ouvrage.</p>
-        </div>
-
-        <!-- Services -->
-        <div class="services-block fade-in">
-          <h2>Nos services</h2>
-          <div class="services-grid">
-            <div class="service-card">
-              <h3>Construction générale</h3>
-              <p>Réalisation complète de bâtiments résidentiels, commerciaux et industriels.</p>
+        <!-- Services Feature Carousel -->
+        <div class="feature-carousel fade-in" id="featureCarousel">
+          <div class="feature-carousel__left">
+            <h2 class="feature-carousel__heading">Nos services</h2>
+            <div class="feature-carousel__list">
+              <button class="feature-carousel__chip active" data-index="0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+                <span>Construction générale</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="1">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                <span>Fondations & Sous-sols</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg>
+                <span>Structure & Béton armé</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="3">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+                <span>Murs porteurs & Dalles</span>
+              </button>
             </div>
-            <div class="service-card">
-              <h3>Fondations &amp; Sous-sols</h3>
-              <p>Construction de fondations robustes et de sous-sols étanches adaptés au terrain.</p>
-            </div>
-            <div class="service-card">
-              <h3>Structure &amp; Béton armé</h3>
-              <p>Réalisation de structures en béton armé avec coffrage et ferraillage de précision.</p>
-            </div>
-            <div class="service-card">
-              <h3>Murs porteurs &amp; Dalles</h3>
-              <p>Construction de murs porteurs et de dalles conformes aux normes structurelles en vigueur.</p>
+          </div>
+          <div class="feature-carousel__right">
+            <div class="feature-carousel__cards">
+              <div class="feature-carousel__card active" data-index="0">
+                <img src="images/terrassement-1.jpg" alt="Construction générale">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">01 — Construction générale</span>
+                  <p>Réalisation complète de bâtiments résidentiels et commerciaux. Coordination de tous les corps de métier pour un résultat optimal.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="1">
+                <img src="images/terrassement-2.jpg" alt="Fondations & Sous-sols">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">02 — Fondations & Sous-sols</span>
+                  <p>Réalisation de fondations solides et de sous-sols étanches. Analyse des sols et adaptation des techniques à chaque terrain.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="2">
+                <img src="images/terrassement-3.jpg" alt="Structure & Béton armé">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">03 — Structure & Béton armé</span>
+                  <p>Mise en oeuvre de structures porteuses en béton armé. Dalles, poutres, piliers et voiles avec une précision millimétrique.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="3">
+                <img src="images/terrassement-4.jpg" alt="Murs porteurs & Dalles">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">04 — Murs porteurs & Dalles</span>
+                  <p>Construction de murs porteurs et de dalles conformes aux normes sismiques et thermiques les plus exigeantes.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Gallery -->
-        <div class="gallery-block fade-in">
-          <h2>Galerie</h2>
-          <div class="gallery">
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-          </div>
-        </div>
-
-        <!-- Advantages -->
-        <div class="advantages-block fade-in">
-          <h2>Nos avantages</h2>
-          <div class="advantages-grid">
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <h3>Qualité garantie</h3>
-              <p>Contrôles rigoureux à chaque étape de la construction.</p>
+        <div class="gallery-block gallery-block--dark fade-in">
+          <h2>Nos réalisations</h2>
+          <p class="gallery-block__sub">Quelques-uns de nos chantiers de maçonnerie et gros oeuvre réalisés en Valais.</p>
+          <div class="expand-gallery">
+            <div class="expand-gallery__item">
+              <img src="images/terrassement-1.jpg" alt="Terrassement - excavation">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <h3>Normes respectées</h3>
-              <p>Conformité totale aux normes SIA et réglementations suisses.</p>
+            <div class="expand-gallery__item">
+              <img src="images/terrassement-2.jpg" alt="Terrassement - nivellement">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-              </div>
-              <h3>Durabilité</h3>
-              <p>Des ouvrages conçus pour résister aux conditions climatiques alpines.</p>
+            <div class="expand-gallery__item">
+              <img src="images/terrassement-3.jpg" alt="Terrassement - fondations">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              </div>
-              <h3>Expertise structurelle</h3>
-              <p>Plus de 25 ans d'expérience en gros œuvre et structures complexes.</p>
+            <div class="expand-gallery__item">
+              <img src="images/terrassement-4.jpg" alt="Terrassement - aménagement">
             </div>
-          </div>
-        </div>
-
-        <!-- Companies Involved -->
-        <div class="companies-involved fade-in">
-          <h2>Sociétés concernées</h2>
-          <div class="companies-box">
-            <ul>
-              <li><strong>MBA Construction SA</strong></li>
-            </ul>
+            <div class="expand-gallery__item">
+              <img src="images/terrassement-5.jpg" alt="Terrassement - drainage">
+            </div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- CTA -->
-    <section class="cta-competence">
-      <div class="container fade-in">
-        <h2>Un projet de construction ?</h2>
-        <p>Contactez-nous pour discuter de vos besoins en maçonnerie et gros œuvre.</p>
-        <a href="contact.html" class="btn btn-primary">Contactez-nous</a>
+    <!-- Contact -->
+    <section class="contact-competence">
+      <div class="container">
+        <div class="contact-competence__grid fade-in">
+          <div class="contact-competence__photo">
+            <img src="images/gerald.jpg" alt="Gérald — MBA Construction SA">
+          </div>
+          <div class="contact-competence__form">
+            <h2>Un projet de maçonnerie ?</h2>
+            <p class="contact-competence__sub">Contactez-nous directement, nous vous répondons rapidement.</p>
+            <form class="contact-form" action="#" method="POST">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
+
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.ch" required>
+
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+41 00 000 00 00">
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Décrivez votre projet de maçonnerie..." required></textarea>
+
+              <button type="submit" class="btn btn-primary">Envoyer le message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Competences Carousel -->
+    <section class="competences-carousel">
+      <div class="container">
+        <h2 class="competences-carousel__title fade-in">Nos autres compétences</h2>
+        <div class="carousel-wrapper">
+          <button class="carousel-btn carousel-btn--prev" aria-label="Précédent">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="carousel-track">
+            <a href="promotion-immobilier.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Promotion Immobilière</h3>
+              <p>Conception et développement de projets</p>
+            </a>
+            <a href="terrassement.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Terrassement</h3>
+              <p>Préparer le terrain pour vos projets</p>
+            </a>
+            <a href="fenetres-portes.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Fenêtres & Portes</h3>
+              <p>Performance et esthétique</p>
+            </a>
+            <a href="peinture-finitions.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Peinture & Finitions</h3>
+              <p>Le détail qui fait la différence</p>
+            </a>
+            <a href="renovation.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Rénovation</h3>
+              <p>Nouvelle vie pour vos espaces</p>
+            </a>
+            <a href="projet-cle-en-main.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Projet Clé en Main</h3>
+              <p>Un interlocuteur unique</p>
+            </a>
+            <a href="vente-immobiliere.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Vente Immobilière</h3>
+              <p>Maximiser la valeur de vos biens</p>
+            </a>
+          </div>
+          <button class="carousel-btn carousel-btn--next" aria-label="Suivant">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
     </section>
   </main>
@@ -211,5 +331,75 @@
 
   <script src="js/group-bar.js?v=11"></script>
   <script src="js/main.js?v=20"></script>
+  <script>
+  (function() {
+    // Scroll-expansion hero
+    var scroll = document.querySelector('.seh__scroll');
+    if (scroll) {
+      var sticky = scroll.querySelector('.seh__sticky');
+      var media = scroll.querySelector('.seh__media');
+      function update() {
+        var rect = scroll.getBoundingClientRect();
+        var h = scroll.offsetHeight - window.innerHeight;
+        if (h <= 0) return void requestAnimationFrame(update);
+        var p = Math.max(0, Math.min(1, -rect.top / h));
+        sticky.style.setProperty('--p', p.toFixed(4));
+        media.style.setProperty('--p', p.toFixed(4));
+        requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+
+    // Feature carousel (services)
+    var fc = document.getElementById('featureCarousel');
+    if (fc) {
+      var chips = fc.querySelectorAll('.feature-carousel__chip');
+      var cards = fc.querySelectorAll('.feature-carousel__card');
+      var current = 0;
+      var total = chips.length;
+      var paused = false;
+
+      function setActive(idx) {
+        var prev = ((idx - 1) + total) % total;
+        var next = (idx + 1) % total;
+        chips.forEach(function(c, i) {
+          c.classList.toggle('active', i === idx);
+        });
+        cards.forEach(function(c, i) {
+          c.classList.remove('active', 'prev', 'next');
+          if (i === idx) c.classList.add('active');
+          else if (i === prev) c.classList.add('prev');
+          else if (i === next) c.classList.add('next');
+        });
+        current = idx;
+      }
+
+      chips.forEach(function(chip, i) {
+        chip.addEventListener('click', function() { setActive(i); });
+        chip.addEventListener('mouseenter', function() { paused = true; });
+        chip.addEventListener('mouseleave', function() { paused = false; });
+      });
+
+      setInterval(function() {
+        if (!paused) setActive((current + 1) % total);
+      }, 3500);
+
+      setActive(0);
+    }
+
+    // Carousel buttons
+    var track = document.querySelector('.carousel-track');
+    var prev = document.querySelector('.carousel-btn--prev');
+    var next = document.querySelector('.carousel-btn--next');
+    if (track && prev && next) {
+      prev.addEventListener('click', function() {
+        track.scrollBy({ left: -260, behavior: 'smooth' });
+      });
+      next.addEventListener('click', function() {
+        track.scrollBy({ left: 260, behavior: 'smooth' });
+      });
+    }
+  })();
+  </script>
 </body>
 </html>
