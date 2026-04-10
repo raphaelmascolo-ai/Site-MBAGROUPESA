@@ -2,48 +2,87 @@
    MBA Groupe SA — Competence Pages
    ============================================ */
 
-/* --- Orange Theme (ASV Fenêtres & Portes) --- */
+/* --- White/Light Theme (ASV Fenêtres & Portes) --- */
 .theme-orange {
   --accent: #E8751A;
   --accent-light: #F4943D;
-  --accent-glow: rgba(232, 117, 26, 0.15);
 }
 
-.theme-orange .seh__title {
-  color: var(--accent);
+/* Override dark body */
+body.theme-orange {
+  background: var(--white);
+}
+
+/* Light intro section */
+.theme-orange .comp-dark-section {
+  background: var(--white);
 }
 
 .theme-orange .comp-intro__label {
   color: var(--accent);
 }
 
+.theme-orange .comp-intro__title {
+  color: var(--black);
+}
+
 .theme-orange .comp-intro__title .highlight {
   color: var(--accent);
 }
 
+.theme-orange .comp-intro__text p {
+  color: var(--gray-dark);
+}
+
+.theme-orange .comp-intro__logo {
+  background: var(--gray-light);
+}
+
 .theme-orange .comp-intro__logo-bg {
-  background:
-    radial-gradient(ellipse at 70% 30%, var(--accent-glow) 0%, transparent 55%),
-    linear-gradient(180deg, #222 0%, #111 50%, #222 100%);
+  background: var(--gray-light);
 }
 
 .theme-orange .comp-intro__logo-bg::after {
-  background-image:
-    linear-gradient(135deg, transparent 60%, rgba(255,255,255,0.03) 60%, rgba(255,255,255,0.03) 70%, transparent 70%),
-    linear-gradient(45deg, transparent 65%, rgba(232,117,26,0.06) 65%, rgba(232,117,26,0.06) 75%, transparent 75%);
+  display: none;
 }
 
+/* Stats bar */
 .theme-orange .comp-stats {
-  background: var(--accent);
+  background: var(--black);
 }
 
-.theme-orange .btn-primary {
-  background: var(--accent);
+.theme-orange .comp-stats__number {
+  color: var(--accent);
 }
 
-.theme-orange .btn-primary:hover {
-  background: var(--accent-light);
-  box-shadow: 0 6px 20px rgba(232, 117, 26, 0.3);
+.theme-orange .comp-stats__label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Light content area */
+.theme-orange .content-competence--dark {
+  background: var(--white);
+}
+
+.theme-orange .content-competence--dark h2 {
+  color: var(--black);
+}
+
+.theme-orange .content-competence--dark .gallery-block__sub {
+  color: var(--gray-metal);
+}
+
+/* Services carousel - light right panel */
+.theme-orange .feature-carousel {
+  border: 1px solid #e0e0e0;
+}
+
+.theme-orange .feature-carousel__left {
+  background: var(--black);
+}
+
+.theme-orange .feature-carousel__left::after {
+  display: none;
 }
 
 .theme-orange .feature-carousel__heading {
@@ -55,6 +94,15 @@
   border-color: var(--accent);
 }
 
+.theme-orange .feature-carousel__right {
+  background: var(--gray-light);
+}
+
+.theme-orange .feature-carousel__card {
+  border-color: #e0e0e0;
+  background: var(--white);
+}
+
 .theme-orange .feature-carousel__card.active {
   border-color: var(--accent);
 }
@@ -63,20 +111,19 @@
   background: var(--accent);
 }
 
-.theme-orange .feature-carousel__card {
-  border-color: rgba(232, 117, 26, 0.3);
+/* Hero title */
+.theme-orange .seh__title {
+  color: var(--white);
 }
 
-.theme-orange .feature-carousel__left {
-  background:
-    radial-gradient(ellipse at 70% 30%, var(--accent-glow) 0%, transparent 55%),
-    linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
+/* Buttons */
+.theme-orange .btn-primary {
+  background: var(--accent);
 }
 
-.theme-orange .feature-carousel__left::after {
-  background-image:
-    linear-gradient(135deg, transparent 60%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0.02) 70%, transparent 70%),
-    linear-gradient(45deg, transparent 65%, rgba(232,117,26,0.05) 65%, rgba(232,117,26,0.05) 75%, transparent 75%);
+.theme-orange .btn-primary:hover {
+  background: var(--accent-light);
+  box-shadow: 0 6px 20px rgba(232, 117, 26, 0.3);
 }
 
 /* --- Hero Competence --- */
