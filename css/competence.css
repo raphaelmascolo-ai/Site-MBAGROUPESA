@@ -91,7 +91,7 @@ body.theme-orange {
 }
 
 .theme-orange .feature-carousel__heading {
-  color: var(--white);
+  color: var(--white) !important;
 }
 
 .theme-orange .feature-carousel__chip.active {
