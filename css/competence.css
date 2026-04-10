@@ -798,6 +798,11 @@ body.theme-orange:has(.comp-dark-section) {
   color: rgba(255, 255, 255, 0.5);
 }
 
+/* Section heading above carousel */
+.section-heading {
+  margin-bottom: 32px;
+}
+
 /* --- Feature Carousel (Services) --- */
 .feature-carousel {
   display: flex;
