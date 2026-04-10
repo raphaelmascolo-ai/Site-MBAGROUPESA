@@ -506,6 +506,106 @@
   margin: 0 auto 2rem;
 }
 
+/* --- Competences Carousel --- */
+.competences-carousel {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.competences-carousel__title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 8px 0;
+  flex: 1;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-card {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+  background: var(--white);
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.carousel-card:hover {
+  border-color: var(--yellow);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+.carousel-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.carousel-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+
+.carousel-card p {
+  font-size: 0.8rem;
+  color: var(--gray-metal);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.carousel-btn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  background: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-dark);
+  transition: all 0.2s ease;
+}
+
+.carousel-btn:hover {
+  border-color: var(--yellow);
+  background: var(--yellow);
+  color: var(--black);
+}
+
 /* --- Scroll-Expansion Hero --- */
 .seh__scroll {
   height: 300vh;
@@ -679,6 +779,18 @@
 
   .contact-competence {
     padding: 50px 0;
+  }
+
+  .competences-carousel {
+    padding: 50px 0;
+  }
+
+  .carousel-btn {
+    display: none;
+  }
+
+  .carousel-card {
+    flex: 0 0 180px;
   }
 
   .contact-competence__grid {
