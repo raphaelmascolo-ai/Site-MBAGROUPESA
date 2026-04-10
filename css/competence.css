@@ -36,27 +36,27 @@ body.theme-orange {
 
 .theme-orange .comp-intro__logo-bg {
   background:
-    radial-gradient(ellipse at 70% 30%, rgba(232, 117, 26, 0.12) 0%, transparent 55%),
-    linear-gradient(180deg, #1a1a1a 0%, #111 50%, #1a1a1a 100%);
+    radial-gradient(ellipse at 70% 30%, rgba(232, 117, 26, 0.08) 0%, transparent 55%),
+    linear-gradient(180deg, #f0f0f0 0%, #e8e8e8 50%, #f0f0f0 100%);
 }
 
 .theme-orange .comp-intro__logo-bg::after {
   background-image:
-    linear-gradient(135deg, transparent 60%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0.02) 70%, transparent 70%),
-    linear-gradient(45deg, transparent 65%, rgba(232,117,26,0.06) 65%, rgba(232,117,26,0.06) 75%, transparent 75%);
+    linear-gradient(135deg, transparent 60%, rgba(0,0,0,0.02) 60%, rgba(0,0,0,0.02) 70%, transparent 70%),
+    linear-gradient(45deg, transparent 65%, rgba(232,117,26,0.05) 65%, rgba(232,117,26,0.05) 75%, transparent 75%);
 }
 
 /* Stats bar */
 .theme-orange .comp-stats {
-  background: var(--black);
+  background: linear-gradient(135deg, var(--accent) 0%, #FDD900 100%);
 }
 
 .theme-orange .comp-stats__number {
-  color: var(--accent);
+  color: var(--black);
 }
 
 .theme-orange .comp-stats__label {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 /* Light content area */
@@ -78,13 +78,16 @@ body.theme-orange {
 }
 
 .theme-orange .feature-carousel__left {
-  background: var(--black);
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(253, 217, 0, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(232, 117, 26, 0.08) 0%, transparent 55%),
+    linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
 }
 
 .theme-orange .feature-carousel__left::after {
   background-image:
-    linear-gradient(135deg, transparent 60%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0.02) 70%, transparent 70%),
-    linear-gradient(45deg, transparent 65%, rgba(232,117,26,0.05) 65%, rgba(232,117,26,0.05) 75%, transparent 75%);
+    linear-gradient(135deg, transparent 60%, rgba(253,217,0,0.03) 60%, rgba(253,217,0,0.03) 70%, transparent 70%),
+    linear-gradient(45deg, transparent 65%, rgba(232,117,26,0.04) 65%, rgba(232,117,26,0.04) 75%, transparent 75%);
 }
 
 .theme-orange .feature-carousel__heading {
@@ -126,6 +129,18 @@ body.theme-orange {
 .theme-orange .btn-primary:hover {
   background: var(--accent-light);
   box-shadow: 0 6px 20px rgba(232, 117, 26, 0.3);
+}
+
+.theme-orange .carousel-card:hover {
+  border-color: var(--accent);
+}
+
+.theme-orange .contact-competence .btn-primary {
+  background: var(--accent);
+}
+
+.theme-orange .contact-competence .btn-primary:hover {
+  background: var(--accent-light);
 }
 
 /* --- Hero Competence --- */
