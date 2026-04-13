@@ -2177,10 +2177,11 @@ p {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #e0e0e0, #ccc);
+  background: linear-gradient(135deg, #333, #222);
   margin: 0 auto 20px;
   position: relative;
   overflow: hidden;
+  border: 3px solid rgba(253, 217, 0, 0.3);
 }
 
 .team-member__photo img {
@@ -2204,11 +2205,12 @@ p {
 .team-member h3 {
   font-size: 1rem;
   margin-bottom: 4px;
+  color: var(--white);
 }
 
 .team-member p {
   font-size: 0.85rem;
-  color: var(--gray-metal);
+  color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -2636,10 +2638,10 @@ p {
   top: 24px;
   left: 24px;
   z-index: 1000;
-  background: var(--white);
+  background: var(--black);
   border-radius: 8px;
   padding: 24px 28px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   border-left: 4px solid var(--yellow);
   max-width: 280px;
 }
@@ -2647,18 +2649,18 @@ p {
 .map-overlay-card h3 {
   font-size: 1.1rem;
   margin-bottom: 8px;
-  color: var(--black);
+  color: var(--white);
 }
 
 .map-overlay-card p {
   font-size: 0.88rem;
-  color: var(--gray-dark);
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 8px;
   line-height: 1.5;
 }
 
 .map-overlay-card a {
-  color: var(--black);
+  color: var(--yellow);
   font-weight: 600;
 }
 
