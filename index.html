@@ -114,7 +114,7 @@
       </div>
     </section>
 
-    <!-- Nos Sociétés -->
+    <!-- Nos Sociétés - Bento Grid -->
     <section class="section section--dark">
       <div class="container">
         <div class="section__header fade-in">
@@ -122,31 +122,56 @@
           <h2>Nos Sociétés</h2>
           <p class="section-subtitle">Un écosystème de sociétés complémentaires au service de vos projets.</p>
         </div>
-        <div class="home-societes fade-in">
-          <a href="companies.html#mba-construction" class="home-societe-card">
-            <div class="home-societe-card__img"><img src="images/logo-mba-construction.png" alt="MBA Construction SA"></div>
-            <h3>MBA Construction SA</h3>
-            <p>Maçonnerie, béton armé et construction générale depuis 2001.</p>
+        <div class="bento-societes fade-in">
+          <!-- MBA Construction - Large featured -->
+          <a href="https://mba-construction.ch/" target="_blank" rel="noopener" class="bento-s bento-s--featured">
+            <div class="bento-s__glow"></div>
+            <div class="bento-s__content">
+              <div class="bento-s__logo"><img src="images/logo-mba-construction.png" alt="MBA Construction SA"></div>
+              <h3>MBA Construction SA</h3>
+              <p>Maçonnerie, béton armé et construction générale depuis 2001. Le pilier historique du groupe.</p>
+              <span class="bento-s__link">Visiter le site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+            </div>
           </a>
-          <a href="companies.html#asv-construction" class="home-societe-card">
-            <div class="home-societe-card__img"><img src="images/logo-asv-construction.png" alt="ASV Construction Générale SA"></div>
-            <h3>ASV Construction Générale SA</h3>
-            <p>Construction générale et projets clés en main.</p>
+          <!-- ASV Construction -->
+          <a href="https://asv-construction.ch/" target="_blank" rel="noopener" class="bento-s">
+            <div class="bento-s__glow"></div>
+            <div class="bento-s__content">
+              <div class="bento-s__logo"><img src="images/logo-asv-construction.png" alt="ASV Construction Générale SA"></div>
+              <h3>ASV Construction Générale SA</h3>
+              <p>Construction générale et projets clés en main.</p>
+              <span class="bento-s__link">Visiter le site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+            </div>
           </a>
-          <a href="companies.html#asv-fenetres" class="home-societe-card">
-            <div class="home-societe-card__img"><img src="images/logo-asv-fenetres.png" alt="ASV Fenêtres et Portes SA"></div>
-            <h3>ASV Fenêtres et Portes SA</h3>
-            <p>Fenêtres, portes et isolation thermique.</p>
+          <!-- ASV Fenêtres -->
+          <a href="#" class="bento-s">
+            <div class="bento-s__glow"></div>
+            <div class="bento-s__content">
+              <div class="bento-s__logo"><img src="images/logo-asv-fenetres.png" alt="ASV Fenêtres et Portes SA"></div>
+              <h3>ASV Fenêtres et Portes SA</h3>
+              <p>Fenêtres, portes et isolation thermique.</p>
+              <span class="bento-s__link">Visiter le site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+            </div>
           </a>
-          <a href="companies.html#mba-immobilier" class="home-societe-card">
-            <div class="home-societe-card__img"><img src="images/logo-mba-immobilier.png" alt="MBA Immobilier SA"></div>
-            <h3>MBA Immobilier SA</h3>
-            <p>Promotion, vente et gestion immobilière.</p>
+          <!-- MBA Immobilier -->
+          <a href="#" class="bento-s">
+            <div class="bento-s__glow"></div>
+            <div class="bento-s__content">
+              <div class="bento-s__logo"><img src="images/logo-mba-immobilier.png" alt="MBA Immobilier SA"></div>
+              <h3>MBA Immobilier SA</h3>
+              <p>Promotion, vente et gestion immobilière.</p>
+              <span class="bento-s__link">Visiter le site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+            </div>
           </a>
-          <a href="companies.html#asv-color" class="home-societe-card">
-            <div class="home-societe-card__img"><img src="images/logo-asv-color.jpg" alt="ASV Color SA"></div>
-            <h3>ASV Color SA</h3>
-            <p>Peinture et finitions du bâtiment.</p>
+          <!-- ASV Color -->
+          <a href="#" class="bento-s">
+            <div class="bento-s__glow"></div>
+            <div class="bento-s__content">
+              <div class="bento-s__logo"><img src="images/logo-asv-color.png" alt="ASV Color SA"></div>
+              <h3>ASV Color SA</h3>
+              <p>Peinture et finitions du bâtiment.</p>
+              <span class="bento-s__link">Visiter le site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+            </div>
           </a>
         </div>
       </div>
@@ -345,15 +370,26 @@
   <script src="js/main.js?v=20"></script>
 <script>
 (function() {
+  // Actualités carousel
   var wrapper = document.querySelector('.actu-carousel__wrapper');
-  if (!wrapper) return;
-  var track = wrapper.querySelector('.actu-carousel__track');
-  var prev = wrapper.querySelector('.actu-carousel__prev');
-  var next = wrapper.querySelector('.actu-carousel__next');
-  if (track && prev && next) {
-    prev.addEventListener('click', function() { track.scrollBy({ left: -380, behavior: 'smooth' }); });
-    next.addEventListener('click', function() { track.scrollBy({ left: 380, behavior: 'smooth' }); });
+  if (wrapper) {
+    var track = wrapper.querySelector('.actu-carousel__track');
+    var prev = wrapper.querySelector('.actu-carousel__prev');
+    var next = wrapper.querySelector('.actu-carousel__next');
+    if (track && prev && next) {
+      prev.addEventListener('click', function() { track.scrollBy({ left: -380, behavior: 'smooth' }); });
+      next.addEventListener('click', function() { track.scrollBy({ left: 380, behavior: 'smooth' }); });
+    }
   }
+
+  // Bento glow follow mouse
+  document.querySelectorAll('.bento-s').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      var rect = card.getBoundingClientRect();
+      card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+    });
+  });
 })();
 </script>
 </body>
