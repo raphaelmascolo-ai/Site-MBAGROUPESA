@@ -1949,7 +1949,7 @@ p {
 .bento-s__bg-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.75) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 100%);
 }
 
 .bento-s--hero .bento-s__content {
