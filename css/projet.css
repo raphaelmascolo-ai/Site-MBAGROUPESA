@@ -90,7 +90,7 @@
 
 /* --- Le Projet (Info Section) --- */
 .projet-info {
-  background: #111;
+  background: var(--black);
   padding: 6rem 0;
 }
 
