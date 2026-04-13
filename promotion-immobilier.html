@@ -200,6 +200,44 @@
           </div>
         </div>
 
+      </div>
+    </div>
+
+    <!-- Nos projets actuels -->
+    <section class="competences-carousel" style="background:var(--black);border-top:1px solid rgba(255,255,255,0.06);">
+      <div class="container">
+        <h2 class="competences-carousel__title fade-in" style="color:var(--white);">Nos projets actuels</h2>
+        <div class="carousel-wrapper">
+          <button class="carousel-btn carousel-btn--prev" aria-label="Précédent">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="carousel-track" id="projetsTrack">
+            <a href="vernayaz-tsareire.html" class="carousel-card" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);color:var(--white);">
+              <div class="carousel-card__img"><img src="images/vernayaz-3.jpg" alt="Vernayaz"></div>
+              <h3 style="color:var(--yellow);">Vernayaz — Tsarreire Tope</h3>
+              <p style="color:rgba(255,255,255,0.5);">34 appartements, 6 bâtiments</p>
+            </a>
+            <a href="verossaz-champlans.html" class="carousel-card" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);color:var(--white);">
+              <div class="carousel-card__img"><img src="images/hero-verossaz.jpg" alt="Vérossaz"></div>
+              <h3 style="color:var(--yellow);">Vérossaz — Les Champlans</h3>
+              <p style="color:rgba(255,255,255,0.5);">12 appartements, 2 bâtiments</p>
+            </a>
+            <a href="salvan-jardins-marais.html" class="carousel-card" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);color:var(--white);">
+              <div class="carousel-card__img"><img src="images/salvan-1.jpg" alt="Salvan"></div>
+              <h3 style="color:var(--yellow);">Salvan — Les Jardins du Marais</h3>
+              <p style="color:rgba(255,255,255,0.5);">9 appartements, 3 étages</p>
+            </a>
+          </div>
+          <button class="carousel-btn carousel-btn--next" aria-label="Suivant">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="content-competence content-competence--dark">
+      <div class="container">
+
         <!-- Gallery -->
         <div class="gallery-block gallery-block--dark fade-in">
           <h2>Nos réalisations</h2>
@@ -424,18 +462,20 @@
       setActive(0);
     }
 
-    // Carousel buttons
-    var track = document.querySelector('.carousel-track');
-    var prev = document.querySelector('.carousel-btn--prev');
-    var next = document.querySelector('.carousel-btn--next');
-    if (track && prev && next) {
-      prev.addEventListener('click', function() {
-        track.scrollBy({ left: -260, behavior: 'smooth' });
-      });
-      next.addEventListener('click', function() {
-        track.scrollBy({ left: 260, behavior: 'smooth' });
-      });
-    }
+    // Carousel buttons (all instances)
+    document.querySelectorAll('.carousel-wrapper').forEach(function(wrapper) {
+      var track = wrapper.querySelector('.carousel-track');
+      var prev = wrapper.querySelector('.carousel-btn--prev');
+      var next = wrapper.querySelector('.carousel-btn--next');
+      if (track && prev && next) {
+        prev.addEventListener('click', function() {
+          track.scrollBy({ left: -260, behavior: 'smooth' });
+        });
+        next.addEventListener('click', function() {
+          track.scrollBy({ left: 260, behavior: 'smooth' });
+        });
+      }
+    });
   })();
   </script>
 </body>
