@@ -59,9 +59,12 @@
   </header>
 
   <main>
-    <!-- Hero -->
+    <!-- Hero with video -->
     <section class="projet-hero">
-      <div class="projet-hero__bg"></div>
+      <video class="projet-hero__video" muted autoplay loop playsinline preload="auto">
+        <source src="images/vernayaz-video.mp4" type="video/mp4">
+      </video>
+      <div class="projet-hero__overlay"></div>
       <div class="projet-hero__content">
         <h1 class="projet-hero__title">Vernayaz</h1>
         <p class="projet-hero__subtitle">Tsareire Tope</p>
@@ -112,34 +115,34 @@
           <!-- 2.5 pièces -->
           <div class="appart-card">
             <div class="appart-card__image">
-              <span class="appart-card__image-placeholder">Image à venir</span>
+              <img src="images/vernayaz-1.jpg" alt="Appartement 2.5 pièces">
             </div>
             <div class="appart-card__body">
               <div class="appart-card__rooms">2.5 pièces</div>
               <div class="appart-card__price">Dès CHF 290'000.—</div>
-              <a href="#" class="appart-card__btn">Voir les plans</a>
+              <a href="contact.html" class="appart-card__btn">Voir les plans</a>
             </div>
           </div>
           <!-- 3.5 pièces -->
           <div class="appart-card">
             <div class="appart-card__image">
-              <span class="appart-card__image-placeholder">Image à venir</span>
+              <img src="images/vernayaz-2.jpg" alt="Appartement 3.5 pièces">
             </div>
             <div class="appart-card__body">
               <div class="appart-card__rooms">3.5 pièces</div>
               <div class="appart-card__price">Dès CHF 390'000.—</div>
-              <a href="#" class="appart-card__btn">Voir les plans</a>
+              <a href="contact.html" class="appart-card__btn">Voir les plans</a>
             </div>
           </div>
           <!-- 4.5 pièces -->
           <div class="appart-card">
             <div class="appart-card__image">
-              <span class="appart-card__image-placeholder">Image à venir</span>
+              <img src="images/vernayaz-3.jpg" alt="Appartement 4.5 pièces">
             </div>
             <div class="appart-card__body">
               <div class="appart-card__rooms">4.5 pièces</div>
               <div class="appart-card__price">Dès CHF 490'000.—</div>
-              <a href="#" class="appart-card__btn">Voir les plans</a>
+              <a href="contact.html" class="appart-card__btn">Voir les plans</a>
             </div>
           </div>
         </div>
@@ -206,12 +209,35 @@
       </div>
     </section>
 
-    <!-- Intéressé -->
-    <section class="projet-cta">
+    <!-- Contact -->
+    <section class="projet-contact">
       <div class="container">
-        <h2 class="projet-cta__title">Intéressé ?</h2>
-        <p class="projet-cta__text">Ce projet vous plaît ? Contactez-nous pour obtenir la documentation complète ou planifier une visite.</p>
-        <a href="contact.html" class="projet-cta__btn">Nous contacter</a>
+        <div class="projet-contact__header">
+          <p class="projet-contact__label">Intéressé ?</p>
+          <h2 class="projet-contact__title">Contactez-nous pour ce projet</h2>
+        </div>
+        <div class="projet-contact__grid">
+          <div class="projet-contact__photo">
+            <img src="images/gerald.jpg" alt="Votre contact — MBA Groupe SA">
+          </div>
+          <div class="projet-contact__form">
+            <form action="#" method="POST">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
+
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.ch" required>
+
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+41 00 000 00 00">
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Je suis intéressé(e) par le projet Tsareire Tope..." required></textarea>
+
+              <button type="submit" class="btn btn-primary">Envoyer le message</button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   </main>
