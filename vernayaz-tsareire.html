@@ -59,19 +59,23 @@
   </header>
 
   <main>
-    <!-- Hero with video -->
-    <section class="projet-hero">
-      <video class="projet-hero__video" muted autoplay loop playsinline preload="auto">
-        <source src="images/vernayaz-video.mp4" type="video/mp4">
-      </video>
-      <div class="projet-hero__overlay"></div>
-      <div class="projet-hero__content">
-        <h1 class="projet-hero__title">Vernayaz</h1>
-        <p class="projet-hero__subtitle">Tsareire Tope</p>
-      </div>
-      <div class="projet-hero__scroll">
-        Découvrir
-        <span></span>
+    <!-- Hero with scroll-driven video -->
+    <section class="projet-hero projet-hero--scroll">
+      <div class="projet-hero__sticky">
+        <div class="projet-hero__bg">
+          <video class="projet-hero__player" muted playsinline preload="auto">
+            <source src="images/vernayaz-video.mp4" type="video/mp4">
+          </video>
+          <div class="projet-hero__overlay"></div>
+        </div>
+        <div class="projet-hero__content">
+          <h1 class="projet-hero__title">Vernayaz</h1>
+          <p class="projet-hero__subtitle">Tsareire Tope</p>
+        </div>
+        <div class="projet-hero__scroll">
+          Découvrir
+          <span></span>
+        </div>
       </div>
     </section>
 
@@ -295,31 +299,99 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
   (function() {
+    // Scroll-driven video
+    var heroSection = document.querySelector('.projet-hero--scroll');
+    var video = document.querySelector('.projet-hero__player');
+    if (heroSection && video) {
+      var isMobile = window.innerWidth < 768 || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+      if (isMobile) {
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.play().catch(function(){});
+      } else {
+        var TOTAL_FRAMES = 120;
+        var frames = [];
+        var framesReady = false;
+        var targetFrame = 0;
+        var currentFrame = 0;
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        canvas.style.cssText = 'width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;';
+
+        function showFirst() {
+          canvas.width = video.videoWidth || 1920;
+          canvas.height = video.videoHeight || 1080;
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          video.style.display = 'none';
+          video.parentNode.appendChild(canvas);
+        }
+
+        function seekTo(t) {
+          return new Promise(function(r) {
+            var fn = function() { video.removeEventListener('seeked', fn); r(); };
+            video.addEventListener('seeked', fn);
+            video.currentTime = t;
+          });
+        }
+
+        async function extract() {
+          var dur = video.duration;
+          frames.length = TOTAL_FRAMES;
+          framesReady = true;
+          for (var i = 0; i < TOTAL_FRAMES; i++) {
+            await seekTo((i / (TOTAL_FRAMES - 1)) * dur);
+            var off = document.createElement('canvas');
+            off.width = canvas.width; off.height = canvas.height;
+            off.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+            frames[i] = off;
+          }
+        }
+
+        function drawFrame(idx) {
+          var t = Math.round(Math.max(0, Math.min(TOTAL_FRAMES - 1, idx)));
+          if (frames[t]) { ctx.clearRect(0, 0, canvas.width, canvas.height); ctx.drawImage(frames[t], 0, 0); }
+        }
+
+        function updateTarget() {
+          var rect = heroSection.getBoundingClientRect();
+          var h = heroSection.offsetHeight - window.innerHeight;
+          var p = Math.max(0, Math.min(1, -rect.top / h));
+          targetFrame = p * (TOTAL_FRAMES - 1);
+        }
+
+        function renderLoop() {
+          if (framesReady) {
+            var diff = targetFrame - currentFrame;
+            if (Math.abs(diff) > 0.05) { currentFrame += diff * 0.12; drawFrame(currentFrame); }
+          }
+          requestAnimationFrame(renderLoop);
+        }
+
+        video.addEventListener('loadeddata', function() { showFirst(); requestAnimationFrame(renderLoop); extract(); });
+        if (video.readyState >= 2) { showFirst(); requestAnimationFrame(renderLoop); extract(); }
+        window.addEventListener('scroll', updateTarget, { passive: true });
+      }
+    }
+
+    // Map
     var mapEl = document.getElementById('projet-map');
-    if (!mapEl) return;
-
-    var lat = 46.1317;
-    var lng = 7.0389;
-
-    var map = L.map('projet-map', {
-      scrollWheelZoom: false
-    }).setView([lat, lng], 15);
-
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
-      maxZoom: 19
-    }).addTo(map);
-
-    var icon = L.divIcon({
-      className: 'map-marker',
-      html: '<div style="width:22px;height:22px;background:#FDD900;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,0.5);"></div>',
-      iconSize: [22, 22],
-      iconAnchor: [11, 11]
-    });
-
-    L.marker([lat, lng], { icon: icon })
-      .addTo(map)
-      .bindPopup('<strong>Tsareire Tope</strong><br>Vernayaz, Valais');
+    if (mapEl) {
+      var lat = 46.1317;
+      var lng = 7.0389;
+      var map = L.map('projet-map', { scrollWheelZoom: false }).setView([lat, lng], 15);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+        maxZoom: 19
+      }).addTo(map);
+      var icon = L.divIcon({
+        className: 'map-marker',
+        html: '<div style="width:22px;height:22px;background:#FDD900;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,0.5);"></div>',
+        iconSize: [22, 22], iconAnchor: [11, 11]
+      });
+      L.marker([lat, lng], { icon: icon }).addTo(map).bindPopup('<strong>Tsareire Tope</strong><br>Vernayaz, Valais');
+    }
   })();
   </script>
 </body>

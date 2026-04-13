@@ -453,10 +453,31 @@
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* --- Video Hero --- */
-.projet-hero__video {
+/* --- Scroll-driven Video Hero --- */
+.projet-hero--scroll {
+  height: 300vh;
+  min-height: auto;
+  display: block;
+}
+
+.projet-hero__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--black);
+}
+
+.projet-hero__bg {
   position: absolute;
   inset: 0;
+}
+
+.projet-hero__player {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -465,16 +486,18 @@
 .projet-hero__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.5) 100%);
 }
 
-.projet-hero__content {
+.projet-hero--scroll .projet-hero__content {
   z-index: 2;
+  position: relative;
 }
 
-.projet-hero__scroll {
+.projet-hero--scroll .projet-hero__scroll {
   z-index: 2;
+  position: absolute;
+  bottom: 2rem;
 }
 
 /* --- Contact Form --- */

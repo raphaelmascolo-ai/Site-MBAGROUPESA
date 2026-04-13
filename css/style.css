@@ -212,7 +212,7 @@ p {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1002;
   background: var(--white);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
   transition: background var(--transition), box-shadow var(--transition);
