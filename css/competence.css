@@ -1346,6 +1346,75 @@ body.theme-orange:has(.comp-dark-section) {
   50% { transform: translateY(4px); opacity: calc(1 - var(--p, 0) * 4); }
 }
 
+/* --- Projets actuels grid --- */
+.projets-actuels {
+  background: var(--black);
+  padding: 80px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.projets-actuels__title {
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.projets-actuels__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.projet-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+
+.projet-card:hover {
+  border-color: var(--yellow);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(253, 217, 0, 0.1);
+}
+
+.projet-card__img {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.projet-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.projet-card:hover .projet-card__img img {
+  transform: scale(1.05);
+}
+
+.projet-card__body {
+  padding: 24px;
+}
+
+.projet-card__body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--yellow);
+  margin-bottom: 8px;
+}
+
+.projet-card__body p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0;
+}
+
 /* --- Realisations Carousels --- */
 .projet-realisations {
   background: var(--black);
@@ -1638,6 +1707,11 @@ body.theme-orange:has(.comp-dark-section) {
 
   .seh__title {
     font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .projets-actuels__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .realisations-grid {
