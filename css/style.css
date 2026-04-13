@@ -616,6 +616,68 @@ p {
   color: var(--white);
 }
 
+.section--yellow {
+  background: var(--yellow);
+}
+
+/* History Circles */
+.history-circles {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.history-circle {
+  text-align: center;
+  max-width: 180px;
+}
+
+.history-circle__ring {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.history-circle__num {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--black);
+  line-height: 1;
+}
+
+.history-circle__title {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.history-circle__year {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 8px;
+}
+
+.history-circle__text {
+  font-size: 0.82rem;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.5;
+}
+
 .section--dark h2,
 .section--dark h3 {
   color: var(--white);
@@ -2654,6 +2716,23 @@ p {
 
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .history-circles {
+    gap: 24px;
+  }
+
+  .history-circle {
+    max-width: 140px;
+  }
+
+  .history-circle__ring {
+    width: 80px;
+    height: 80px;
+  }
+
+  .history-circle__num {
+    font-size: 1.8rem;
   }
 
   .why-us__grid {
