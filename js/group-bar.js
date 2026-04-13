@@ -23,9 +23,8 @@
   // Detect if we're on the MBA Groupe SA site itself
   const isGroupSite = document.querySelector('meta[name="site-id"]')?.content === 'mba-groupe';
 
-  // Skip group bar on pages with hero (index page) to avoid overlap with fixed header
-  const hasHero = document.querySelector('.hero-video-section') || document.querySelector('.hero');
-  const skipGroupBar = hasHero;
+  // Skip group bar on all pages to avoid overlap with sticky header
+  const skipGroupBar = true;
 
   // --- Inject Group Top Bar ---
   function createGroupBar() {
