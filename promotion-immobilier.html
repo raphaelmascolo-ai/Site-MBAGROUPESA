@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="site-id" content="mba-groupe">
   <title>Promotion et Développement Immobilier — MBA Groupe SA</title>
-  <meta name="description" content="MBA Groupe SA : promotion et développement immobilier en Valais. Identification de terrains, études de faisabilité, concept immobilier et gestion des autorisations.">
+  <meta name="description" content="MBA Groupe SA : promotion et développement immobilier en Valais. Conception, réalisation et commercialisation de projets résidentiels.">
   <meta property="og:title" content="Promotion et Développement Immobilier — MBA Groupe SA">
-  <meta property="og:description" content="Concevoir et préparer vos meilleurs projets immobiliers en Valais.">
+  <meta property="og:description" content="Promotion et développement immobilier en Valais. Conception, réalisation et commercialisation de projets résidentiels.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=20">
-  <link rel="stylesheet" href="css/competence.css?v=1">
+  <link rel="stylesheet" href="css/competence.css?v=28">
 </head>
 <body>
 
@@ -65,112 +65,255 @@
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero-competence">
-      <div class="container fade-in">
-        <div class="accent-line"></div>
-        <h1>Promotion et Développement Immobilier</h1>
-        <p class="hero-tagline">Concevoir et préparer vos meilleurs projets</p>
+    <!-- Scroll-Expansion Hero -->
+    <section class="seh" id="seh-promotion">
+      <div class="seh__scroll">
+        <div class="seh__sticky">
+          <!-- Background (blurred / dimmed) -->
+          <div class="seh__bg" style="background-image: url('images/promo-1.jpg');"></div>
+          <!-- Expanding image -->
+          <div class="seh__media">
+            <img src="images/promo-1.jpg" alt="Promotion Immobilière" class="seh__img">
+            <div class="seh__media-overlay"></div>
+          </div>
+          <!-- Split titles -->
+          <div class="seh__titles">
+            <h1 class="seh__title seh__title--top">Promotion Immobilière</h1>
+            <p class="seh__tagline">De l'idée au projet réalisé.</p>
+            <p class="seh__hint">Scrollez pour découvrir</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <div class="content-competence">
+    <!-- Description dark section -->
+    <section class="comp-dark-section">
+      <div class="container">
+        <div class="comp-intro fade-in">
+          <div class="comp-intro__text">
+            <span class="comp-intro__label">MBA Immobilier SA</span>
+            <h2 class="comp-intro__title">La <span class='highlight'>promotion immobilière</span><br>maîtrisée de A à Z</h2>
+            <p>MBA Immobilier SA conçoit et réalise des projets résidentiels en Valais. De l'acquisition du terrain à la remise des clés, nous maîtrisons chaque étape du développement immobilier avec rigueur et vision.</p>
+            <p>Notre connaissance du marché local, notre réseau de partenaires et notre exigence de qualité nous permettent de proposer des projets qui font la différence.</p>
+            <a href="companies.html#mba-immobilier" class="btn btn-primary">Découvrir MBA Immobilier SA</a>
+          </div>
+          <div class="comp-intro__logo">
+            <div class="comp-intro__logo-bg"></div>
+            <img src="images/logo-mba-immobilier.jpg" alt="MBA Immobilier SA">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="comp-stats">
+      <div class="container">
+        <div class="comp-stats__grid fade-in">
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">25+</span>
+            <span class="comp-stats__label">Années d'expérience</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">+1000</span>
+            <span class="comp-stats__label">Projets réalisés</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">60+</span>
+            <span class="comp-stats__label">Collaborateurs</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">9</span>
+            <span class="comp-stats__label">Sociétés du groupe</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="content-competence content-competence--dark">
       <div class="container">
 
-        <!-- Description -->
-        <div class="description-block fade-in">
-          <h2>Qu'est-ce que c'est ?</h2>
-          <p>La promotion et le développement immobilier est la phase fondatrice de tout projet. Nous identifions les terrains idéaux, étudions la faisabilité technique et économique, définissons le concept immobilier, et préparons l'ensemble des autorisations nécessaires.</p>
-        </div>
-
-        <!-- Services -->
-        <div class="services-block fade-in">
-          <h2>Nos services</h2>
-          <div class="services-grid">
-            <div class="service-card">
-              <h3>Identification de Terrains Stratégiques</h3>
-              <p>Repérage et analyse de terrains à fort potentiel pour vos projets immobiliers en Valais.</p>
+        <!-- Services Feature Carousel -->
+        <div class="feature-carousel fade-in" id="featureCarousel">
+          <div class="feature-carousel__left">
+            <h2 class="feature-carousel__heading">Nos services</h2>
+            <div class="feature-carousel__list">
+              <button class="feature-carousel__chip active" data-index="0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Promotion immobilière</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="1">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Recherche et acquisition de terrains</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                <span>Développement de projets</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="3">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                <span>Suivi de chantier</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="4">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                <span>Accompagnement acquéreurs</span>
+              </button>
             </div>
-            <div class="service-card">
-              <h3>Études de Faisabilité</h3>
-              <p>Analyse technique, économique et réglementaire pour valider la viabilité de chaque projet.</p>
-            </div>
-            <div class="service-card">
-              <h3>Concept Immobilier &amp; Design</h3>
-              <p>Définition du programme immobilier et conception architecturale adaptée au marché.</p>
-            </div>
-            <div class="service-card">
-              <h3>Gestion Permis &amp; Autorisations</h3>
-              <p>Préparation et suivi des dossiers de permis de construire et autorisations administratives.</p>
+          </div>
+          <div class="feature-carousel__right">
+            <div class="feature-carousel__cards">
+              <div class="feature-carousel__card active" data-index="0">
+                <img src="images/promo-3.jpg" alt="Promotion immobilière">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">01 — Promotion immobilière</span>
+                  <p>On conçoit et réalise des projets résidentiels en Valais — immeubles, ensembles de villas, résidences. De l'idée au projet livré.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="1">
+                <img src="images/promo-4.jpg" alt="Recherche et acquisition de terrains">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">02 — Recherche et acquisition de terrains</span>
+                  <p>On identifie les opportunités foncières, on évalue le potentiel constructible et on négocie les acquisitions.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="2">
+                <img src="images/promo-5.jpg" alt="Développement de projets">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">03 — Développement de projets</span>
+                  <p>Étude de faisabilité, montage financier, choix des architectes et ingénieurs, définition du programme — tout est structuré avant le premier coup de pioche.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="3">
+                <img src="images/promo-6.jpg" alt="Suivi de chantier">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">04 — Suivi de chantier</span>
+                  <p>On assure le suivi de la réalisation du projet : respect du planning, contrôle qualité, coordination avec les entreprises.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="4">
+                <img src="images/promo-7.jpg" alt="Accompagnement acquéreurs">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">05 — Accompagnement acquéreurs</span>
+                  <p>Chaque acheteur a un interlocuteur dédié. Aide au choix des finitions, réponses aux questions, suivi personnalisé jusqu'à la remise des clés.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Gallery -->
-        <div class="gallery-block fade-in">
-          <h2>Galerie</h2>
-          <div class="gallery">
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-          </div>
-        </div>
-
-        <!-- Advantages -->
-        <div class="advantages-block fade-in">
-          <h2>Nos avantages</h2>
-          <div class="advantages-grid">
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-              </div>
-              <h3>Vision Marché</h3>
-              <p>Connaissance approfondie du marché immobilier valaisan.</p>
+        <div class="gallery-block gallery-block--dark fade-in">
+          <h2>Nos réalisations</h2>
+          <p class="gallery-block__sub">Quelques-uns de nos projets de promotion immobilière réalisés en Valais.</p>
+          <div class="expand-gallery">
+            <div class="expand-gallery__item">
+              <img src="images/promo-1.jpg" alt="Promotion immobilière - projet 1">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <h3>Expertise Réglementaire</h3>
-              <p>Maîtrise des normes et procédures administratives locales.</p>
+            <div class="expand-gallery__item">
+              <img src="images/promo-2.jpg" alt="Promotion immobilière - projet 2">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              </div>
-              <h3>Projets Stratégiques</h3>
-              <p>Sélection rigoureuse des opportunités pour maximiser la valeur.</p>
+            <div class="expand-gallery__item">
+              <img src="images/promo-3.jpg" alt="Promotion immobilière - projet 3">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              </div>
-              <h3>Accompagnement A à Z</h3>
-              <p>Suivi complet de la conception à l'obtention des autorisations.</p>
+            <div class="expand-gallery__item">
+              <img src="images/promo-4.jpg" alt="Promotion immobilière - projet 4">
             </div>
-          </div>
-        </div>
-
-        <!-- Companies Involved -->
-        <div class="companies-involved fade-in">
-          <h2>Sociétés concernées</h2>
-          <div class="companies-box">
-            <ul>
-              <li><strong>MBA Immobilier SA</strong> — Promotion et gestion immobilière</li>
-            </ul>
+            <div class="expand-gallery__item">
+              <img src="images/promo-5.jpg" alt="Promotion immobilière - projet 5">
+            </div>
+            <div class="expand-gallery__item">
+              <img src="images/promo-6.jpg" alt="Promotion immobilière - projet 6">
+            </div>
+            <div class="expand-gallery__item">
+              <img src="images/promo-7.jpg" alt="Promotion immobilière - projet 7">
+            </div>
+            <div class="expand-gallery__item">
+              <img src="images/promo-8.jpg" alt="Promotion immobilière - projet 8">
+            </div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- CTA -->
-    <section class="cta-competence">
-      <div class="container fade-in">
-        <h2>Un projet immobilier en tête ?</h2>
-        <p>Contactez-nous pour discuter de votre projet et bénéficier de notre expertise en promotion immobilière.</p>
-        <a href="contact.html" class="btn btn-primary">Contactez-nous</a>
+    <!-- Contact -->
+    <section class="contact-competence">
+      <div class="container">
+        <div class="contact-competence__grid fade-in">
+          <div class="contact-competence__photo">
+            <img src="images/raphael.jpg" alt="Raphaël — MBA Immobilier SA">
+          </div>
+          <div class="contact-competence__form">
+            <h2>Un projet immobilier ?</h2>
+            <p class="contact-competence__sub">Contactez-nous directement, nous vous répondons rapidement.</p>
+            <form class="contact-form" action="#" method="POST">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
+
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.ch" required>
+
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+41 00 000 00 00">
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Décrivez votre projet immobilier..." required></textarea>
+
+              <button type="submit" class="btn btn-primary">Envoyer le message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Competences Carousel -->
+    <section class="competences-carousel">
+      <div class="container">
+        <h2 class="competences-carousel__title fade-in">Nos autres compétences</h2>
+        <div class="carousel-wrapper">
+          <button class="carousel-btn carousel-btn--prev" aria-label="Précédent">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="carousel-track">
+            <a href="terrassement.html" class="carousel-card">
+              <div class="carousel-card__img"><img src="images/hero-terrassement.jpg" alt="Terrassement"></div>
+              <h3>Terrassement</h3>
+              <p>Des fondations solides pour chaque projet</p>
+            </a>
+            <a href="maconnerie.html" class="carousel-card">
+              <div class="carousel-card__img"><img src="images/hero-maconnerie.jpg" alt="Maçonnerie & Gros Oeuvre"></div>
+              <h3>Maçonnerie & Gros Oeuvre</h3>
+              <p>Fondations et structures porteuses</p>
+            </a>
+            <a href="fenetres-portes.html" class="carousel-card">
+              <div class="carousel-card__img"><img src="images/hero-fenetres.jpg" alt="Fenêtres & Portes"></div>
+              <h3>Fenêtres & Portes</h3>
+              <p>Performance et esthétique</p>
+            </a>
+            <a href="peinture-finitions.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Peinture & Finitions</h3>
+              <p>Le détail qui fait la différence</p>
+            </a>
+            <a href="renovation.html" class="carousel-card">
+              <div class="carousel-card__img"><img src="images/fenetres-saillon.jpg" alt="Rénovation"></div>
+              <h3>Rénovation</h3>
+              <p>Nouvelle vie pour vos espaces</p>
+            </a>
+            <a href="projet-cle-en-main.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Projet Clé en Main</h3>
+              <p>Un interlocuteur unique</p>
+            </a>
+            <a href="vente-immobiliere.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Vente Immobilière</h3>
+              <p>Maximiser la valeur de vos biens</p>
+            </a>
+          </div>
+          <button class="carousel-btn carousel-btn--next" aria-label="Suivant">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
     </section>
   </main>
@@ -225,5 +368,75 @@
 
   <script src="js/group-bar.js?v=11"></script>
   <script src="js/main.js?v=20"></script>
+  <script>
+  (function() {
+    // Scroll-expansion hero
+    var scroll = document.querySelector('.seh__scroll');
+    if (scroll) {
+      var sticky = scroll.querySelector('.seh__sticky');
+      var media = scroll.querySelector('.seh__media');
+      function update() {
+        var rect = scroll.getBoundingClientRect();
+        var h = scroll.offsetHeight - window.innerHeight;
+        if (h <= 0) return void requestAnimationFrame(update);
+        var p = Math.max(0, Math.min(1, -rect.top / h));
+        sticky.style.setProperty('--p', p.toFixed(4));
+        media.style.setProperty('--p', p.toFixed(4));
+        requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+
+    // Feature carousel (services)
+    var fc = document.getElementById('featureCarousel');
+    if (fc) {
+      var chips = fc.querySelectorAll('.feature-carousel__chip');
+      var cards = fc.querySelectorAll('.feature-carousel__card');
+      var current = 0;
+      var total = chips.length;
+      var paused = false;
+
+      function setActive(idx) {
+        var prev = ((idx - 1) + total) % total;
+        var next = (idx + 1) % total;
+        chips.forEach(function(c, i) {
+          c.classList.toggle('active', i === idx);
+        });
+        cards.forEach(function(c, i) {
+          c.classList.remove('active', 'prev', 'next');
+          if (i === idx) c.classList.add('active');
+          else if (i === prev) c.classList.add('prev');
+          else if (i === next) c.classList.add('next');
+        });
+        current = idx;
+      }
+
+      chips.forEach(function(chip, i) {
+        chip.addEventListener('click', function() { setActive(i); });
+        chip.addEventListener('mouseenter', function() { paused = true; });
+        chip.addEventListener('mouseleave', function() { paused = false; });
+      });
+
+      setInterval(function() {
+        if (!paused) setActive((current + 1) % total);
+      }, 3500);
+
+      setActive(0);
+    }
+
+    // Carousel buttons
+    var track = document.querySelector('.carousel-track');
+    var prev = document.querySelector('.carousel-btn--prev');
+    var next = document.querySelector('.carousel-btn--next');
+    if (track && prev && next) {
+      prev.addEventListener('click', function() {
+        track.scrollBy({ left: -260, behavior: 'smooth' });
+      });
+      next.addEventListener('click', function() {
+        track.scrollBy({ left: 260, behavior: 'smooth' });
+      });
+    }
+  })();
+  </script>
 </body>
 </html>
