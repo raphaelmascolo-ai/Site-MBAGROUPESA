@@ -1834,13 +1834,25 @@ p {
 
 .bento-s {
   position: relative;
-  background: rgba(255, 255, 255, 0.03);
+  background:
+    radial-gradient(ellipse at 30% 70%, rgba(253, 217, 0, 0.04) 0%, transparent 50%),
+    linear-gradient(180deg, #222 0%, #1a1a1a 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 36px 28px;
   text-decoration: none;
   overflow: hidden;
   transition: border-color 0.4s ease, transform 0.3s ease;
+}
+
+.bento-s::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(135deg, transparent 60%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0.02) 70%, transparent 70%),
+    linear-gradient(45deg, transparent 65%, rgba(253,217,0,0.03) 65%, rgba(253,217,0,0.03) 75%, transparent 75%);
+  pointer-events: none;
 }
 
 .bento-s:hover {
@@ -1854,6 +1866,49 @@ p {
   padding: 48px 40px;
   display: flex;
   align-items: flex-end;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(253, 217, 0, 0.12) 0%, transparent 55%),
+    linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
+}
+
+.bento-s--featured::after {
+  background-image:
+    linear-gradient(135deg, transparent 60%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0.02) 70%, transparent 70%),
+    linear-gradient(45deg, transparent 65%, rgba(253,217,0,0.04) 65%, rgba(253,217,0,0.04) 75%, transparent 75%);
+}
+
+/* Light variant for logos that need light bg */
+.bento-s--light {
+  background:
+    radial-gradient(ellipse at 30% 70%, rgba(253, 217, 0, 0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #f5f5f5 0%, #eee 100%);
+  border-color: #e0e0e0;
+}
+
+.bento-s--light::after {
+  background-image:
+    linear-gradient(135deg, transparent 60%, rgba(0,0,0,0.015) 60%, rgba(0,0,0,0.015) 70%, transparent 70%),
+    linear-gradient(45deg, transparent 65%, rgba(253,217,0,0.04) 65%, rgba(253,217,0,0.04) 75%, transparent 75%);
+}
+
+.bento-s--light:hover {
+  border-color: var(--yellow);
+}
+
+.bento-s--light h3 {
+  color: var(--black);
+}
+
+.bento-s--light p {
+  color: var(--gray-dark);
+}
+
+.bento-s--light .bento-s__link {
+  color: var(--black);
+}
+
+.bento-s--light .bento-s__glow {
+  background: radial-gradient(circle, rgba(253, 217, 0, 0.15) 0%, transparent 70%);
 }
 
 .bento-s__glow {
