@@ -622,6 +622,25 @@
   }
 }
 
+/* --- Image Hero variant --- */
+.projet-hero--image {
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.projet-hero--image .projet-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.5) 100%);
+}
+
+.projet-hero--image .projet-hero__content,
+.projet-hero--image .projet-hero__scroll {
+  position: relative;
+  z-index: 2;
+}
+
 /* --- Scroll-driven Video Hero --- */
 .projet-hero--scroll {
   height: 300vh;

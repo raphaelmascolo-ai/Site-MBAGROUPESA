@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="site-id" content="mba-groupe">
-  <title>MBA Groupe SA — Holding Construction & Immobilier | Martigny, Valais</title>
-  <meta name="description" content="MBA Groupe SA est une holding basée à Martigny (Valais) regroupant des sociétés actives dans la construction, l'immobilier et les services du bâtiment en Suisse.">
-  <meta property="og:title" content="MBA Groupe SA — Holding Construction & Immobilier">
-  <meta property="og:description" content="Holding basée à Martigny regroupant des sociétés actives dans la construction et l'immobilier en Valais, Suisse.">
+  <title>Vérossaz — Les Champlans | MBA Groupe SA</title>
+  <meta name="description" content="Projet résidentiel Les Champlans à Vérossaz : appartements avec vue panoramique sur les Alpes valaisannes. MBA Groupe SA.">
+  <meta property="og:title" content="Vérossaz — Les Champlans | MBA Groupe SA">
+  <meta property="og:description" content="Projet résidentiel Les Champlans à Vérossaz avec vue panoramique.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="images/logo-mba-groupe.png">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=20">
+  <link rel="stylesheet" href="css/projet.css?v=1">
 </head>
-<body>
+<body class="projet-page" style="background: #1a1a1a;">
 
   <!-- Header -->
   <header class="site-header header-transparent" role="banner">
@@ -59,86 +59,109 @@
   </header>
 
   <main>
-    <!-- Hero with scroll-driven video -->
-    <section class="hero-video-section">
-      <div class="hero-video__sticky">
-        <div class="hero-video__bg">
-          <video class="hero-video__player" muted playsinline preload="auto">
-            <source src="images/hero-video.mp4" type="video/mp4">
-          </video>
-          <div class="hero-video__overlay"></div>
+    <!-- Hero with image -->
+    <section class="projet-hero projet-hero--image" style="background-image: url('images/verossaz-1.jpg');">
+      <div class="projet-hero__overlay"></div>
+      <div class="projet-hero__content">
+        <h1 class="projet-hero__title">Vérossaz</h1>
+        <p class="projet-hero__subtitle">Les Champlans</p>
+      </div>
+      <div class="projet-hero__scroll">
+        Découvrir
+        <span></span>
+      </div>
+    </section>
+
+    <!-- Le Projet -->
+    <section class="projet-info">
+      <div class="container">
+        <div class="projet-info__text">
+          <p class="projet-info__label">Le Projet</p>
+          <h2 class="projet-info__title">Vue panoramique<br>sur les Alpes</h2>
+          <p class="projet-info__desc">Situé sur les hauteurs de Vérossaz, le projet Les Champlans offre un cadre de vie privilégié avec une vue panoramique exceptionnelle sur les Alpes valaisannes et la plaine du Rhône. Des appartements modernes pensés pour le confort et la luminosité.</p>
         </div>
-        <div class="hero-video__gradient"></div>
-        <div class="hero-video__content">
-          <p class="hero__tagline">Holding Construction & Immobilier</p>
-          <h1>Nous construisons<br>plus que des <span class="highlight">bâtiments</span></h1>
-          <p class="hero__description">
-            Depuis Martigny, au cœur du Valais, MBA Groupe SA fédère un ensemble de sociétés spécialisées dans la construction, l'immobilier et les services du bâtiment.
-          </p>
-          <div class="hero__buttons">
-            <a href="companies.html" class="btn btn-primary">Découvrir nos sociétés</a>
-            <a href="contact.html" class="btn btn-outline">Nous contacter</a>
+        <div class="projet-info__stats">
+          <div class="projet-stat">
+            <div class="projet-stat__number">12</div>
+            <div class="projet-stat__label">Appartements</div>
+          </div>
+          <div class="projet-stat">
+            <div class="projet-stat__number">2</div>
+            <div class="projet-stat__label">Bâtiments</div>
+          </div>
+          <div class="projet-stat">
+            <div class="projet-stat__number">2027</div>
+            <div class="projet-stat__label">Livraison</div>
+          </div>
+          <div class="projet-stat">
+            <div class="projet-stat__number">2.5–5.5</div>
+            <div class="projet-stat__label">Pièces</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Introduction -->
-    <section class="section">
+    <!-- Coming Soon -->
+    <section class="projet-coming-soon">
       <div class="container">
-        <div class="intro-grid">
-          <div class="intro-text fade-in-left">
-            <div class="section__header" style="text-align:left;margin-bottom:2rem;">
-              <div class="accent-line"></div>
-              <h2>Un groupe,<br>une vision</h2>
+        <div class="coming-soon__content">
+          <div class="coming-soon__loader">
+            <div class="box box-1">
+              <div class="side-left"></div>
+              <div class="side-right"></div>
+              <div class="side-top"></div>
             </div>
-            <p>MBA Groupe SA est une holding valaisanne fondée avec l'ambition de fédérer des compétences complémentaires dans le domaine de la construction et de l'immobilier. Notre modèle repose sur la synergie entre nos différentes sociétés, chacune experte dans son domaine.</p>
-            <p>De la maçonnerie à la promotion immobilière, de la peinture à la gestion de biens, nous couvrons l'ensemble de la chaîne de valeur du bâtiment. Cette intégration nous permet d'offrir à nos clients un service global, cohérent et de haute qualité.</p>
-            <p>Ancrés en Valais, nous portons les valeurs d'une région où le travail bien fait, la rigueur et l'engagement sont des piliers fondamentaux.</p>
-            <a href="about.html" class="btn btn-dark" style="margin-top:1rem;">En savoir plus</a>
+            <div class="box box-2">
+              <div class="side-left"></div>
+              <div class="side-right"></div>
+              <div class="side-top"></div>
+            </div>
+            <div class="box box-3">
+              <div class="side-left"></div>
+              <div class="side-right"></div>
+              <div class="side-top"></div>
+            </div>
+            <div class="box box-4">
+              <div class="side-left"></div>
+              <div class="side-right"></div>
+              <div class="side-top"></div>
+            </div>
           </div>
-          <div class="intro-image fade-in-right" role="img" aria-label="Photo du groupe MBA">
-            <img src="images/equipe-mba.jpg" alt="Équipe MBA Groupe SA" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">
-          </div>
+          <h2>Plus d'informations prochainement</h2>
+          <p>Les détails des appartements, plans et situation seront disponibles très bientôt. Contactez-nous pour être informé en avant-première.</p>
         </div>
       </div>
     </section>
 
-    <!-- Chiffres clés -->
-    <section class="section section--dark">
+    <!-- Contact -->
+    <section class="projet-contact">
       <div class="container">
-        <div class="section__header fade-in">
-          <div class="accent-line"></div>
-          <h2>Chiffres clés</h2>
-          <p class="section-subtitle">Des résultats qui témoignent de notre engagement et de notre croissance continue.</p>
+        <div class="projet-contact__header">
+          <p class="projet-contact__label">Intéressé ?</p>
+          <h2 class="projet-contact__title">Contactez-nous pour Les Champlans</h2>
         </div>
-        <div class="stats-grid fade-in">
-          <div class="stat-item">
-            <div class="stat-number">25+</div>
-            <div class="stat-label">Années d'expérience</div>
+        <div class="projet-contact__grid">
+          <div class="projet-contact__photo">
+            <img src="images/contact-vernayaz.jpg" alt="Votre contact — MBA Groupe SA">
           </div>
-          <div class="stat-item">
-            <div class="stat-number">9</div>
-            <div class="stat-label">Sociétés du groupe</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">60+</div>
-            <div class="stat-label">Collaborateurs</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">+1000</div>
-            <div class="stat-label">Projets réalisés</div>
-          </div>
-        </div>
-      </div>
-    </section>
+          <div class="projet-contact__form">
+            <form action="#" method="POST">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <div class="container fade-in">
-        <h2>Un projet en tête ?</h2>
-        <p>Que vous soyez un particulier, un promoteur ou une collectivité, notre groupe dispose des compétences pour concrétiser vos ambitions.</p>
-        <a href="contact.html" class="btn btn-primary">Contactez-nous</a>
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.ch" required>
+
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+41 00 000 00 00">
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Je suis intéressé(e) par le projet Les Champlans..." required></textarea>
+
+              <button type="submit" class="btn btn-primary">Envoyer le message</button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -184,7 +207,6 @@
         </div>
       </div>
     </div>
-    <!-- Group footer injected by group-bar.js -->
     <div class="footer-bottom">
       <div class="container">
         &copy; 2026 MBA Groupe SA. Tous droits réservés.
