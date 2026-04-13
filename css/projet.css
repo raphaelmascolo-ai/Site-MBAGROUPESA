@@ -90,7 +90,7 @@
 
 /* --- Le Projet (Info Section) --- */
 .projet-info {
-  background: var(--black);
+  background: #111;
   padding: 6rem 0;
 }
 
@@ -672,7 +672,7 @@
 
 /* --- Contact Form --- */
 .projet-contact {
-  background: var(--gray-light);
+  background: var(--black);
   padding: 5rem 0;
 }
 
@@ -694,7 +694,7 @@
 .projet-contact__title {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 700;
-  color: var(--black);
+  color: var(--white);
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
@@ -704,8 +704,8 @@
   gap: 0;
   border-radius: 12px;
   overflow: hidden;
-  background: var(--white);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  background: #222;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
   max-width: 900px;
   margin: 0 auto;
 }
@@ -735,7 +735,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--gray-dark);
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 6px;
 }
 
@@ -743,20 +743,26 @@
 .projet-contact__form textarea {
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: var(--black);
+  color: var(--white);
   margin-bottom: 20px;
   transition: border-color 0.2s ease;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.projet-contact__form input::placeholder,
+.projet-contact__form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.25);
 }
 
 .projet-contact__form input:focus,
 .projet-contact__form textarea:focus {
   outline: none;
   border-color: var(--yellow);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .projet-contact__form textarea {
