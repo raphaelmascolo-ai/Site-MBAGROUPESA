@@ -173,7 +173,7 @@ p {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.7);
   position: relative;
-  z-index: 1001;
+  z-index: 999;
 }
 
 .group-bar .container {
