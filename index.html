@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=20">
+  <link rel="stylesheet" href="css/competence.css?v=28">
 </head>
 <body>
 
@@ -89,51 +90,193 @@
       </div>
     </section>
 
-    <!-- Introduction -->
-    <section class="section">
+    <!-- Chiffres clés -->
+    <section class="comp-stats" style="background:var(--yellow);">
       <div class="container">
-        <div class="intro-grid">
-          <div class="intro-text fade-in-left">
-            <div class="section__header" style="text-align:left;margin-bottom:2rem;">
-              <div class="accent-line"></div>
-              <h2>Un groupe,<br>une vision</h2>
-            </div>
-            <p>MBA Groupe SA est une holding valaisanne fondée avec l'ambition de fédérer des compétences complémentaires dans le domaine de la construction et de l'immobilier. Notre modèle repose sur la synergie entre nos différentes sociétés, chacune experte dans son domaine.</p>
-            <p>De la maçonnerie à la promotion immobilière, de la peinture à la gestion de biens, nous couvrons l'ensemble de la chaîne de valeur du bâtiment. Cette intégration nous permet d'offrir à nos clients un service global, cohérent et de haute qualité.</p>
-            <p>Ancrés en Valais, nous portons les valeurs d'une région où le travail bien fait, la rigueur et l'engagement sont des piliers fondamentaux.</p>
-            <a href="about.html" class="btn btn-dark" style="margin-top:1rem;">En savoir plus</a>
+        <div class="stats-grid fade-in" style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;">
+          <div>
+            <div style="font-family:var(--font-heading);font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--black);line-height:1;margin-bottom:8px;">25+</div>
+            <div style="font-size:0.85rem;font-weight:500;color:rgba(0,0,0,0.6);text-transform:uppercase;letter-spacing:0.04em;">Années d'expérience</div>
           </div>
-          <div class="intro-image fade-in-right" role="img" aria-label="Photo du groupe MBA">
-            <img src="images/equipe-mba.jpg" alt="Équipe MBA Groupe SA" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">
+          <div>
+            <div style="font-family:var(--font-heading);font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--black);line-height:1;margin-bottom:8px;">9</div>
+            <div style="font-size:0.85rem;font-weight:500;color:rgba(0,0,0,0.6);text-transform:uppercase;letter-spacing:0.04em;">Sociétés du groupe</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-heading);font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--black);line-height:1;margin-bottom:8px;">60+</div>
+            <div style="font-size:0.85rem;font-weight:500;color:rgba(0,0,0,0.6);text-transform:uppercase;letter-spacing:0.04em;">Collaborateurs</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-heading);font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--black);line-height:1;margin-bottom:8px;">+1000</div>
+            <div style="font-size:0.85rem;font-weight:500;color:rgba(0,0,0,0.6);text-transform:uppercase;letter-spacing:0.04em;">Projets réalisés</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Chiffres clés -->
+    <!-- Nos Sociétés -->
     <section class="section section--dark">
       <div class="container">
         <div class="section__header fade-in">
           <div class="accent-line"></div>
-          <h2>Chiffres clés</h2>
-          <p class="section-subtitle">Des résultats qui témoignent de notre engagement et de notre croissance continue.</p>
+          <h2>Nos Sociétés</h2>
+          <p class="section-subtitle">Un écosystème de sociétés complémentaires au service de vos projets.</p>
         </div>
-        <div class="stats-grid fade-in">
-          <div class="stat-item">
-            <div class="stat-number">25+</div>
-            <div class="stat-label">Années d'expérience</div>
+        <div class="home-societes fade-in">
+          <a href="companies.html#mba-construction" class="home-societe-card">
+            <div class="home-societe-card__img"><img src="images/logo-mba-construction.png" alt="MBA Construction SA"></div>
+            <h3>MBA Construction SA</h3>
+            <p>Maçonnerie, béton armé et construction générale depuis 2001.</p>
+          </a>
+          <a href="companies.html#asv-construction" class="home-societe-card">
+            <div class="home-societe-card__img"><img src="images/logo-asv-construction.png" alt="ASV Construction Générale SA"></div>
+            <h3>ASV Construction Générale SA</h3>
+            <p>Construction générale et projets clés en main.</p>
+          </a>
+          <a href="companies.html#asv-fenetres" class="home-societe-card">
+            <div class="home-societe-card__img"><img src="images/logo-asv-fenetres.png" alt="ASV Fenêtres et Portes SA"></div>
+            <h3>ASV Fenêtres et Portes SA</h3>
+            <p>Fenêtres, portes et isolation thermique.</p>
+          </a>
+          <a href="companies.html#mba-immobilier" class="home-societe-card">
+            <div class="home-societe-card__img"><img src="images/logo-mba-immobilier.png" alt="MBA Immobilier SA"></div>
+            <h3>MBA Immobilier SA</h3>
+            <p>Promotion, vente et gestion immobilière.</p>
+          </a>
+          <a href="companies.html#asv-color" class="home-societe-card">
+            <div class="home-societe-card__img"><img src="images/logo-asv-color.jpg" alt="ASV Color SA"></div>
+            <h3>ASV Color SA</h3>
+            <p>Peinture et finitions du bâtiment.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nos Valeurs -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="section__header fade-in">
+          <div class="accent-line"></div>
+          <h2>Nos Valeurs</h2>
+          <p class="section-subtitle">Les principes qui guident notre action au quotidien.</p>
+        </div>
+        <div class="valeurs-grid">
+          <div class="valeur-card fade-in">
+            <span class="valeur-card__num">01</span>
+            <h3>Maîtrise complète</h3>
+            <p>Nos sociétés couvrent l'intégralité de votre projet. Un seul groupe, un seul responsable.</p>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">9</div>
-            <div class="stat-label">Sociétés du groupe</div>
+          <div class="valeur-card fade-in">
+            <span class="valeur-card__num">02</span>
+            <h3>Esprit familial</h3>
+            <p>Entreprise familiale depuis 2001. Votre projet n'est pas un numéro, c'est notre réputation.</p>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">60+</div>
-            <div class="stat-label">Collaborateurs</div>
+          <div class="valeur-card fade-in">
+            <span class="valeur-card__num">03</span>
+            <h3>Parole tenue</h3>
+            <p>Nos délais, nos prix et nos engagements sont respectés. Depuis 25 ans.</p>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">+1000</div>
-            <div class="stat-label">Projets réalisés</div>
+          <div class="valeur-card fade-in">
+            <span class="valeur-card__num">04</span>
+            <h3>Ancrage valaisan</h3>
+            <p>Nés à Martigny, enracinés en Valais. On connaît le terrain, les normes, les gens.</p>
+          </div>
+          <div class="valeur-card fade-in">
+            <span class="valeur-card__num">05</span>
+            <h3>Qualité</h3>
+            <p>Chaque détail compte. Notre nom est sur chaque projet.</p>
+          </div>
+          <div class="valeur-card fade-in">
+            <span class="valeur-card__num">06</span>
+            <h3>Innovation</h3>
+            <p>Tradition du métier, moyens d'aujourd'hui.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nos Projets -->
+    <section class="section section--dark">
+      <div class="container">
+        <div class="section__header fade-in">
+          <div class="accent-line"></div>
+          <h2>Nos Projets</h2>
+          <p class="section-subtitle">Découvrez nos projets immobiliers en cours en Valais.</p>
+        </div>
+        <div class="projets-actuels__grid fade-in">
+          <a href="vernayaz-tsareire.html" class="projet-card">
+            <div class="projet-card__img"><img src="images/vernayaz-3.jpg" alt="Vernayaz"></div>
+            <div class="projet-card__body">
+              <h3>Vernayaz — Tsarreire Tope</h3>
+              <p>34 appartements · 6 bâtiments · Livraison 2028</p>
+            </div>
+          </a>
+          <a href="verossaz-champlans.html" class="projet-card">
+            <div class="projet-card__img"><img src="images/hero-verossaz.jpg" alt="Vérossaz"></div>
+            <div class="projet-card__body">
+              <h3>Vérossaz — Les Champlans</h3>
+              <p>12 appartements · 2 bâtiments · Livraison 2027</p>
+            </div>
+          </a>
+          <a href="salvan-jardins-marais.html" class="projet-card">
+            <div class="projet-card__img"><img src="images/salvan-1.jpg" alt="Salvan"></div>
+            <div class="projet-card__body">
+              <h3>Salvan — Les Jardins du Marais</h3>
+              <p>9 appartements · 3 étages · Livraison mai 2027</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actualités -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header fade-in">
+          <div class="accent-line"></div>
+          <h2>Actualités</h2>
+          <p class="section-subtitle">Les dernières nouvelles du groupe.</p>
+        </div>
+        <div class="actu-carousel fade-in">
+          <div class="actu-carousel__wrapper">
+            <button class="actu-carousel__prev" aria-label="Précédent">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div class="actu-carousel__track">
+              <article class="actu-card">
+                <div class="actu-card__img" style="background:linear-gradient(135deg,#e8e8e8,#d0d0d0);"></div>
+                <div class="actu-card__body">
+                  <span class="actu-card__date">15 mars 2026</span>
+                  <span class="actu-card__cat">Événement</span>
+                  <h3>MBA Construction SA célèbre ses 25 ans</h3>
+                  <p>Un quart de siècle d'expertise dans la construction en Valais. Retour sur les moments forts.</p>
+                  <a href="blog.html" class="actu-card__link">Lire la suite →</a>
+                </div>
+              </article>
+              <article class="actu-card">
+                <div class="actu-card__img" style="background:linear-gradient(135deg,#d8d8d8,#c0c0c0);"></div>
+                <div class="actu-card__body">
+                  <span class="actu-card__date">28 février 2026</span>
+                  <span class="actu-card__cat">Projet</span>
+                  <h3>Nouveau projet résidentiel à Martigny</h3>
+                  <p>MBA Immobilier SA et MBA Construction SA unissent leurs forces pour un nouveau complexe.</p>
+                  <a href="blog.html" class="actu-card__link">Lire la suite →</a>
+                </div>
+              </article>
+              <article class="actu-card">
+                <div class="actu-card__img" style="background:linear-gradient(135deg,#e0e0e0,#c8c8c8);"></div>
+                <div class="actu-card__body">
+                  <span class="actu-card__date">10 janvier 2026</span>
+                  <span class="actu-card__cat">Groupe</span>
+                  <h3>Le groupe MBA renforce ses équipes pour 2026</h3>
+                  <p>Face à la croissance, MBA Groupe SA recrute de nouveaux talents.</p>
+                  <a href="blog.html" class="actu-card__link">Lire la suite →</a>
+                </div>
+              </article>
+            </div>
+            <button class="actu-carousel__next" aria-label="Suivant">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
           </div>
         </div>
       </div>
@@ -200,5 +343,18 @@
 
   <script src="js/group-bar.js?v=11"></script>
   <script src="js/main.js?v=20"></script>
+<script>
+(function() {
+  var wrapper = document.querySelector('.actu-carousel__wrapper');
+  if (!wrapper) return;
+  var track = wrapper.querySelector('.actu-carousel__track');
+  var prev = wrapper.querySelector('.actu-carousel__prev');
+  var next = wrapper.querySelector('.actu-carousel__next');
+  if (track && prev && next) {
+    prev.addEventListener('click', function() { track.scrollBy({ left: -380, behavior: 'smooth' }); });
+    next.addEventListener('click', function() { track.scrollBy({ left: 380, behavior: 'smooth' }); });
+  }
+})();
+</script>
 </body>
 </html>
