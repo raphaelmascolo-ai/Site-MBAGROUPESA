@@ -225,123 +225,116 @@
   <script src="js/main.js?v=20"></script>
   <script>
   (function() {
-    // Scroll-driven video with immediate playback fallback
     var heroSection = document.querySelector('.projet-hero--scroll');
     var video = document.querySelector('.projet-hero__player');
     if (heroSection && video) {
       var isMobile = window.innerWidth < 768 || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
 
-      // Always start playing immediately so user sees something
-      video.muted = true;
-      video.playsInline = true;
-      video.play().catch(function(){});
-
       if (isMobile) {
+        heroSection.style.height = '100vh';
+        video.autoplay = true;
         video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.play().catch(function(){});
       } else {
-        // Desktop: extract frames in background, then switch to scroll-driven
-        var TOTAL_FRAMES = 120;
+        var TOTAL_FRAMES = 150;
         var frames = [];
-        var framesExtracted = 0;
+        var framesReady = false;
         var targetFrame = 0;
         var currentFrame = 0;
-        var scrollMode = false;
+        var extracting = false;
+
         var canvas = document.createElement('canvas');
         var ctx = canvas.getContext('2d');
-        canvas.style.cssText = 'width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;display:none;';
+        canvas.style.cssText = 'width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;';
 
-        function switchToScrollMode() {
-          if (scrollMode) return;
-          scrollMode = true;
-          video.pause();
+        function showFirstFrame() {
+          canvas.width = video.videoWidth || 1920;
+          canvas.height = video.videoHeight || 1080;
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
           video.style.display = 'none';
-          canvas.style.display = 'block';
-          // Draw current position immediately
-          updateTarget();
-          drawFrame(targetFrame);
-          currentFrame = targetFrame;
+          video.parentNode.appendChild(canvas);
         }
 
-        function seekTo(t) {
-          return new Promise(function(r) {
-            var fn = function() { video.removeEventListener('seeked', fn); r(); };
-            video.addEventListener('seeked', fn);
-            video.currentTime = t;
+        async function extractFrames() {
+          if (extracting) return;
+          extracting = true;
+          var duration = video.duration;
+          frames.length = TOTAL_FRAMES;
+          framesReady = true;
+
+          for (var i = 0; i < TOTAL_FRAMES; i++) {
+            var time = (i / (TOTAL_FRAMES - 1)) * duration;
+            await seekTo(time);
+            var off = document.createElement('canvas');
+            off.width = canvas.width;
+            off.height = canvas.height;
+            off.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+            frames[i] = off;
+          }
+        }
+
+        function seekTo(time) {
+          return new Promise(function(resolve) {
+            var onSeeked = function() {
+              video.removeEventListener('seeked', onSeeked);
+              resolve();
+            };
+            video.addEventListener('seeked', onSeeked);
+            video.currentTime = time;
           });
         }
 
-        async function extract() {
-          // Wait for video to be fully loaded
-          var dur = video.duration;
-          if (!dur || isNaN(dur)) return;
-
-          canvas.width = video.videoWidth || 1920;
-          canvas.height = video.videoHeight || 1080;
-          video.parentNode.appendChild(canvas);
-
-          // Pause video for extraction
-          video.pause();
-          frames.length = TOTAL_FRAMES;
-
-          for (var i = 0; i < TOTAL_FRAMES; i++) {
-            await seekTo((i / (TOTAL_FRAMES - 1)) * dur);
-            var off = document.createElement('canvas');
-            off.width = canvas.width; off.height = canvas.height;
-            off.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-            frames[i] = off;
-            framesExtracted = i + 1;
-
-            // Switch to scroll mode as soon as we have enough frames
-            if (i === 10 && !scrollMode) {
-              switchToScrollMode();
+        function drawFrame(index) {
+          var target = Math.round(Math.max(0, Math.min(TOTAL_FRAMES - 1, index)));
+          var i = target;
+          if (!frames[i]) {
+            for (var offset = 1; offset < TOTAL_FRAMES; offset++) {
+              if (frames[target - offset]) { i = target - offset; break; }
+              if (frames[target + offset]) { i = target + offset; break; }
             }
           }
-
-          if (!scrollMode) switchToScrollMode();
-        }
-
-        function drawFrame(idx) {
-          var t = Math.round(Math.max(0, Math.min(framesExtracted - 1, idx)));
-          if (frames[t]) {
+          if (frames[i]) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(frames[t], 0, 0);
+            ctx.drawImage(frames[i], 0, 0);
           }
         }
 
-        function updateTarget() {
+        function updateTargetFrame() {
           var rect = heroSection.getBoundingClientRect();
-          var h = heroSection.offsetHeight - window.innerHeight;
-          var p = Math.max(0, Math.min(1, -rect.top / h));
-          targetFrame = p * (TOTAL_FRAMES - 1);
+          var sectionHeight = heroSection.offsetHeight - window.innerHeight;
+          var scrolled = -rect.top;
+          var progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
+          targetFrame = progress * (TOTAL_FRAMES - 1);
         }
 
         function renderLoop() {
-          if (scrollMode && framesExtracted > 0) {
+          if (framesReady) {
             var diff = targetFrame - currentFrame;
             if (Math.abs(diff) > 0.05) {
-              currentFrame += diff * 0.15;
+              currentFrame += diff * 0.12;
               drawFrame(currentFrame);
             }
           }
           requestAnimationFrame(renderLoop);
         }
 
-        // Start extraction when video has enough data
         video.addEventListener('loadeddata', function() {
+          showFirstFrame();
           requestAnimationFrame(renderLoop);
-          // Small delay to let autoplay show a few seconds first
-          setTimeout(function() { extract(); }, 1500);
+          extractFrames();
         });
 
         if (video.readyState >= 2) {
+          showFirstFrame();
           requestAnimationFrame(renderLoop);
-          setTimeout(function() { extract(); }, 1500);
+          extractFrames();
         }
 
-        window.addEventListener('scroll', updateTarget, { passive: true });
+        window.addEventListener('scroll', updateTargetFrame, { passive: true });
       }
     }
-
   })();
   </script>
 </body>
