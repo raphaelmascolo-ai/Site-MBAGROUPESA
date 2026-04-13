@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="site-id" content="mba-groupe">
   <title>Peinture &amp; Finitions — MBA Groupe SA</title>
-  <meta name="description" content="MBA Groupe SA : peinture et finitions en Valais. Peinture intérieure et extérieure, revêtements muraux, finitions décoratives et traitement des surfaces.">
-  <meta property="og:title" content="Peinture & Finitions — MBA Groupe SA">
-  <meta property="og:description" content="Le détail qui fait toute la différence pour vos espaces en Valais.">
+  <meta name="description" content="ASV Color SA : peinture intérieure et extérieure, finitions, crépis et enduits en Valais.">
+  <meta property="og:title" content="Peinture &amp; Finitions — MBA Groupe SA">
+  <meta property="og:description" content="ASV Color SA : peinture intérieure et extérieure, finitions, crépis et enduits en Valais.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=20">
-  <link rel="stylesheet" href="css/competence.css?v=1">
+  <link rel="stylesheet" href="css/competence.css?v=28">
 </head>
-<body>
+<body class="theme-orange">
 
   <!-- Header -->
   <header class="site-header" role="banner">
@@ -65,112 +65,248 @@
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero-competence">
-      <div class="container fade-in">
-        <div class="accent-line"></div>
-        <h1>Peinture &amp; Finitions</h1>
-        <p class="hero-tagline">Le détail qui fait toute la différence</p>
+    <!-- Scroll-Expansion Hero -->
+    <section class="seh" id="seh-peinture">
+      <div class="seh__scroll">
+        <div class="seh__sticky">
+          <div class="seh__bg" style="background-image: url('images/peinture-1.jpg');"></div>
+          <div class="seh__media">
+            <img src="images/peinture-1.jpg" alt="Peinture & Finitions" class="seh__img">
+            <div class="seh__media-overlay"></div>
+          </div>
+          <div class="seh__titles">
+            <h1 class="seh__title seh__title--top">Peinture & Finitions</h1>
+            <p class="seh__tagline">Le détail qui fait toute la différence.</p>
+            <p class="seh__hint">Scrollez pour découvrir</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <div class="content-competence">
+    <!-- Description dark section -->
+    <section class="comp-dark-section">
+      <div class="container">
+        <div class="comp-intro fade-in">
+          <div class="comp-intro__text">
+            <span class="comp-intro__label">ASV Color SA</span>
+            <h2 class="comp-intro__title">L'art de la <span class="highlight">finition</span><br>depuis plus de 25 ans</h2>
+            <p>ASV Color SA est spécialisée dans la peinture et les finitions du bâtiment. Avec un savoir-faire artisanal reconnu, notre équipe intervient sur des projets neufs comme en rénovation pour apporter la touche finale qui fait la différence.</p>
+            <p>Peinture intérieure et extérieure, crépis, enduits décoratifs — nous maîtrisons l'ensemble des techniques pour sublimer vos espaces en Valais et en Suisse romande.</p>
+            <a href="companies.html#asv-color" class="btn btn-primary">Découvrir ASV Color SA</a>
+          </div>
+          <div class="comp-intro__logo">
+            <div class="comp-intro__logo-bg"></div>
+            <img src="images/logo-asv-color.jpg" alt="ASV Color SA">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="comp-stats">
+      <div class="container">
+        <div class="comp-stats__grid fade-in">
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">25+</span>
+            <span class="comp-stats__label">Années d'expérience</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">+1000</span>
+            <span class="comp-stats__label">Projets réalisés</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">60+</span>
+            <span class="comp-stats__label">Collaborateurs</span>
+          </div>
+          <div class="comp-stats__item">
+            <span class="comp-stats__number">9</span>
+            <span class="comp-stats__label">Sociétés du groupe</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="content-competence content-competence--dark">
       <div class="container">
 
-        <!-- Description -->
-        <div class="description-block fade-in">
-          <h2>Qu'est-ce que c'est ?</h2>
-          <p>La peinture et les finitions sont la touche finale qui sublime votre espace. Nos artisans qualifiés réalisent des travaux de peinture intérieure et extérieure, des revêtements spécialisés et des finitions décoratives avec un souci du détail incomparable.</p>
-        </div>
+        <h2 class="section-heading fade-in">Nos services</h2>
 
-        <!-- Services -->
-        <div class="services-block fade-in">
-          <h2>Nos services</h2>
-          <div class="services-grid">
-            <div class="service-card">
-              <h3>Peinture intérieure &amp; extérieure</h3>
-              <p>Application de peintures de qualité pour sublimer vos espaces intérieurs et façades.</p>
+        <!-- Services Feature Carousel -->
+        <div class="feature-carousel fade-in" id="featureCarousel">
+          <div class="feature-carousel__left">
+            <h2 class="feature-carousel__heading">Nos services</h2>
+            <div class="feature-carousel__list">
+              <button class="feature-carousel__chip active" data-index="0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                <span>Peinture intérieure</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="1">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Peinture extérieure</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>Finitions</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="3">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                <span>Retouches et reprises</span>
+              </button>
+              <button class="feature-carousel__chip" data-index="4">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+                <span>Crépis et enduits</span>
+              </button>
             </div>
-            <div class="service-card">
-              <h3>Revêtements muraux spécialisés</h3>
-              <p>Pose de papiers peints, enduits décoratifs et revêtements techniques spécialisés.</p>
-            </div>
-            <div class="service-card">
-              <h3>Finitions décoratives</h3>
-              <p>Techniques de finition haut de gamme pour un rendu esthétique unique.</p>
-            </div>
-            <div class="service-card">
-              <h3>Préparation &amp; Traitement des surfaces</h3>
-              <p>Préparation minutieuse des supports et traitements protecteurs durables.</p>
+          </div>
+          <div class="feature-carousel__right">
+            <div class="feature-carousel__cards">
+              <div class="feature-carousel__card active" data-index="0">
+                <img src="images/peinture-2.jpg" alt="Peinture intérieure">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">01 — Peinture intérieure</span>
+                  <p>Murs, plafonds, boiseries — on applique les teintes et finitions que vous avez choisies, avec un travail soigné dans chaque pièce.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="1">
+                <img src="images/peinture-3.jpg" alt="Peinture extérieure">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">02 — Peinture extérieure</span>
+                  <p>Façades, balcons, avant-toits — on protège et on embellit l'extérieur de votre bâtiment, avec des produits adaptés au climat valaisan.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="2">
+                <img src="images/peinture-4.jpg" alt="Finitions">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">03 — Finitions</span>
+                  <p>La touche finale qui fait la différence : joints, raccords, détails — on s'assure que chaque surface est impeccable avant la livraison.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="3">
+                <img src="images/peinture-5.jpg" alt="Retouches et reprises">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">04 — Retouches et reprises</span>
+                  <p>Petits défauts, éclats, traces de chantier — on intervient pour corriger et remettre à neuf ce qui doit l'être.</p>
+                </div>
+              </div>
+              <div class="feature-carousel__card" data-index="4">
+                <img src="images/peinture-6.jpg" alt="Crépis et enduits">
+                <div class="feature-carousel__card-overlay">
+                  <span class="feature-carousel__card-tag">05 — Crépis et enduits</span>
+                  <p>Application d'enduits décoratifs et crépis intérieurs et extérieurs pour donner du caractère et de la texture à vos surfaces.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Gallery -->
-        <div class="gallery-block fade-in">
-          <h2>Galerie</h2>
-          <div class="gallery">
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-            <div class="gallery-placeholder"></div>
-          </div>
-        </div>
-
-        <!-- Advantages -->
-        <div class="advantages-block fade-in">
-          <h2>Nos avantages</h2>
-          <div class="advantages-grid">
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              </div>
-              <h3>Finitions impeccables</h3>
-              <p>Un souci du détail qui se voit dans chaque réalisation.</p>
+        <div class="gallery-block gallery-block--dark fade-in">
+          <h2>Nos réalisations</h2>
+          <p class="gallery-block__sub">Quelques-uns de nos travaux de peinture et finitions réalisés en Valais.</p>
+          <div class="expand-gallery">
+            <div class="expand-gallery__item">
+              <img src="images/peinture-1.jpg" alt="Peinture et finitions">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <h3>Durabilité des couleurs</h3>
-              <p>Produits premium pour des couleurs qui résistent au temps.</p>
+            <div class="expand-gallery__item">
+              <img src="images/peinture-2.jpg" alt="Peinture intérieure">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-              </div>
-              <h3>Attention au détail</h3>
-              <p>Chaque centimètre est traité avec le plus grand soin.</p>
+            <div class="expand-gallery__item">
+              <img src="images/peinture-3.jpg" alt="Peinture extérieure">
             </div>
-            <div class="advantage">
-              <div class="icon-circle">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              </div>
-              <h3>Respect de l'environnement</h3>
-              <p>Utilisation de produits écoresponsables et à faible émission.</p>
+            <div class="expand-gallery__item">
+              <img src="images/peinture-4.jpg" alt="Finitions">
             </div>
-          </div>
-        </div>
-
-        <!-- Companies Involved -->
-        <div class="companies-involved fade-in">
-          <h2>Sociétés concernées</h2>
-          <div class="companies-box">
-            <ul>
-              <li><strong>ASV Color SA</strong></li>
-            </ul>
+            <div class="expand-gallery__item">
+              <img src="images/peinture-5.jpg" alt="Retouches">
+            </div>
+            <div class="expand-gallery__item">
+              <img src="images/peinture-6.jpg" alt="Crépis et enduits">
+            </div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- CTA -->
-    <section class="cta-competence">
-      <div class="container fade-in">
-        <h2>Besoin de travaux de peinture ?</h2>
-        <p>Contactez-nous pour sublimer vos espaces avec des finitions d'exception.</p>
-        <a href="contact.html" class="btn btn-primary">Contactez-nous</a>
+    <!-- Contact -->
+    <section class="contact-competence">
+      <div class="container">
+        <div class="contact-competence__grid fade-in">
+          <div class="contact-competence__photo">
+            <img src="images/valentin.jpg" alt="Valentin — ASV Color SA">
+          </div>
+          <div class="contact-competence__form">
+            <h2>Un projet de peinture ?</h2>
+            <p class="contact-competence__sub">Contactez-nous directement, nous vous répondons rapidement.</p>
+            <form class="contact-form" action="#" method="POST">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
+
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.ch" required>
+
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+41 00 000 00 00">
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Décrivez votre projet de peinture ou finitions..." required></textarea>
+
+              <button type="submit" class="btn btn-primary">Envoyer le message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Competences Carousel -->
+    <section class="competences-carousel">
+      <div class="container">
+        <h2 class="competences-carousel__title fade-in">Nos autres compétences</h2>
+        <div class="carousel-wrapper">
+          <button class="carousel-btn carousel-btn--prev" aria-label="Précédent">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="carousel-track">
+            <a href="promotion-immobilier.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Promotion Immobilière</h3>
+              <p>Conception et développement de projets</p>
+            </a>
+            <a href="terrassement.html" class="carousel-card">
+              <div class="carousel-card__img"><img src="images/hero-terrassement.jpg" alt="Terrassement"></div>
+              <h3>Terrassement</h3>
+              <p>Préparer le terrain pour vos projets</p>
+            </a>
+            <a href="maconnerie.html" class="carousel-card">
+              <div class="carousel-card__img"><img src="images/hero-maconnerie.jpg" alt="Maçonnerie & Gros Oeuvre"></div>
+              <h3>Maçonnerie & Gros Oeuvre</h3>
+              <p>Fondations et structures porteuses</p>
+            </a>
+            <a href="fenetres-portes.html" class="carousel-card">
+              <div class="carousel-card__img"><img src="images/hero-fenetres.jpg" alt="Fenêtres & Portes"></div>
+              <h3>Fenêtres & Portes</h3>
+              <p>Performance et esthétique</p>
+            </a>
+            <a href="renovation.html" class="carousel-card">
+              <div class="carousel-card__img"><img src="images/fenetres-saillon.jpg" alt="Rénovation"></div>
+              <h3>Rénovation</h3>
+              <p>Nouvelle vie pour vos espaces</p>
+            </a>
+            <a href="projet-cle-en-main.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Projet Clé en Main</h3>
+              <p>Un interlocuteur unique</p>
+            </a>
+            <a href="vente-immobiliere.html" class="carousel-card">
+              <div class="carousel-card__img"></div>
+              <h3>Vente Immobilière</h3>
+              <p>Maximiser la valeur de vos biens</p>
+            </a>
+          </div>
+          <button class="carousel-btn carousel-btn--next" aria-label="Suivant">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
     </section>
   </main>
@@ -225,5 +361,75 @@
 
   <script src="js/group-bar.js?v=11"></script>
   <script src="js/main.js?v=20"></script>
+  <script>
+  (function() {
+    // Scroll-expansion hero
+    var scroll = document.querySelector('.seh__scroll');
+    if (scroll) {
+      var sticky = scroll.querySelector('.seh__sticky');
+      var media = scroll.querySelector('.seh__media');
+      function update() {
+        var rect = scroll.getBoundingClientRect();
+        var h = scroll.offsetHeight - window.innerHeight;
+        if (h <= 0) return void requestAnimationFrame(update);
+        var p = Math.max(0, Math.min(1, -rect.top / h));
+        sticky.style.setProperty('--p', p.toFixed(4));
+        media.style.setProperty('--p', p.toFixed(4));
+        requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+
+    // Feature carousel (services)
+    var fc = document.getElementById('featureCarousel');
+    if (fc) {
+      var chips = fc.querySelectorAll('.feature-carousel__chip');
+      var cards = fc.querySelectorAll('.feature-carousel__card');
+      var current = 0;
+      var total = chips.length;
+      var paused = false;
+
+      function setActive(idx) {
+        var prev = ((idx - 1) + total) % total;
+        var next = (idx + 1) % total;
+        chips.forEach(function(c, i) {
+          c.classList.toggle('active', i === idx);
+        });
+        cards.forEach(function(c, i) {
+          c.classList.remove('active', 'prev', 'next');
+          if (i === idx) c.classList.add('active');
+          else if (i === prev) c.classList.add('prev');
+          else if (i === next) c.classList.add('next');
+        });
+        current = idx;
+      }
+
+      chips.forEach(function(chip, i) {
+        chip.addEventListener('click', function() { setActive(i); });
+        chip.addEventListener('mouseenter', function() { paused = true; });
+        chip.addEventListener('mouseleave', function() { paused = false; });
+      });
+
+      setInterval(function() {
+        if (!paused) setActive((current + 1) % total);
+      }, 3500);
+
+      setActive(0);
+    }
+
+    // Carousel buttons
+    var track = document.querySelector('.carousel-track');
+    var prev = document.querySelector('.carousel-btn--prev');
+    var next = document.querySelector('.carousel-btn--next');
+    if (track && prev && next) {
+      prev.addEventListener('click', function() {
+        track.scrollBy({ left: -260, behavior: 'smooth' });
+      });
+      next.addEventListener('click', function() {
+        track.scrollBy({ left: 260, behavior: 'smooth' });
+      });
+    }
+  })();
+  </script>
 </body>
 </html>
