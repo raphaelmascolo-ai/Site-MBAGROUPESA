@@ -13,12 +13,68 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="css/style.css?v=20">
+  <style>
+    .contact-page { background: var(--black); }
+    .contact-hero { background: var(--black); padding: 160px 0 60px; text-align: center; position: relative; }
+    .contact-hero::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at 50% 80%, rgba(253,217,0,0.06) 0%, transparent 60%); pointer-events:none; }
+    .contact-hero h1 { color: var(--white); margin-bottom: 1rem; }
+    .contact-hero p { color: rgba(255,255,255,0.55); max-width: 550px; margin: 0 auto; font-size: 1.05rem; }
+    .contact-hero .accent-line { display: inline-block; width: 60px; height: 3px; background: var(--yellow); margin-bottom: 1.5rem; }
+
+    .contact-main { padding: 80px 0; background: #111; }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+
+    .contact-form-section h2 { color: var(--white); font-size: 1.4rem; margin-bottom: 8px; }
+    .contact-form-section .sub { color: rgba(255,255,255,0.45); font-size: 0.9rem; margin-bottom: 32px; }
+
+    .contact-form label { display:block; font-family:var(--font-heading); font-size:0.78rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:rgba(255,255,255,0.5); margin-bottom:6px; }
+    .contact-form input, .contact-form select, .contact-form textarea { width:100%; padding:14px 16px; border:1px solid rgba(255,255,255,0.08); border-radius:6px; font-family:var(--font-body); font-size:0.9rem; color:var(--white); margin-bottom:20px; transition:border-color 0.2s ease; background:rgba(255,255,255,0.04); }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color:rgba(255,255,255,0.2); }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline:none; border-color:var(--yellow); background:rgba(255,255,255,0.06); }
+    .contact-form select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; cursor:pointer; }
+    .contact-form select option { background:#222; color:var(--white); }
+    .contact-form textarea { min-height:140px; resize:vertical; }
+    .contact-form .btn { width:100%; text-align:center; padding:16px; font-size:0.9rem; }
+
+    .contact-info-section h2 { color:var(--white); font-size:1.4rem; margin-bottom:32px; }
+
+    .ci-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:28px; margin-bottom:20px; display:flex; align-items:flex-start; gap:16px; transition:all 0.3s ease; }
+    .ci-card:hover { border-color:var(--yellow); background:rgba(255,255,255,0.05); }
+    .ci-card__icon { width:44px; height:44px; border-radius:50%; background:rgba(253,217,0,0.1); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .ci-card__icon svg { stroke:var(--yellow); }
+    .ci-card h3 { font-size:0.95rem; color:var(--white); margin-bottom:4px; }
+    .ci-card p { font-size:0.88rem; color:rgba(255,255,255,0.55); line-height:1.5; margin-bottom:0; }
+    .ci-card a { color:var(--yellow); }
+
+    .contact-map-section { padding:80px 0; background:var(--black); }
+    .contact-map-section h2 { color:var(--white); text-align:center; margin-bottom:8px; }
+    .contact-map-section .sub { color:rgba(255,255,255,0.45); text-align:center; font-size:0.95rem; margin-bottom:40px; }
+    .contact-map-wrap { position:relative; border-radius:12px; overflow:hidden; }
+    #contactMap { width:100%; height:450px; }
+
+    .contact-team { padding:80px 0; background:#111; }
+    .contact-team h2 { color:var(--white); text-align:center; margin-bottom:8px; }
+    .contact-team .sub { color:rgba(255,255,255,0.45); text-align:center; font-size:0.95rem; margin-bottom:48px; }
+    .contact-team__grid { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; }
+    .contact-team__member { text-align:center; }
+    .contact-team__photo { width:120px; height:120px; border-radius:50%; overflow:hidden; margin:0 auto 16px; border:2px solid rgba(253,217,0,0.3); }
+    .contact-team__photo img { width:100%; height:100%; object-fit:cover; object-position:center 20%; }
+    .contact-team__member h3 { font-size:0.95rem; color:var(--white); margin-bottom:4px; }
+    .contact-team__member p { font-size:0.8rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.04em; }
+
+    @media (max-width:768px) {
+      .contact-layout { grid-template-columns:1fr; gap:40px; }
+      .contact-team__grid { grid-template-columns:repeat(2,1fr); gap:24px; }
+      .contact-hero { padding:120px 0 50px; }
+    }
+  </style>
 </head>
-<body>
+<body class="contact-page">
 
   <!-- Header -->
-  <header class="site-header" role="banner">
+  <header class="site-header header-transparent" role="banner">
     <div class="container">
       <a href="index.html" class="site-header__logo" aria-label="MBA Groupe SA — Accueil">
         <img src="images/logo-mba-groupe-white.svg" alt="MBA Groupe SA" class="logo-white">
@@ -64,23 +120,24 @@
   </header>
 
   <main>
-    <!-- Page Hero -->
-    <section class="page-hero">
+    <!-- Hero -->
+    <section class="contact-hero">
       <div class="container">
         <div class="accent-line"></div>
-        <h1>Contact</h1>
-        <p>Une question, un projet ? N'hésitez pas à nous contacter. Notre équipe vous répondra dans les meilleurs délais.</p>
+        <h1>Contactez-nous</h1>
+        <p>Une question, un projet ? Notre équipe est à votre disposition pour en discuter.</p>
       </div>
     </section>
 
-    <!-- Contact Content -->
-    <section class="section">
+    <!-- Formulaire + Infos -->
+    <section class="contact-main">
       <div class="container">
-        <div class="contact-grid">
+        <div class="contact-layout">
 
           <!-- Formulaire -->
-          <div class="fade-in-left">
-            <h2 style="font-size:1.5rem;margin-bottom:2rem;">Envoyez-nous un message</h2>
+          <div class="contact-form-section fade-in">
+            <h2>Envoyez-nous un message</h2>
+            <p class="sub">Nous vous répondons dans les meilleurs délais.</p>
             <form class="contact-form" action="#" method="POST">
               <label for="name">Nom complet</label>
               <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
@@ -89,7 +146,7 @@
               <input type="email" id="email" name="email" placeholder="votre@email.ch" required>
 
               <label for="phone">Téléphone</label>
-              <input type="tel" id="phone" name="phone" placeholder="+41 00 000 00 00">
+              <input type="tel" id="phone" name="phone" placeholder="027 000 00 00">
 
               <label for="company">Société concernée</label>
               <select id="company" name="company">
@@ -109,33 +166,33 @@
             </form>
           </div>
 
-          <!-- Informations de contact -->
-          <div class="fade-in-right">
-            <h2 style="font-size:1.5rem;margin-bottom:2rem;">Nos coordonnées</h2>
+          <!-- Informations -->
+          <div class="contact-info-section fade-in">
+            <h2>Nos coordonnées</h2>
 
-            <div class="contact-info-item">
-              <div class="contact-info-item__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div class="ci-card">
+              <div class="ci-card__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </div>
               <div>
                 <h3>Adresse</h3>
-                <p>Rue du Châble-Bet 41<br>1920 Martigny<br>Valais, Suisse</p>
+                <p>Rue du Châble-Bet 41<br>1920 Martigny, Valais</p>
               </div>
             </div>
 
-            <div class="contact-info-item">
-              <div class="contact-info-item__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div class="ci-card">
+              <div class="ci-card__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0122 16.92z"/></svg>
               </div>
               <div>
                 <h3>Téléphone</h3>
-                <p><a href="tel:+41000000000">+41 00 000 00 00</a></p>
+                <p><a href="tel:+41277236708">027 723 67 08</a></p>
               </div>
             </div>
 
-            <div class="contact-info-item">
-              <div class="contact-info-item__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div class="ci-card">
+              <div class="ci-card__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </div>
               <div>
                 <h3>E-mail</h3>
@@ -143,29 +200,74 @@
               </div>
             </div>
 
-            <div class="contact-info-item">
-              <div class="contact-info-item__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div class="ci-card">
+              <div class="ci-card__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </div>
               <div>
                 <h3>Horaires</h3>
                 <p>Lundi – Vendredi : 07h30 – 17h00<br>Samedi – Dimanche : Fermé</p>
               </div>
             </div>
-
-            <!-- Google Maps -->
-            <div class="contact-map">
-              <iframe
-                src="about:blank"
-                title="Localisation de MBA Groupe SA à Martigny"
-                allowfullscreen
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                aria-label="Carte Google Maps — Rue du Châble-Bet 41, 1920 Martigny">
-              </iframe>
-            </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- Équipe -->
+    <section class="contact-team">
+      <div class="container">
+        <h2 class="fade-in">Votre interlocuteur</h2>
+        <p class="sub fade-in">N'hésitez pas à contacter directement la personne en charge de votre domaine.</p>
+        <div class="contact-team__grid">
+          <div class="contact-team__member fade-in">
+            <div class="contact-team__photo">
+              <img src="images/giovanni.jpg" alt="Giovanni Mascolo">
+            </div>
+            <h3>Giovanni Mascolo</h3>
+            <p>Fondateur & CEO</p>
+          </div>
+          <div class="contact-team__member fade-in">
+            <div class="contact-team__photo">
+              <img src="images/raphael.jpg" alt="Raphaël Mascolo">
+            </div>
+            <h3>Raphaël Mascolo</h3>
+            <p>Directeur Général</p>
+          </div>
+          <div class="contact-team__member fade-in">
+            <div class="contact-team__photo">
+              <img src="images/philippe.jpg" alt="Philippe Nunes">
+            </div>
+            <h3>Philippe Nunes</h3>
+            <p>Dir. ASV Fenêtres & Portes</p>
+          </div>
+          <div class="contact-team__member fade-in">
+            <div class="contact-team__photo">
+              <img src="images/gerald.jpg" alt="Gérald Mariéthoz">
+            </div>
+            <h3>Gérald Mariéthoz</h3>
+            <p>Dir. MBA Construction</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carte -->
+    <section class="contact-map-section">
+      <div class="container">
+        <h2 class="fade-in">Où nous trouver</h2>
+        <p class="sub fade-in">Rue du Châble-Bet 41, 1920 Martigny</p>
+        <div class="contact-map-wrap fade-in" style="position:relative;">
+          <div id="contactMap"></div>
+          <div class="map-overlay-card">
+            <h3>MBA Groupe SA</h3>
+            <p>Rue du Châble-Bet 41<br>1920 Martigny</p>
+            <a href="https://maps.google.com/?q=Rue+du+Châble-Bet+41,+1920+Martigny" target="_blank" rel="noopener" class="map-info__link">
+              Itinéraire
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -219,7 +321,26 @@
     </div>
   </footer>
 
-  <script src="js/group-bar.js?v=4"></script>
-  <script src="js/main.js?v=4"></script>
+  <script src="js/group-bar.js?v=11"></script>
+  <script src="js/main.js?v=20"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+  (function() {
+    var mapEl = document.getElementById('contactMap');
+    if (!mapEl) return;
+    var lat = 46.1030, lng = 7.0926;
+    var map = L.map('contactMap', { scrollWheelZoom: false }).setView([lat, lng], 15);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      maxZoom: 19
+    }).addTo(map);
+    var icon = L.divIcon({
+      className: 'map-marker',
+      html: '<div style="width:22px;height:22px;background:#FDD900;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,0.5);"></div>',
+      iconSize: [22, 22], iconAnchor: [11, 11]
+    });
+    L.marker([lat, lng], { icon: icon }).addTo(map).bindPopup('<strong>MBA Groupe SA</strong><br>Rue du Châble-Bet 41<br>1920 Martigny');
+  })();
+  </script>
 </body>
 </html>
