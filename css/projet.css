@@ -458,6 +458,7 @@
   height: 300vh;
   min-height: auto;
   display: block;
+  overflow: visible;
 }
 
 .projet-hero__sticky {
