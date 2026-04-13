@@ -13,7 +13,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="css/style.css?v=20">
   <link rel="stylesheet" href="css/projet.css?v=1">
 </head>
@@ -108,107 +107,34 @@
       </div>
     </section>
 
-    <!-- Nos Appartements -->
-    <section class="projet-apparts">
+    <!-- Coming Soon -->
+    <section class="projet-coming-soon">
       <div class="container">
-        <div class="projet-apparts__header">
-          <p class="projet-apparts__label">Nos Appartements</p>
-          <h2 class="projet-apparts__title">Trouvez votre futur chez-vous</h2>
-        </div>
-        <div class="projet-apparts__grid">
-          <!-- 2.5 pièces -->
-          <div class="appart-card">
-            <div class="appart-card__image">
-              <img src="images/vernayaz-1.jpg" alt="Appartement 2.5 pièces">
+        <div class="coming-soon__content">
+          <div class="coming-soon__loader">
+            <div class="box box-1">
+              <div class="side-left"></div>
+              <div class="side-right"></div>
+              <div class="side-top"></div>
             </div>
-            <div class="appart-card__body">
-              <div class="appart-card__rooms">2.5 pièces</div>
-              <div class="appart-card__price">Dès CHF 290'000.—</div>
-              <a href="contact.html" class="appart-card__btn">Voir les plans</a>
+            <div class="box box-2">
+              <div class="side-left"></div>
+              <div class="side-right"></div>
+              <div class="side-top"></div>
             </div>
-          </div>
-          <!-- 3.5 pièces -->
-          <div class="appart-card">
-            <div class="appart-card__image">
-              <img src="images/vernayaz-2.jpg" alt="Appartement 3.5 pièces">
+            <div class="box box-3">
+              <div class="side-left"></div>
+              <div class="side-right"></div>
+              <div class="side-top"></div>
             </div>
-            <div class="appart-card__body">
-              <div class="appart-card__rooms">3.5 pièces</div>
-              <div class="appart-card__price">Dès CHF 390'000.—</div>
-              <a href="contact.html" class="appart-card__btn">Voir les plans</a>
+            <div class="box box-4">
+              <div class="side-left"></div>
+              <div class="side-right"></div>
+              <div class="side-top"></div>
             </div>
           </div>
-          <!-- 4.5 pièces -->
-          <div class="appart-card">
-            <div class="appart-card__image">
-              <img src="images/vernayaz-3.jpg" alt="Appartement 4.5 pièces">
-            </div>
-            <div class="appart-card__body">
-              <div class="appart-card__rooms">4.5 pièces</div>
-              <div class="appart-card__price">Dès CHF 490'000.—</div>
-              <a href="contact.html" class="appart-card__btn">Voir les plans</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Situation -->
-    <section class="projet-situation">
-      <div class="container">
-        <div class="projet-situation__header">
-          <p class="projet-situation__label">Situation</p>
-          <h2 class="projet-situation__title">Un emplacement idéal</h2>
-        </div>
-        <div class="projet-situation__grid">
-          <div id="projet-map" class="projet-map"></div>
-          <ul class="projet-amenities">
-            <li class="projet-amenity">
-              <div class="projet-amenity__icon">
-                <svg viewBox="0 0 24 24"><path d="M4 11V8a8 8 0 0 1 16 0v3"/><rect x="2" y="11" width="20" height="11" rx="2"/><path d="M12 11v4"/></svg>
-              </div>
-              <div class="projet-amenity__info">
-                <div class="projet-amenity__name">Gare</div>
-                <div class="projet-amenity__time">5 min à pied</div>
-              </div>
-            </li>
-            <li class="projet-amenity">
-              <div class="projet-amenity__icon">
-                <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-              </div>
-              <div class="projet-amenity__info">
-                <div class="projet-amenity__name">Écoles</div>
-                <div class="projet-amenity__time">10 min à pied</div>
-              </div>
-            </li>
-            <li class="projet-amenity">
-              <div class="projet-amenity__icon">
-                <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-              </div>
-              <div class="projet-amenity__info">
-                <div class="projet-amenity__name">Commerces</div>
-                <div class="projet-amenity__time">5 min à pied</div>
-              </div>
-            </li>
-            <li class="projet-amenity">
-              <div class="projet-amenity__icon">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <div class="projet-amenity__info">
-                <div class="projet-amenity__name">Autoroute</div>
-                <div class="projet-amenity__time">3 min en voiture</div>
-              </div>
-            </li>
-            <li class="projet-amenity">
-              <div class="projet-amenity__icon">
-                <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
-              </div>
-              <div class="projet-amenity__info">
-                <div class="projet-amenity__name">Nature</div>
-                <div class="projet-amenity__time">2 min à pied</div>
-              </div>
-            </li>
-          </ul>
+          <h2>Plus d'informations prochainement</h2>
+          <p>Les détails des appartements, plans et situation seront disponibles très bientôt. Contactez-nous pour être informé en avant-première.</p>
         </div>
       </div>
     </section>
@@ -296,7 +222,6 @@
 
   <script src="js/group-bar.js?v=11"></script>
   <script src="js/main.js?v=20"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
   (function() {
     // Scroll-driven video
@@ -375,23 +300,6 @@
       }
     }
 
-    // Map
-    var mapEl = document.getElementById('projet-map');
-    if (mapEl) {
-      var lat = 46.1317;
-      var lng = 7.0389;
-      var map = L.map('projet-map', { scrollWheelZoom: false }).setView([lat, lng], 15);
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
-        maxZoom: 19
-      }).addTo(map);
-      var icon = L.divIcon({
-        className: 'map-marker',
-        html: '<div style="width:22px;height:22px;background:#FDD900;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,0.5);"></div>',
-        iconSize: [22, 22], iconAnchor: [11, 11]
-      });
-      L.marker([lat, lng], { icon: icon }).addTo(map).bindPopup('<strong>Tsareire Tope</strong><br>Vernayaz, Valais');
-    }
   })();
   </script>
 </body>
