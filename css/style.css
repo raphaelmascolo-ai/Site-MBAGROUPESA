@@ -1883,54 +1883,57 @@ p {
   margin-bottom: 1.5rem;
 }
 
-/* --- Valeurs Cards --- */
-.valeurs-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.valeur-card {
-  background: var(--white);
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 32px 28px;
+/* --- Valeur Display (right panel) --- */
+.valeur-display {
   position: relative;
-  transition: all 0.3s ease;
-  overflow: hidden;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.valeur-card:hover {
-  border-color: var(--yellow);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  transform: translateY(-4px);
-}
-
-.valeur-card__num {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  font-weight: 800;
-  color: rgba(0, 0, 0, 0.06);
+.valeur-display__item {
   position: absolute;
-  top: 12px;
-  right: 20px;
+  text-align: center;
+  padding: 40px;
+  max-width: 420px;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.valeur-display__item.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.valeur-display__num {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: 800;
+  color: var(--yellow);
+  opacity: 0.15;
   line-height: 1;
+  display: block;
+  margin-bottom: 16px;
 }
 
-.valeur-card:hover .valeur-card__num {
-  color: rgba(253, 217, 0, 0.2);
-}
-
-.valeur-card h3 {
-  font-size: 1.1rem;
+.valeur-display__item h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
   font-weight: 700;
-  color: var(--black);
-  margin-bottom: 10px;
+  color: var(--yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
 }
 
-.valeur-card p {
-  font-size: 0.88rem;
-  color: var(--gray-dark);
+.valeur-display__item p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.7;
   margin-bottom: 0;
 }
@@ -2883,9 +2886,8 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .valeurs-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  .valeur-display__item {
+    padding: 24px;
   }
 
   .timeline-3d::before {
