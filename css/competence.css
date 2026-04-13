@@ -1364,19 +1364,16 @@ body.theme-orange:has(.comp-dark-section) {
   margin-bottom: 48px;
 }
 
-.realisation-carousel {
-  position: relative;
-  margin-bottom: 48px;
-  overflow: hidden;
-  border-radius: 12px;
+.realisations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
 }
 
-.realisation-carousel h3 {
-  color: var(--yellow);
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 16px;
+.realisation-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .realisation-carousel__viewport {
@@ -1392,8 +1389,10 @@ body.theme-orange:has(.comp-dark-section) {
 
 .realisation-carousel__track img {
   width: 100%;
-  height: 450px;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  background: #111;
   flex-shrink: 0;
 }
 
@@ -1641,8 +1640,8 @@ body.theme-orange:has(.comp-dark-section) {
     font-size: clamp(2rem, 10vw, 3rem);
   }
 
-  .realisation-carousel__track img {
-    height: 280px;
+  .realisations-grid {
+    grid-template-columns: 1fr;
   }
 
   .projet-realisations {
