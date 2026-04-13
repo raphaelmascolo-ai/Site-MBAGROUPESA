@@ -1877,6 +1877,34 @@ p {
     linear-gradient(45deg, transparent 65%, rgba(253,217,0,0.04) 65%, rgba(253,217,0,0.04) 75%, transparent 75%);
 }
 
+.bento-s--wide {
+  grid-column: span 2;
+  background:
+    radial-gradient(ellipse at 70% 50%, rgba(253, 217, 0, 0.08) 0%, transparent 55%),
+    linear-gradient(135deg, #222 0%, #1a1a1a 100%);
+}
+
+.bento-s--wide::after {
+  background-image:
+    linear-gradient(135deg, transparent 60%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0.02) 70%, transparent 70%),
+    linear-gradient(45deg, transparent 65%, rgba(253,217,0,0.04) 65%, rgba(253,217,0,0.04) 75%, transparent 75%);
+}
+
+.bento-s--wide .bento-s__content {
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+}
+
+.bento-s--wide p {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.bento-s--wide .bento-s__link {
+  margin-top: 0;
+}
+
 /* Light variant for logos that need light bg */
 .bento-s--light {
   background:
@@ -3216,7 +3244,8 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .bento-s--featured {
+  .bento-s--featured,
+  .bento-s--wide {
     grid-column: span 2;
     grid-row: span 1;
   }
@@ -3285,8 +3314,13 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .bento-s--featured {
+  .bento-s--featured,
+  .bento-s--wide {
     grid-column: span 1;
+  }
+
+  .bento-s--wide .bento-s__content {
+    flex-direction: column;
   }
 
   .actu-card {
