@@ -31,7 +31,13 @@
       </button>
       <nav class="main-nav" role="navigation" aria-label="Navigation principale">
         <a href="index.html" class="nav-link">Accueil</a>
-        <a href="about.html" class="nav-link">À propos</a>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link nav-link--dropdown">Le Groupe</a>
+          <div class="dropdown-menu">
+            <a href="about.html" class="dropdown-link">À propos</a>
+            <a href="contact.html" class="dropdown-link">Contact</a>
+          </div>
+        </div>
         <div class="nav-dropdown">
           <a href="#" class="nav-link nav-link--dropdown">Nos Compétences</a>
           <div class="dropdown-menu">
@@ -54,7 +60,6 @@
           </div>
         </div>
         <a href="blog.html" class="nav-link">Actualités</a>
-        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
     </div>
     <div class="menu-overlay"></div>
