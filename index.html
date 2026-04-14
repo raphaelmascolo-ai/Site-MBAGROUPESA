@@ -218,49 +218,37 @@
               </button>
             </div>
           </div>
-          <div class="feature-carousel__right">
-            <div class="feature-carousel__cards">
-              <div class="feature-carousel__card active" data-index="0">
-                <img src="images/cle-1.jpg" alt="Maîtrise complète">
-                <div class="feature-carousel__card-overlay">
-                  <span class="feature-carousel__card-tag">Maîtrise complète</span>
-                  <p>Nos sociétés couvrent l'intégralité de votre projet. Un seul groupe, un seul responsable, zéro perte de temps.</p>
-                </div>
+          <div class="feature-carousel__right" style="background:var(--black);">
+            <div class="valeur-display">
+              <div class="valeur-display__item active" data-index="0">
+                <span class="valeur-display__num">01</span>
+                <h3>Maîtrise complète</h3>
+                <p>De la maçonnerie aux finitions, des fenêtres à la promotion immobilière — nos sociétés couvrent l'intégralité de votre projet. Un seul groupe, un seul responsable, zéro perte de temps.</p>
               </div>
-              <div class="feature-carousel__card" data-index="1">
-                <img src="images/equipe-mba.jpg" alt="Esprit familial">
-                <div class="feature-carousel__card-overlay">
-                  <span class="feature-carousel__card-tag">Esprit familial</span>
-                  <p>Entreprise familiale depuis 2001. Votre projet n'est pas un numéro de dossier, c'est notre réputation.</p>
-                </div>
+              <div class="valeur-display__item" data-index="1">
+                <span class="valeur-display__num">02</span>
+                <h3>Esprit familial</h3>
+                <p>MBA Groupe est une entreprise familiale depuis 2001. Ici, le patron connaît chaque chantier par son nom. Votre projet n'est pas un numéro de dossier, c'est notre réputation.</p>
               </div>
-              <div class="feature-carousel__card" data-index="2">
-                <img src="images/maconnerie-3.jpg" alt="Parole tenue">
-                <div class="feature-carousel__card-overlay">
-                  <span class="feature-carousel__card-tag">Parole tenue</span>
-                  <p>On dit ce qu'on fait, on fait ce qu'on dit. Nos délais, nos prix et nos engagements sont respectés.</p>
-                </div>
+              <div class="valeur-display__item" data-index="2">
+                <span class="valeur-display__num">03</span>
+                <h3>Parole tenue</h3>
+                <p>On dit ce qu'on fait, on fait ce qu'on dit. Nos délais, nos prix et nos engagements sont respectés. En 25 ans, c'est comme ça qu'on a bâti la confiance de nos clients.</p>
               </div>
-              <div class="feature-carousel__card" data-index="3">
-                <img src="images/hero-terrassement.jpg" alt="Ancrage valaisan">
-                <div class="feature-carousel__card-overlay">
-                  <span class="feature-carousel__card-tag">Ancrage valaisan</span>
-                  <p>Nés à Martigny, enracinés en Valais. On connaît le terrain, le climat, les normes, les gens.</p>
-                </div>
+              <div class="valeur-display__item" data-index="3">
+                <span class="valeur-display__num">04</span>
+                <h3>Ancrage valaisan</h3>
+                <p>Nés à Martigny, enracinés en Valais. On connaît le terrain, le climat, les normes, les gens. Construire ici, c'est notre métier depuis toujours.</p>
               </div>
-              <div class="feature-carousel__card" data-index="4">
-                <img src="images/promo-5.jpg" alt="Qualité">
-                <div class="feature-carousel__card-overlay">
-                  <span class="feature-carousel__card-tag">Qualité</span>
-                  <p>Chaque détail compte. Du choix des matériaux à la finition, notre nom est sur chaque projet.</p>
-                </div>
+              <div class="valeur-display__item" data-index="4">
+                <span class="valeur-display__num">05</span>
+                <h3>Qualité</h3>
+                <p>Chaque détail compte. Du choix des matériaux à la finition, on ne livre pas un chantier tant que le résultat n'est pas à la hauteur de nos standards. Notre nom est sur chaque projet.</p>
               </div>
-              <div class="feature-carousel__card" data-index="5">
-                <img src="images/vernayaz-3.jpg" alt="Innovation">
-                <div class="feature-carousel__card-overlay">
-                  <span class="feature-carousel__card-tag">Innovation</span>
-                  <p>Tradition du métier, moyens d'aujourd'hui. Gestion digitale, procédures structurées, technologies actuelles.</p>
-                </div>
+              <div class="valeur-display__item" data-index="5">
+                <span class="valeur-display__num">06</span>
+                <h3>Innovation</h3>
+                <p>On investit dans les outils et les méthodes qui font la différence : gestion digitale, procédures structurées, technologies actuelles. Tradition du métier, moyens d'aujourd'hui.</p>
               </div>
             </div>
           </div>
@@ -434,20 +422,13 @@
   var vc = document.getElementById('valeursCarousel');
   if (vc) {
     var chips = vc.querySelectorAll('.feature-carousel__chip');
-    var cards = vc.querySelectorAll('.feature-carousel__card');
+    var items = vc.querySelectorAll('.valeur-display__item');
     var current = 0;
     var total = chips.length;
     var paused = false;
     function setActiveV(idx) {
-      var prev = ((idx - 1) + total) % total;
-      var next = (idx + 1) % total;
       chips.forEach(function(c, i) { c.classList.toggle('active', i === idx); });
-      cards.forEach(function(c, i) {
-        c.classList.remove('active', 'prev', 'next');
-        if (i === idx) c.classList.add('active');
-        else if (i === prev) c.classList.add('prev');
-        else if (i === next) c.classList.add('next');
-      });
+      items.forEach(function(c, i) { c.classList.toggle('active', i === idx); });
       current = idx;
     }
     chips.forEach(function(chip, i) {
