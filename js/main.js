@@ -175,43 +175,34 @@
       });
     }
 
-    // Only close menu when clicking actual page links, not dropdown triggers
-    mainNav.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', (e) => {
-        // Don't close menu if it's a dropdown trigger
+    // Close menu when clicking actual page links (not dropdown triggers)
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
         if (link.classList.contains('nav-link--dropdown')) return;
         mainNav.classList.remove('open');
         if (menuOverlay) menuOverlay.classList.remove('active');
         menuToggle.setAttribute('aria-expanded', 'false');
       });
     });
-
-    // Also close when clicking a dropdown-link (actual page link inside dropdown)
-    mainNav.querySelectorAll('.dropdown-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('open');
-        if (menuOverlay) menuOverlay.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // Mobile dropdown toggle
-    document.querySelectorAll('.nav-dropdown').forEach(function(dropdown) {
-      var trigger = dropdown.querySelector('.nav-link--dropdown');
-      if (trigger) {
-        trigger.addEventListener('click', function(e) {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            // Close other open dropdowns
-            document.querySelectorAll('.nav-dropdown').forEach(function(other) {
-              if (other !== dropdown) other.classList.remove('open');
-            });
-            dropdown.classList.toggle('open');
-          }
-        });
-      }
-    });
   }
+
+  // Mobile dropdown toggle
+  document.querySelectorAll('.nav-link--dropdown').forEach(function(trigger) {
+    trigger.addEventListener('click', function(e) {
+      if (window.innerWidth > 768) return; // Desktop uses CSS hover
+      e.preventDefault();
+      e.stopPropagation();
+      var dropdown = trigger.closest('.nav-dropdown');
+      if (!dropdown) return;
+      var isOpen = dropdown.classList.contains('open');
+      // Close all dropdowns
+      document.querySelectorAll('.nav-dropdown').forEach(function(d) {
+        d.classList.remove('open');
+      });
+      // Toggle the clicked one
+      if (!isOpen) dropdown.classList.add('open');
+    });
+  });
 
   // Dropdown toggle for mobile
   document.querySelectorAll('.nav-dropdown').forEach(function(dropdown) {
