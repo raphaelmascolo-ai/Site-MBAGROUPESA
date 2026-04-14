@@ -1692,6 +1692,10 @@ body.theme-orange:has(.comp-dark-section) {
     height: 300px;
   }
 
+  .contact-competence__photo img {
+    object-position: center top;
+  }
+
   .contact-competence__form {
     padding: 28px 24px;
   }

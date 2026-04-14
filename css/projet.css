@@ -852,6 +852,10 @@
     height: 250px;
   }
 
+  .projet-contact__photo img {
+    object-position: center top;
+  }
+
   .projet-contact__form {
     padding: 28px 24px;
   }
@@ -872,5 +876,40 @@
 
   .projet-contact__form {
     padding: 20px 16px;
+  }
+
+  .projet-coming-soon {
+    padding: 5rem 0;
+  }
+
+  .coming-soon__loader {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 3rem;
+  }
+
+  .coming-soon__loader .box {
+    width: 38px;
+    height: 38px;
+  }
+
+  .coming-soon__loader .side-left {
+    transform: rotateY(-90deg) translateZ(19px);
+  }
+
+  .coming-soon__loader .side-right {
+    transform: rotateX(90deg) translateZ(19px);
+  }
+
+  .coming-soon__loader .side-top {
+    transform: translateZ(19px);
+  }
+
+  .coming-soon__content h2 {
+    font-size: 1.2rem;
+  }
+
+  .coming-soon__content p {
+    font-size: 0.88rem;
   }
 }
