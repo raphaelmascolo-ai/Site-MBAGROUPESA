@@ -635,10 +635,17 @@
   background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.5) 100%);
 }
 
-.projet-hero--image .projet-hero__content,
-.projet-hero--image .projet-hero__scroll {
+.projet-hero--image .projet-hero__content {
   position: relative;
   z-index: 2;
+}
+
+.projet-hero--image .projet-hero__scroll {
+  position: absolute;
+  z-index: 2;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* --- Scroll-driven Video Hero --- */
