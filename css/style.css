@@ -3320,9 +3320,11 @@ p {
     height: 100vh;
     background: var(--black);
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
+    padding-top: 80px;
+    overflow-y: auto;
     transition: right var(--transition);
     z-index: 1001;
   }
