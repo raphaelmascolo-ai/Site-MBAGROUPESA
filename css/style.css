@@ -3360,25 +3360,21 @@ p {
   }
 
   .dropdown-menu {
-    position: static;
-    transform: none;
-    opacity: 0;
-    visibility: hidden;
-    max-height: 0;
-    overflow: hidden;
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: none;
     box-shadow: none;
     border: none;
     background: transparent;
     min-width: auto;
     width: 100%;
     padding: 0;
-    transition: all 0.3s ease;
   }
 
   .nav-dropdown.open .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    max-height: 500px;
+    display: block;
     padding: 8px 0;
   }
 
