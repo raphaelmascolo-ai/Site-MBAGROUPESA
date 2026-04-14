@@ -32,121 +32,13 @@
       setTimeout(() => heroContent.classList.add('animate-in'), 300);
     }
 
-    if (isMobile) {
-      // --- MOBILE: autoplay video in background ---
-      videoSection.style.height = '100vh';
-      video.autoplay = true;
-      video.loop = true;
-      video.muted = true;
-      video.playsInline = true;
-      video.play().catch(() => {});
-
-    } else {
-      // --- DESKTOP: canvas frame extraction for smooth scroll scrub ---
-      const TOTAL_FRAMES = 60;
-      const frames = [];
-      let framesReady = false;
-      let targetFrame = 0;
-      let currentFrame = 0;
-      let extracting = false;
-      let canvasReady = false;
-
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.style.cssText = 'width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;display:none;';
-
-      // Show video normally first, then switch to canvas when ready
-      video.muted = true;
-      video.playsInline = true;
-
-      function switchToCanvas() {
-        if (canvasReady) return;
-        canvas.width = video.videoWidth || 1920;
-        canvas.height = video.videoHeight || 1080;
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        video.parentNode.appendChild(canvas);
-        canvas.style.display = 'block';
-        video.style.display = 'none';
-        video.pause();
-        canvasReady = true;
-      }
-
-      async function extractFrames() {
-        if (extracting) return;
-        extracting = true;
-        const duration = video.duration;
-        frames.length = TOTAL_FRAMES;
-        framesReady = true;
-
-        for (let i = 0; i < TOTAL_FRAMES; i++) {
-          const time = (i / (TOTAL_FRAMES - 1)) * duration;
-          await seekTo(time);
-          const offscreen = document.createElement('canvas');
-          offscreen.width = canvas.width;
-          offscreen.height = canvas.height;
-          offscreen.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-          frames[i] = offscreen;
-        }
-      }
-
-      function seekTo(time) {
-        return new Promise((resolve) => {
-          const onSeeked = () => { video.removeEventListener('seeked', onSeeked); resolve(); };
-          video.addEventListener('seeked', onSeeked);
-          video.currentTime = time;
-        });
-      }
-
-      function drawFrame(index) {
-        const target = Math.round(Math.max(0, Math.min(TOTAL_FRAMES - 1, index)));
-        let i = target;
-        if (!frames[i]) {
-          for (let offset = 1; offset < TOTAL_FRAMES; offset++) {
-            if (frames[target - offset]) { i = target - offset; break; }
-            if (frames[target + offset]) { i = target + offset; break; }
-          }
-        }
-        if (frames[i]) {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          ctx.drawImage(frames[i], 0, 0);
-        }
-      }
-
-      function updateTargetFrame() {
-        const rect = videoSection.getBoundingClientRect();
-        const sectionHeight = videoSection.offsetHeight - window.innerHeight;
-        const scrolled = -rect.top;
-        const progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
-        targetFrame = progress * (TOTAL_FRAMES - 1);
-      }
-
-      function renderLoop() {
-        if (framesReady && canvasReady) {
-          const diff = targetFrame - currentFrame;
-          if (Math.abs(diff) > 0.05) {
-            currentFrame += diff * 0.15;
-            drawFrame(currentFrame);
-          }
-        }
-        requestAnimationFrame(renderLoop);
-      }
-
-      function init() {
-        switchToCanvas();
-        requestAnimationFrame(renderLoop);
-        extractFrames();
-      }
-
-      // Try multiple events to catch the video as early as possible
-      video.addEventListener('loadeddata', init);
-      video.addEventListener('canplay', init);
-      if (video.readyState >= 2) init();
-
-      // Fallback: if video takes too long, force load
-      setTimeout(() => { if (!canvasReady && video.readyState >= 2) init(); }, 2000);
-
-      window.addEventListener('scroll', updateTargetFrame, { passive: true });
-    }
+    // Both mobile and desktop: autoplay loop
+    videoSection.style.height = '100vh';
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.play().catch(() => {});
   }
 
   // --- Mobile menu ---
