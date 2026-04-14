@@ -1669,10 +1669,14 @@ body.theme-orange:has(.comp-dark-section) {
   }
 
   .comp-intro__logo {
-    width: 160px;
-    height: 160px;
-    padding: 32px;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
     margin: 0 auto;
+  }
+
+  .comp-intro__label {
+    display: none;
   }
 
   .comp-intro__logos {
