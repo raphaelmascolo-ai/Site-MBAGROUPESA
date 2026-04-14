@@ -418,4 +418,33 @@
     }
   });
 
+  // --- Mobile gallery dots ---
+  if (window.innerWidth <= 768) {
+    document.querySelectorAll('.expand-gallery').forEach(function(gallery) {
+      var items = gallery.querySelectorAll('.expand-gallery__item');
+      if (items.length < 2) return;
+
+      var dotsDiv = document.createElement('div');
+      dotsDiv.className = 'gallery-dots';
+      items.forEach(function(_, i) {
+        var dot = document.createElement('button');
+        dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', function() {
+          items[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        });
+        dotsDiv.appendChild(dot);
+      });
+      gallery.parentNode.insertBefore(dotsDiv, gallery.nextSibling);
+
+      gallery.addEventListener('scroll', function() {
+        var scrollLeft = gallery.scrollLeft;
+        var itemWidth = items[0].offsetWidth + 8;
+        var active = Math.round(scrollLeft / itemWidth);
+        dotsDiv.querySelectorAll('.gallery-dot').forEach(function(d, i) {
+          d.classList.toggle('active', i === active);
+        });
+      }, { passive: true });
+    });
+  }
+
 })();
