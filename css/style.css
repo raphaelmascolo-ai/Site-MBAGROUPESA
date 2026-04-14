@@ -3353,7 +3353,7 @@ p {
     display: block;
   }
 
-  /* Dropdown nav mobile */
+  /* Dropdown nav mobile — always open, no toggle needed */
   .nav-dropdown {
     display: flex;
     flex-direction: column;
@@ -3361,30 +3361,34 @@ p {
     width: 100%;
   }
 
+  .nav-link--dropdown {
+    display: none !important;
+  }
+
   .dropdown-menu {
     position: static !important;
     transform: none !important;
     opacity: 1 !important;
     visibility: visible !important;
-    display: none;
+    display: block !important;
     box-shadow: none;
     border: none;
     background: transparent;
     min-width: auto;
     width: 100%;
-    padding: 0;
+    padding: 4px 0;
   }
 
-  .nav-dropdown.open .dropdown-menu {
-    display: block;
-    padding: 8px 0;
+  .dropdown-menu::before {
+    display: none;
   }
 
   .dropdown-link {
     color: rgba(255, 255, 255, 0.55);
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     text-align: center;
-    padding: 8px 20px;
+    padding: 10px 20px;
+    display: block;
   }
 
   .dropdown-link:hover {
