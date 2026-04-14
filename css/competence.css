@@ -1578,11 +1578,25 @@ body.theme-orange:has(.comp-dark-section) {
   }
 
   .expand-gallery {
-    height: 280px;
-    gap: 4px;
+    height: auto;
+    gap: 8px;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .expand-gallery__item {
+    border-radius: 6px;
+    min-width: auto;
+    height: auto;
+    aspect-ratio: 4/3;
+  }
+
+  .expand-gallery__item:hover {
+    flex: none;
+  }
+
+  .expand-gallery__item img {
     border-radius: 6px;
   }
 
