@@ -175,32 +175,36 @@
       });
     }
 
-    // Handle all clicks inside nav
-    mainNav.addEventListener('click', function(e) {
-      var target = e.target.closest('a');
-      if (!target) return;
-
-      // Dropdown trigger clicked
-      if (target.classList.contains('nav-link--dropdown')) {
-        e.preventDefault();
-        var dropdown = target.closest('.nav-dropdown');
-        if (!dropdown) return;
-        var wasOpen = dropdown.classList.contains('open');
-        // Close all
-        document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
-          d.classList.remove('open');
-        });
-        // Toggle
-        if (!wasOpen) dropdown.classList.add('open');
-        return;
-      }
-
-      // Regular link clicked — close menu
-      mainNav.classList.remove('open');
-      if (menuOverlay) menuOverlay.classList.remove('active');
-      menuToggle.setAttribute('aria-expanded', 'false');
+    // Regular page links close the menu
+    mainNav.querySelectorAll('.dropdown-link, .nav-link:not(.nav-link--dropdown)').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mainNav.classList.remove('open');
+        if (menuOverlay) menuOverlay.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
     });
   }
+
+  // Dropdown toggles for mobile
+  document.querySelectorAll('.nav-link--dropdown').forEach(function(trigger) {
+    trigger.addEventListener('touchstart', function(e) {
+      if (window.innerWidth > 768) return;
+      e.preventDefault();
+      var dd = trigger.parentElement;
+      var wasOpen = dd.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(d) { d.classList.remove('open'); });
+      if (!wasOpen) dd.classList.add('open');
+    }, { passive: false });
+
+    trigger.addEventListener('click', function(e) {
+      if (window.innerWidth > 768) return;
+      e.preventDefault();
+      var dd = trigger.parentElement;
+      var wasOpen = dd.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(d) { d.classList.remove('open'); });
+      if (!wasOpen) dd.classList.add('open');
+    });
+  });
 
   // Dropdown toggle for mobile
   document.querySelectorAll('.nav-dropdown').forEach(function(dropdown) {
