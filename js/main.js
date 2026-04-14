@@ -43,38 +43,39 @@
 
     } else {
       // --- DESKTOP: canvas frame extraction for smooth scroll scrub ---
-      const TOTAL_FRAMES = 150;
+      const TOTAL_FRAMES = 60;
       const frames = [];
       let framesReady = false;
       let targetFrame = 0;
       let currentFrame = 0;
       let extracting = false;
+      let canvasReady = false;
 
-      // Canvas that replaces the video
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
-      canvas.className = 'hero-video__player';
-      canvas.style.cssText = 'width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;';
+      canvas.style.cssText = 'width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;display:none;';
 
-      // Show first frame ASAP
-      function showFirstFrame() {
+      // Show video normally first, then switch to canvas when ready
+      video.muted = true;
+      video.playsInline = true;
+
+      function switchToCanvas() {
+        if (canvasReady) return;
         canvas.width = video.videoWidth || 1920;
         canvas.height = video.videoHeight || 1080;
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        // Insert canvas, hide video
-        video.style.display = 'none';
         video.parentNode.appendChild(canvas);
+        canvas.style.display = 'block';
+        video.style.display = 'none';
+        video.pause();
+        canvasReady = true;
       }
 
-      // Extract frames sequentially — but mark ready immediately
       async function extractFrames() {
         if (extracting) return;
         extracting = true;
         const duration = video.duration;
-        // Pre-allocate array so we can fill in any order if needed
         frames.length = TOTAL_FRAMES;
-
-        // Mark ready right away — drawFrame will use closest available frame
         framesReady = true;
 
         for (let i = 0; i < TOTAL_FRAMES; i++) {
@@ -83,18 +84,14 @@
           const offscreen = document.createElement('canvas');
           offscreen.width = canvas.width;
           offscreen.height = canvas.height;
-          const offCtx = offscreen.getContext('2d');
-          offCtx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          offscreen.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
           frames[i] = offscreen;
         }
       }
 
       function seekTo(time) {
         return new Promise((resolve) => {
-          const onSeeked = () => {
-            video.removeEventListener('seeked', onSeeked);
-            resolve();
-          };
+          const onSeeked = () => { video.removeEventListener('seeked', onSeeked); resolve(); };
           video.addEventListener('seeked', onSeeked);
           video.currentTime = time;
         });
@@ -102,10 +99,8 @@
 
       function drawFrame(index) {
         const target = Math.round(Math.max(0, Math.min(TOTAL_FRAMES - 1, index)));
-        // Find closest available frame (in case extraction not finished)
         let i = target;
         if (!frames[i]) {
-          // Search outward for nearest extracted frame
           for (let offset = 1; offset < TOTAL_FRAMES; offset++) {
             if (frames[target - offset]) { i = target - offset; break; }
             if (frames[target + offset]) { i = target + offset; break; }
@@ -126,29 +121,29 @@
       }
 
       function renderLoop() {
-        if (framesReady) {
+        if (framesReady && canvasReady) {
           const diff = targetFrame - currentFrame;
           if (Math.abs(diff) > 0.05) {
-            currentFrame += diff * 0.12;
+            currentFrame += diff * 0.15;
             drawFrame(currentFrame);
           }
         }
         requestAnimationFrame(renderLoop);
       }
 
-      // Kick off as soon as video has enough data
-      video.addEventListener('loadeddata', () => {
-        showFirstFrame();
-        requestAnimationFrame(renderLoop);
-        extractFrames();
-      });
-
-      // Fallback if loadeddata already fired
-      if (video.readyState >= 2) {
-        showFirstFrame();
+      function init() {
+        switchToCanvas();
         requestAnimationFrame(renderLoop);
         extractFrames();
       }
+
+      // Try multiple events to catch the video as early as possible
+      video.addEventListener('loadeddata', init);
+      video.addEventListener('canplay', init);
+      if (video.readyState >= 2) init();
+
+      // Fallback: if video takes too long, force load
+      setTimeout(() => { if (!canvasReady && video.readyState >= 2) init(); }, 2000);
 
       window.addEventListener('scroll', updateTargetFrame, { passive: true });
     }
