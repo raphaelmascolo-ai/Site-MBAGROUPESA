@@ -3423,6 +3423,13 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .map-overlay-card {
+    position: static;
+    margin-top: 16px;
+    max-width: none;
+    border-radius: 8px;
+  }
+
   /* Timeline mobile */
   .timeline::before {
     left: 20px;
