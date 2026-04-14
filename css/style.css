@@ -3231,6 +3231,14 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .valeur-display {
+    min-height: 250px;
+  }
+
+  .valeur-display__num {
+    font-size: 3rem;
+  }
+
   .valeur-display__item {
     padding: 24px;
   }
@@ -3508,5 +3516,34 @@ p {
 
   .why-us__card {
     padding: 20px 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .bento-s--hero {
+    min-height: 240px;
+  }
+
+  .bento-s--hero h3 {
+    font-size: 1.1rem;
+  }
+
+  .bento-s {
+    padding: 24px 20px;
+  }
+
+  .actu-card {
+    flex: 0 0 260px;
+  }
+
+  .actu-card__img {
+    height: 140px;
+  }
+
+  .actu-card__body {
+    padding: 16px;
   }
 }

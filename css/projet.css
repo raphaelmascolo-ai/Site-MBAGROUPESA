@@ -856,3 +856,21 @@
     padding: 28px 24px;
   }
 }
+
+@media (max-width: 480px) {
+  .projet-hero__title {
+    font-size: 2rem;
+  }
+
+  .projet-stat__number {
+    font-size: 1.6rem;
+  }
+
+  .projet-stat {
+    padding: 1rem;
+  }
+
+  .projet-contact__form {
+    padding: 20px 16px;
+  }
+}

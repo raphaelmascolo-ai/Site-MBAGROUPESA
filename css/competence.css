@@ -1722,3 +1722,30 @@ body.theme-orange:has(.comp-dark-section) {
     padding: 50px 0;
   }
 }
+
+@media (max-width: 480px) {
+  .feature-carousel__left {
+    padding: 24px 20px;
+  }
+
+  .feature-carousel__chip {
+    padding: 8px 14px;
+    font-size: 0.7rem;
+  }
+
+  .projets-actuels__grid {
+    gap: 16px;
+  }
+
+  .projet-card__img {
+    height: 160px;
+  }
+
+  .projet-card__body {
+    padding: 16px;
+  }
+
+  .projet-card__body h3 {
+    font-size: 0.95rem;
+  }
+}
