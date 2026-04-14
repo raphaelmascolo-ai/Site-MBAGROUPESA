@@ -1689,11 +1689,14 @@ body.theme-orange:has(.comp-dark-section) {
 
   .contact-competence__photo {
     width: 100%;
-    height: 300px;
+    height: auto;
+    max-height: 450px;
   }
 
   .contact-competence__photo img {
     object-position: center top;
+    height: auto;
+    max-height: 450px;
   }
 
   .contact-competence__form {
