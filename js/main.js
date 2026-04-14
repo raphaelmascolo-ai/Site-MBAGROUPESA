@@ -175,34 +175,32 @@
       });
     }
 
-    // Close menu when clicking actual page links (not dropdown triggers)
-    mainNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (link.classList.contains('nav-link--dropdown')) return;
-        mainNav.classList.remove('open');
-        if (menuOverlay) menuOverlay.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      });
+    // Handle all clicks inside nav
+    mainNav.addEventListener('click', function(e) {
+      var target = e.target.closest('a');
+      if (!target) return;
+
+      // Dropdown trigger clicked
+      if (target.classList.contains('nav-link--dropdown')) {
+        e.preventDefault();
+        var dropdown = target.closest('.nav-dropdown');
+        if (!dropdown) return;
+        var wasOpen = dropdown.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
+          d.classList.remove('open');
+        });
+        // Toggle
+        if (!wasOpen) dropdown.classList.add('open');
+        return;
+      }
+
+      // Regular link clicked — close menu
+      mainNav.classList.remove('open');
+      if (menuOverlay) menuOverlay.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
     });
   }
-
-  // Mobile dropdown toggle
-  document.querySelectorAll('.nav-link--dropdown').forEach(function(trigger) {
-    trigger.addEventListener('click', function(e) {
-      if (window.innerWidth > 768) return; // Desktop uses CSS hover
-      e.preventDefault();
-      e.stopPropagation();
-      var dropdown = trigger.closest('.nav-dropdown');
-      if (!dropdown) return;
-      var isOpen = dropdown.classList.contains('open');
-      // Close all dropdowns
-      document.querySelectorAll('.nav-dropdown').forEach(function(d) {
-        d.classList.remove('open');
-      });
-      // Toggle the clicked one
-      if (!isOpen) dropdown.classList.add('open');
-    });
-  });
 
   // Dropdown toggle for mobile
   document.querySelectorAll('.nav-dropdown').forEach(function(dropdown) {
