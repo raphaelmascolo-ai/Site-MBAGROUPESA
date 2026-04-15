@@ -576,11 +576,12 @@ p {
 }
 
 /* ============================================================
-   Hero — tablet redesign (≤1280px — covers iPad landscape too)
+   Hero — mobile/tablet layout (≤1366px — covers all iPads incl. 12.9" Pro)
+   Desktop-style hero only kicks in on real large screens (≥1367px).
    Anchored to the bottom of the hero so content never touches the navbar,
    full-width centered block with a soft bottom gradient for readability.
    ============================================================ */
-@media (max-width: 1280px) {
+@media (max-width: 1366px) {
   .hero-video-section {
     height: 200vh;
   }
@@ -3357,10 +3358,10 @@ p {
 }
 
 /* ============================================================
-   Mobile/tablet navigation — triggers at ≤1280px so iPad landscape gets
-   the hamburger nav instead of a cramped desktop nav that collides with hero text.
+   Mobile/tablet navigation — triggers at ≤1366px so all iPads (incl. 12.9" Pro landscape)
+   get the hamburger nav. Desktop nav only appears on real computer screens (≥1367px).
    ============================================================ */
-@media (max-width: 1280px) {
+@media (max-width: 1366px) {
   .menu-toggle {
     display: flex;
   }
