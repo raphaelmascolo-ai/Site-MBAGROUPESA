@@ -575,55 +575,105 @@ p {
   margin-top: -82px;
 }
 
+/* ============================================================
+   Hero — tablet redesign (≤1024px)
+   Anchored to the bottom of the hero so content never touches the navbar,
+   full-width centered block with a soft bottom gradient for readability.
+   ============================================================ */
 @media (max-width: 1024px) {
   .hero-video-section {
     height: 200vh;
   }
 
   .hero-video__overlay {
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.25);
   }
 
   .hero-video__gradient {
     background: linear-gradient(
-      to bottom,
-      rgba(10, 10, 12, 0.2) 0%,
-      rgba(10, 10, 12, 0.55) 100%
+      to top,
+      rgba(10, 10, 12, 0.85) 0%,
+      rgba(10, 10, 12, 0.55) 40%,
+      rgba(10, 10, 12, 0.15) 70%,
+      transparent 100%
     );
   }
 
   .hero-video__content {
-    top: 82px;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
     width: 100%;
-    height: calc(100% - 82px);
-    padding: 20px 6%;
-    text-align: center;
-    background: linear-gradient(
-      to bottom,
-      rgba(15, 15, 18, 0.45) 0%,
-      rgba(15, 15, 18, 0.65) 100%
-    );
+    height: auto;
+    max-height: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 40px 6% 8vh;
+    background: none;
     mask-image: none;
     -webkit-mask-image: none;
     border-left: none;
-    align-items: center;
-    justify-content: safe center;
-    overflow-y: auto;
+    text-align: center;
+    overflow: visible;
+  }
+
+  .hero__tagline {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    margin-bottom: 14px;
+    opacity: 0;
+  }
+
+  .hero-video__content.animate-in .hero__tagline {
+    opacity: 1;
   }
 
   .hero-video__content h1 {
-    font-size: clamp(1.8rem, 4.2vw, 2.6rem);
-    max-width: 720px;
+    font-size: clamp(1.9rem, 4.8vw, 2.9rem);
+    line-height: 1.12;
+    max-width: 640px;
+    margin-bottom: 1.1rem;
   }
 
   .hero__description {
     font-size: 0.95rem;
-    max-width: 560px;
+    line-height: 1.65;
+    max-width: 520px;
     margin: 0 auto 1.75rem;
+    color: rgba(255, 255, 255, 0.82);
   }
 
   .hero__buttons {
     justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .hero__buttons .btn {
+    padding: 13px 22px;
+    font-size: 0.82rem;
+  }
+}
+
+/* Very narrow tablets / large phones: stack buttons, tighter spacing */
+@media (max-width: 640px) {
+  .hero-video__content {
+    padding: 30px 5% 6vh;
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .hero__buttons .btn {
+    width: 100%;
   }
 }
 
