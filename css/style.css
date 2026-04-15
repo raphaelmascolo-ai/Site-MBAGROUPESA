@@ -504,11 +504,11 @@ p {
 
 .hero__tagline {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.22em;
   color: var(--yellow);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   font-weight: 600;
   opacity: 0;
   transform: translateY(20px);
