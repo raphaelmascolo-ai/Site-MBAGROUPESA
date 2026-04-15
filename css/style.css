@@ -489,14 +489,14 @@ p {
 /* Content area — sits over the gradient, no glass background of its own */
 .hero-video__content {
   position: absolute;
-  top: 0;
+  top: 82px;
   right: 0;
   width: 50%;
-  height: 100%;
+  height: calc(100% - 82px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 110px 6% 40px 4%;
+  padding: 0 6% 0 4%;
   color: var(--white);
   z-index: 2;
   text-align: left;
