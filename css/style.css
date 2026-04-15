@@ -495,11 +495,12 @@ p {
   height: calc(100% - 82px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 6% 0 4%;
+  justify-content: safe center;
+  padding: 20px 6% 20px 4%;
   color: var(--white);
   z-index: 2;
   text-align: left;
+  overflow-y: auto;
 }
 
 .hero__tagline {
@@ -522,7 +523,9 @@ p {
 
 .hero-video__content h1 {
   color: var(--white);
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.9rem, min(5vw, 8.5vh), 3.8rem);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease 0.15s, transform 0.6s ease 0.15s;
