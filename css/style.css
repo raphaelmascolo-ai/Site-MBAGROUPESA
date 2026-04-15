@@ -495,12 +495,12 @@ p {
   height: calc(100% - 82px);
   display: flex;
   flex-direction: column;
-  justify-content: safe center;
+  justify-content: center;
   padding: 20px 6% 20px 4%;
   color: var(--white);
   z-index: 2;
   text-align: left;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .hero__tagline {
@@ -576,11 +576,11 @@ p {
 }
 
 /* ============================================================
-   Hero — tablet redesign (≤1024px)
+   Hero — tablet redesign (≤1280px — covers iPad landscape too)
    Anchored to the bottom of the hero so content never touches the navbar,
    full-width centered block with a soft bottom gradient for readability.
    ============================================================ */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .hero-video-section {
     height: 200vh;
   }
@@ -3354,13 +3354,13 @@ p {
   .why-us__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  /* Hide hero tagline on tablets/small laptops — keep it on large screens */
-  .hero__tagline {
-    display: none;
-  }
-
-  /* Mobile nav kicks in at 1024px to prevent header overlap on tablets/small laptops */
+/* ============================================================
+   Mobile/tablet navigation — triggers at ≤1280px so iPad landscape gets
+   the hamburger nav instead of a cramped desktop nav that collides with hero text.
+   ============================================================ */
+@media (max-width: 1280px) {
   .menu-toggle {
     display: flex;
   }
