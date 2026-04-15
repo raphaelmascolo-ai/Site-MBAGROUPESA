@@ -98,7 +98,7 @@
     var link = dropdown.querySelector('.nav-link--dropdown');
     if (link) {
       link.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1366) {
           e.preventDefault();
           dropdown.classList.toggle('open');
         }
