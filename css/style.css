@@ -659,6 +659,58 @@ p {
   }
 }
 
+/* ============================================================
+   Short desktop viewports (e.g. laptops in landscape, widescreen monitors
+   with a compact window). Scales the hero content so the title never
+   overflows the vertically-centered right column into the navbar zone.
+   ============================================================ */
+@media (min-width: 1367px) and (max-height: 800px) {
+  .hero-video__content {
+    top: 90px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: calc(100% - 90px);
+  }
+
+  .hero__tagline {
+    font-size: 0.7rem;
+    margin-bottom: 0.9rem;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-video__content h1 {
+    font-size: clamp(1.9rem, 4.2vh, 2.8rem);
+    line-height: 1.1;
+    margin-bottom: 0.9rem;
+  }
+
+  .hero__description {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero__buttons .btn {
+    padding: 12px 22px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (min-width: 1367px) and (max-height: 620px) {
+  .hero-video__content h1 {
+    font-size: clamp(1.6rem, 3.4vh, 2.2rem);
+    margin-bottom: 0.7rem;
+  }
+
+  .hero__description {
+    display: none;
+  }
+
+  .hero__tagline {
+    margin-bottom: 0.6rem;
+  }
+}
+
 /* Very narrow tablets / large phones: stack buttons, tighter spacing */
 @media (max-width: 640px) {
   .hero-video__content {
