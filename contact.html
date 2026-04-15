@@ -145,7 +145,7 @@
           <div class="contact-form-section fade-in">
             <h2>Envoyez-nous un message</h2>
             <p class="sub">Nous vous répondons dans les meilleurs délais.</p>
-            <form class="contact-form" action="#" method="POST">
+            <form class="contact-form" id="contactForm" action="https://hook.eu2.make.com/0tjgrdhje8ai7oez8g2nqh56q9g4324q" method="POST">
               <label for="name">Nom complet</label>
               <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
 
@@ -318,6 +318,40 @@
       iconSize: [22, 22], iconAnchor: [11, 11]
     });
     L.marker([lat, lng], { icon: icon }).addTo(map).bindPopup('<strong>MBA Groupe SA</strong><br>Rue du Châble-Bet 41<br>1920 Martigny');
+  })();
+  </script>
+
+  <script>
+  (function() {
+    var form = document.getElementById('contactForm');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var originalLabel = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Envoi en cours…';
+      var data = new FormData(form);
+      var payload = {};
+      data.forEach(function(v, k) { payload[k] = v; });
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function(res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        btn.textContent = 'Message envoyé ✓';
+        form.reset();
+        setTimeout(function() {
+          btn.disabled = false;
+          btn.textContent = originalLabel;
+        }, 4000);
+      }).catch(function() {
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+        alert("Une erreur est survenue lors de l'envoi. Merci de réessayer ou de nous contacter directement.");
+      });
+    });
   })();
   </script>
 </body>
