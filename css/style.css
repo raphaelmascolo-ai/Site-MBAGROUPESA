@@ -2696,8 +2696,8 @@ p {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 2fr 1fr 1.3fr 1.5fr 1fr;
+  gap: 32px;
   margin-bottom: 60px;
 }
 
@@ -3226,7 +3226,7 @@ p {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1.3fr 1.5fr 1fr;
   }
 
   .values-grid {
@@ -3465,7 +3465,8 @@ p {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr 1fr 1.3fr 1.5fr 1fr;
+    gap: 20px;
   }
 
   .values-grid {
