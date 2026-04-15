@@ -3283,6 +3283,11 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Hide hero tagline on tablets/small laptops — keep it on large screens */
+  .hero__tagline {
+    display: none;
+  }
+
   /* Mobile nav kicks in at 1024px to prevent header overlap on tablets/small laptops */
   .menu-toggle {
     display: flex;
