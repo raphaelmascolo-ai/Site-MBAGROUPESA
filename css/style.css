@@ -600,24 +600,23 @@ p {
   }
 
   .hero-video__content {
-    top: auto;
+    top: 110px;
     bottom: 0;
     right: 0;
     left: 0;
-    width: 100%;
+    width: auto;
     height: auto;
-    max-height: calc(100% - 100px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding: 40px 6% 8vh;
+    padding: 20px 6% 8vh;
     background: none;
     mask-image: none;
     -webkit-mask-image: none;
     border-left: none;
     text-align: center;
-    overflow: visible;
+    overflow: hidden;
   }
 
   .hero__tagline {
